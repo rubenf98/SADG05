@@ -947,7 +947,7 @@ WHERE COUNTRY = 'France'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>672</xloc>
+      <xloc>816</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
