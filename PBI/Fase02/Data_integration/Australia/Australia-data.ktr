@@ -543,11 +543,6 @@
   </connection>
   <order>
     <hop>
-      <from>CUSTOMERS_W_TER</from>
-      <to>SQL CUSTOMERS_W_TER</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>DIM_TIME</from>
       <to>Block this step until CUSTOMERS_W_TER finish</to>
       <enabled>Y</enabled>
@@ -555,11 +550,6 @@
     <hop>
       <from>Block this step until CUSTOMERS_W_TER finish</from>
       <to>SQL DIM_TIME</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ORDERS</from>
-      <to>Block this step until DIM_TIME finish</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -573,11 +563,6 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Convert_USD_AUD</from>
-      <to>Block this step until ORDERS finish</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Block this step until ORDERS finish</from>
       <to>SQL ORDERFACT</to>
       <enabled>Y</enabled>
@@ -588,13 +573,48 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>Block this step until ORDERFACT finish</from>
+      <to>SQL PRODUCTS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CUSTOMERS_W_TER</from>
+      <to>RenameAttributes</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>RenameAttributes</from>
+      <to>SQL CUSTOMERS_W_TER</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ORDERS</from>
+      <to>RenameAttributes2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>RenameAttributes2</from>
+      <to>Block this step until DIM_TIME finish</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Convert_USD_AUD_2</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
       <to>Block this step until ORDERFACT finish</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Block this step until ORDERFACT finish</from>
-      <to>SQL PRODUCTS</to>
+      <from>Convert_USD_AUD</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>Block this step until ORDERS finish</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -953,7 +973,7 @@ var TOTALPRICE = TOTALPRICE * 1.31;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>320</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -999,7 +1019,7 @@ var BUYPRICE = BUYPRICE * 1.31;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>320</xloc>
       <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1343,7 +1363,7 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>208</xloc>
       <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1524,7 +1544,7 @@ AND c.COUNTRY = 'Australia'</sql>
 , PRODUCTNAME
 , PRODUCTVENDOR
 , QUANTITYINSTOCK
-, BUYPRICE AS PRICEIINAUD
+, BUYPRICE
 , MSRP
 FROM PRODUCTS AS p
 INNER JOIN ORDERFACT AS o
@@ -1548,8 +1568,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1558,8 +1578,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1571,8 +1591,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1581,8 +1601,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1594,8 +1614,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1604,8 +1624,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1617,8 +1637,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <origin>PRODUCTS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1627,8 +1647,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1638,10 +1658,10 @@ AND c.COUNTRY = 'Australia'</sql>
         <length>17</length>
         <precision>0</precision>
         <origin>PRODUCTS</origin>
-        <comments>PRICEIINAUD</comments>
+        <comments>BUYPRICE</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1650,8 +1670,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1663,8 +1683,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <origin>PRODUCTS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1673,8 +1693,8 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1687,7 +1707,7 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
+      <xloc>208</xloc>
       <yloc>560</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1909,6 +1929,186 @@ AND c.COUNTRY = 'Australia'</sql>
     <GUI>
       <xloc>736</xloc>
       <yloc>560</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>RenameAttributes</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CUSTOMERNAME</name>
+        <rename>NAME</rename>
+      </field>
+      <field>
+        <name>PHONE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ADDRESSLINE1</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CITY</name>
+        <rename/>
+      </field>
+      <field>
+        <name>STATE</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>464</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>RenameAttributes2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>ORDERNUMBER</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ORDERDATE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>REQUIREDDATE</name>
+        <rename>DATE</rename>
+      </field>
+      <field>
+        <name>SHIPPEDDATE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>368</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+        <rename/>
+      </field>
+      <field>
+        <name>QUANTITYINSTOCK</name>
+        <rename/>
+      </field>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>PRICEIINAUD</rename>
+      </field>
+      <field>
+        <name>MSRP</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>560</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>432</xloc>
+      <yloc>464</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

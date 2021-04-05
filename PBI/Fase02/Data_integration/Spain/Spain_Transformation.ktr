@@ -456,11 +456,6 @@
   </connection>
   <order>
     <hop>
-      <from>CUSTOMER_W_TER</from>
-      <to>CUSTOMER_W_TER_MDB</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>DIM_TIME</from>
       <to>Wait for Customer table </to>
       <enabled>Y</enabled>
@@ -473,11 +468,6 @@
     <hop>
       <from>Wait for TIME table </from>
       <to>ORDERS_MDB</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>PRODUCTS</from>
-      <to>Wait for ORDERS table</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -508,6 +498,31 @@
     <hop>
       <from>Select values</from>
       <to>Wait for Products table</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CUSTOMER_W_TER</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 2</from>
+      <to>CUSTOMER_W_TER_MDB</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PRODUCTS</from>
+      <to>Convert Product value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Convert Product value</from>
+      <to>Select values 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values 3</from>
+      <to>Wait for ORDERS table</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -706,7 +721,7 @@ WHERE ct.COUNTRY = 'Spain'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\Spain\Spain_Data.mdb</filename>
+    <filename>${Internal.Entry.Current.Directory}\Spain_Data.mdb</filename>
     <table>CUSTOMER_W_TER</table>
     <truncate>Y</truncate>
     <create_file>Y</create_file>
@@ -878,7 +893,7 @@ WHERE ct.COUNTRY='Spain'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\Spain\Spain_Data.mdb</filename>
+    <filename>${Internal.Entry.Current.Directory}\Spain_Data.mdb</filename>
     <table>DIM_TIME</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
@@ -919,8 +934,8 @@ WHERE ct.COUNTRY='Spain'
         <jsScript_name>Script 1</jsScript_name>
         <jsScript_script>//Script here
 
-var PRICEEACH = PRICEEACH * 0.83;
-var TOTALPRICE = TOTALPRICE * 0.83;</jsScript_script>
+var PRICEEACH = PRICEEACH * 0.84998;
+var TOTALPRICE = TOTALPRICE * 0.84998;</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -1173,7 +1188,7 @@ WHERE ct.COUNTRY = 'Spain'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\Spain\Spain_Data.mdb</filename>
+    <filename>${Internal.Entry.Current.Directory}\Spain_Data.mdb</filename>
     <table>ORDERFACT</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
@@ -1213,7 +1228,6 @@ WHERE ct.COUNTRY = 'Spain'</sql>
 , REQUIREDDATE
 , SHIPPEDDATE
 , CUSTOMERNUMBER
-, CITY
 FROM ORDERS AS o
 INNER JOIN ORDERFACT AS orderf
 ON orderf.ORDERNUMBER = o.ORDERNUMBER
@@ -1343,29 +1357,6 @@ WHERE ct.COUNTRY = 'Spain'
         <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CITY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>ORDERS</origin>
-        <comments>CITY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -1392,7 +1383,7 @@ WHERE ct.COUNTRY = 'Spain'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\Spain\Spain_Data.mdb</filename>
+    <filename>${Internal.Entry.Current.Directory}\Spain_Data.mdb</filename>
     <table>ORDERS</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
@@ -1635,7 +1626,7 @@ WHERE ct.COUNTRY = 'Spain'
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\Spain\Spain_Data.mdb</filename>
+    <filename>${Internal.Entry.Current.Directory}\Spain_Data.mdb</filename>
     <table>PRODUCTS</table>
     <truncate>Y</truncate>
     <create_file>N</create_file>
@@ -1925,6 +1916,171 @@ WHERE ct.COUNTRY = 'Spain'
     <GUI>
       <xloc>480</xloc>
       <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <rename/>
+      </field>
+      <field>
+        <name>CUSTOMERNAME</name>
+        <rename>NOMBRE</rename>
+      </field>
+      <field>
+        <name>PHONE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ADDRESSLINE1</name>
+        <rename>ADRESSLINE</rename>
+      </field>
+      <field>
+        <name>CITY</name>
+        <rename>CIUDAD</rename>
+      </field>
+      <field>
+        <name>STATE</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Convert Product value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var BUYPRICE = BUYPRICE * 0.84998;
+var MSRP = MSRP * 0.84998;
+
+</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>BUYPRICE</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>MSRP</name>
+        <rename>MSRP</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 3</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+        <rename/>
+      </field>
+      <field>
+        <name>QUANTITYINSTOCK</name>
+        <rename/>
+      </field>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>PRECIOENEURO</rename>
+      </field>
+      <field>
+        <name>MSRP</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
