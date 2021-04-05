@@ -488,11 +488,6 @@
   </connection>
   <order>
     <hop>
-      <from>CUSTOMER_W_TER</from>
-      <to>CUSTOMER_W_TER_(sheet)</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>DIM_TIME</from>
       <to>Block this step until CUSTOMER_W_TER finish</to>
       <enabled>Y</enabled>
@@ -538,7 +533,22 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>CUSTOMER_W_TER</from>
+      <to>Rename_attributes</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Rename_attributes</from>
+      <to>CUSTOMER_W_TER_(sheet)</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Convert_USD_EUR_2</from>
+      <to>Rename_attributes2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Rename_attributes2</from>
       <to>PRODUCTS_(sheet)</to>
       <enabled>Y</enabled>
     </hop>
@@ -866,7 +876,7 @@ WHERE COUNTRY = 'France'
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\France\FRANCE_DATA</name>
+      <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -906,7 +916,7 @@ WHERE COUNTRY = 'France'
         <format/>
       </field>
       <field>
-        <name>ADDRESSLINE1</name>
+        <name>ADDRESSLINE</name>
         <type>String</type>
         <format/>
       </field>
@@ -916,7 +926,7 @@ WHERE COUNTRY = 'France'
         <format/>
       </field>
       <field>
-        <name>STATE</name>
+        <name>ETAT</name>
         <type>String</type>
         <format/>
       </field>
@@ -947,7 +957,7 @@ WHERE COUNTRY = 'France'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1027,6 +1037,7 @@ var TOTALPRICE = TOTALPRICE * 0.84;</jsScript_script>
         <jsScript_script>//Script here
 
 var BUYPRICE = BUYPRICE * 0.84;
+var MSRP = MSRP * 0.84;
 </jsScript_script>
       </jsScript>
     </jsScripts>
@@ -1034,6 +1045,14 @@ var BUYPRICE = BUYPRICE * 0.84;
       <field>
         <name>BUYPRICE</name>
         <rename>BUYPRICE</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>MSRP</name>
+        <rename>MSRP</rename>
         <type>Number</type>
         <length>16</length>
         <precision>2</precision>
@@ -1209,7 +1228,7 @@ AND c.COUNTRY = 'France'
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\France\FRANCE_DATA</name>
+      <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -1280,7 +1299,7 @@ AND c.COUNTRY = 'France'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
       <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1509,7 +1528,7 @@ AND c.COUNTRY = 'France'</sql>
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\France\FRANCE_DATA</name>
+      <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -1595,7 +1614,7 @@ AND c.COUNTRY = 'France'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
       <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1778,7 +1797,7 @@ AND c.COUNTRY = 'France'
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\France\FRANCE_DATA</name>
+      <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -1854,7 +1873,7 @@ AND c.COUNTRY = 'France'
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1876,7 +1895,7 @@ AND c.COUNTRY = 'France'
 , PRODUCTNAME
 , PRODUCTVENDOR
 , QUANTITYINSTOCK
-, BUYPRICE AS PRIXEENEURO
+, BUYPRICE
 , MSRP
 FROM "PUBLIC".PRODUCTS AS p
 INNER JOIN ORDERFACT AS o
@@ -1990,7 +2009,7 @@ AND c.COUNTRY = 'France'</sql>
         <length>17</length>
         <precision>0</precision>
         <origin>PRODUCTS</origin>
-        <comments>PRIXEENEURO</comments>
+        <comments>BUYPRICE</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -2061,7 +2080,7 @@ AND c.COUNTRY = 'France'</sql>
     <append>Y</append>
     <add_to_result_filenames>Y</add_to_result_filenames>
     <file>
-      <name>C:\Users\tadeu\Desktop\SAD2021\SADG05\PBI\Fase02\Data_integration\France\FRANCE_DATA</name>
+      <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>Y</do_not_open_newfile_init>
       <create_parent_folder>N</create_parent_folder>
@@ -2106,7 +2125,7 @@ AND c.COUNTRY = 'France'</sql>
         <format/>
       </field>
       <field>
-        <name>BUYPRICE</name>
+        <name>PRIXEENEURO</name>
         <type>Number</type>
         <format/>
       </field>
@@ -2142,7 +2161,102 @@ AND c.COUNTRY = 'France'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>816</xloc>
+      <xloc>912</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Rename_attributes</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+      </field>
+      <field>
+        <name>CUSTOMERNAME</name>
+      </field>
+      <field>
+        <name>PHONE</name>
+      </field>
+      <field>
+        <name>ADDRESSLINE1</name>
+        <rename>ADDRESSLINE</rename>
+      </field>
+      <field>
+        <name>CITY</name>
+      </field>
+      <field>
+        <name>STATE</name>
+        <rename>ETAT</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>640</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Rename_attributes2</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+      </field>
+      <field>
+        <name>QUANTITYINSTOCK</name>
+      </field>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>PRIXEENEURO</rename>
+      </field>
+      <field>
+        <name>MSRP</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>784</xloc>
       <yloc>432</yloc>
       <draw>Y</draw>
     </GUI>
