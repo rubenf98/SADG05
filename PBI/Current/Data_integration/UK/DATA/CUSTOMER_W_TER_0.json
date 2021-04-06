@@ -1,0 +1,44 @@
+{
+  "CUSTOMER_W_TER": [
+    {
+      "ADRESSLINE": "Fauntleroy Circus",
+      "CITY": "Manchester",
+      "CUSTOMERSURNAME": "Ashworth",
+      "PHONE": "(171) 555-1555",
+      "CUSTOMERFIRSTNAME": "Victoria",
+      "CUSTOMERNUMBER": 187
+    },
+    {
+      "ADRESSLINE": "Berkeley Gardens 12  Brewery",
+      "CITY": "Liverpool",
+      "CUSTOMERSURNAME": "Devon",
+      "PHONE": "(171) 555-2282",
+      "CUSTOMERFIRSTNAME": "Elizabeth",
+      "CUSTOMERNUMBER": 201
+    },
+    {
+      "ADRESSLINE": "Garden House Crowther Way",
+      "CITY": "Cowes",
+      "CUSTOMERSURNAME": "Bennett",
+      "PHONE": "(198) 555-8888",
+      "CUSTOMERFIRSTNAME": "Helen",
+      "CUSTOMERNUMBER": 240
+    },
+    {
+      "ADRESSLINE": "35 King George",
+      "CITY": "London",
+      "CUSTOMERSURNAME": "Brown",
+      "PHONE": "(171) 555-0297",
+      "CUSTOMERFIRSTNAME": "Ann",
+      "CUSTOMERNUMBER": 324
+    },
+    {
+      "ADRESSLINE": "120 Hanover Sq.",
+      "CITY": "London",
+      "CUSTOMERSURNAME": "Hardy",
+      "PHONE": "(171) 555-7555",
+      "CUSTOMERFIRSTNAME": "Thomas",
+      "CUSTOMERNUMBER": 489
+    }
+  ]
+}
