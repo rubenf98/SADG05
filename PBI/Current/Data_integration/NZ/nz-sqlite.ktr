@@ -930,7 +930,7 @@ WHERE COUNTRY = 'New Zealand'</sql>
         <jsScript_script>//Script here
 
 var PRICEEACH = PRICEEACH * 1.42
-var TOTALPRICE = TOTALPRICE * 1.31;</jsScript_script>
+var TOTALPRICE = TOTALPRICE * 1.42;</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
