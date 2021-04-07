@@ -1216,7 +1216,7 @@ var MSRP =MSRP * 0.72;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>496</xloc>
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
