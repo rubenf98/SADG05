@@ -1,5 +1,5 @@
 PRODUCTCODE;PRODUCTNAME;PRODUCTVENDOR;QUANTITYINSTOCK;PRICEINDOLLARS;MSRP
-S10_1678;1969 Harley Davidson Ultimate Chopper;Min Lin Diecast;7933;;96
+S10_1678;1969 Harley Davidson Ultimate Chopper;Min Lin Diecast;7933;49;96
 S10_1949;1952 Alpine Renault 1300;Classic Metal Creations;7305;99;214
 S10_2016;1996 Moto Guzzi 1100i;Highway 66 Mini Classics;6625;69;119
 S10_4698;2003 Harley-Davidson Eagle Drag Bike;Red Start Diecast;5582;91;194
@@ -30,7 +30,7 @@ S18_2319;1964 Mercedec Tour Bus;Unimax Art Galleries;8258;75;123
 S18_2325;1932 Model A Ford J-Coupe;Autoart Studio Design;9354;58;127
 S18_2432;1926 Ford Fire Engine;Carousel DieCast Legends;2018;25;61
 S18_2581;P-51-D Mustang;Gearbox Collectibles;992;49;84
-S18_2625;1936 Harley Davidson El Knucklehead;Welly Diecast Productions;4357;24;
+S18_2625;1936 Harley Davidson El Knucklehead;Welly Diecast Productions;4357;24;61
 S18_2795;1928 Mercedes-Benz SSK;Gearbox Collectibles;548;73;169
 S18_2870;1999 Indy 500 Monte Carlo SS;Red Start Diecast;8164;57;132
 S18_2949;1913 Ford Model T Speedster;Carousel DieCast Legends;4189;61;101
@@ -44,7 +44,7 @@ S18_3259;Collectable Wooden Train;Carousel DieCast Legends;6450;68;101
 S18_3278;1969 Dodge Super Bee;Min Lin Diecast;1917;49;80
 S18_3320;1917 Maxwell Touring Car;Exoto Designs;7913;58;99
 S18_3482;1976 Ford Gran Torino;Gearbox Collectibles;9127;73;147
-S18_3685;1948 Porsche Type 356 Roadster;Gearbox Collectibles;8990;;141
+S18_3685;1948 Porsche Type 356 Roadster;Gearbox Collectibles;8990;62;141
 S18_3782;1957 Vespa GS150;Studio M Art Models;7689;33;62
 S18_3856;1941 Chevrolet Special Deluxe Cabriolet;Exoto Designs;2378;65;106
 S18_4027;1970 Triumph Spitfire;Min Lin Diecast;5545;92;144
