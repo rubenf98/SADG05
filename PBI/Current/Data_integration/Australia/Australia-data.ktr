@@ -1750,6 +1750,7 @@ AND c.COUNTRY = 'Australia'</sql>
     <fields>
       <field>
         <name>CUSTOMERNUMBER</name>
+        <rename/>
       </field>
       <field>
         <name>CUSTOMERNAME</name>
@@ -1757,15 +1758,19 @@ AND c.COUNTRY = 'Australia'</sql>
       </field>
       <field>
         <name>PHONE</name>
+        <rename/>
       </field>
       <field>
         <name>ADDRESSLINE1</name>
+        <rename>ADDRESSLINE</rename>
       </field>
       <field>
         <name>CITY</name>
+        <rename/>
       </field>
       <field>
         <name>STATE</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2061,23 +2066,18 @@ AND c.COUNTRY = 'Australia'</sql>
     <fields>
       <field>
         <name>PRODUCTCODE</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTLINE</name>
-        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
-        <rename/>
       </field>
       <field>
         <name>BUYPRICE</name>
@@ -2085,7 +2085,6 @@ AND c.COUNTRY = 'Australia'</sql>
       </field>
       <field>
         <name>MSRP</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
