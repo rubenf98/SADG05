@@ -2220,7 +2220,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
 , QUANTITYINSTOCK
 , BUYPRICE
 , MSRP
-, COUNTRY
 FROM "PUBLIC".PRODUCTS, "PUBLIC".CUSTOMER_W_TER
 WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
 </sql>
@@ -2438,29 +2437,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>COUNTRY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>PRODUCTS</origin>
-        <comments>COUNTRY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -2543,6 +2519,18 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <precision>-1</precision>
       </field>
       <field>
+        <name>PRODUCTLINE</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
+      </field>
+      <field>
         <name>PRODUCTVENDOR</name>
         <type>String</type>
         <format/>
@@ -2559,8 +2547,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <type>Integer</type>
         <format>####0;-####0</format>
         <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <nullif/>
         <trim_type>none</trim_type>
         <length>4</length>
@@ -2571,8 +2559,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <type>Integer</type>
         <format>####0;-####0</format>
         <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <nullif/>
         <trim_type>none</trim_type>
         <length>17</length>
@@ -2583,8 +2571,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <type>Integer</type>
         <format>####0;-####0</format>
         <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal>,</decimal>
+        <group>.</group>
         <nullif/>
         <trim_type>none</trim_type>
         <length>17</length>
@@ -2747,15 +2735,23 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
     <fields>
       <field>
         <name>PRODUCTCODE</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
+        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
+        <rename/>
       </field>
       <field>
         <name>BUYPRICE</name>
@@ -2763,6 +2759,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
       </field>
       <field>
         <name>MSRP</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

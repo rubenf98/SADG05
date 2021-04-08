@@ -1368,7 +1368,7 @@ AND c.COUNTRY = 'New Zealand'</sql>
     </partitioning>
     <connection>SteelWheelsConection</connection>
     <sql>SELECT
-  ORDERNUMBER
+  DISTINCT(ORDERNUMBER)
 , ORDERDATE
 , REQUIREDDATE 
 , SHIPPEDDATE
@@ -1393,8 +1393,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>ORDERS</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1403,8 +1403,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1416,8 +1416,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>ORDERS</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1426,8 +1426,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1439,8 +1439,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>ORDERS</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1449,8 +1449,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1462,8 +1462,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>ORDERS</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1472,8 +1472,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1485,8 +1485,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>ORDERS</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1495,8 +1495,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1555,8 +1555,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1565,8 +1565,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1578,8 +1578,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1588,8 +1588,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1601,8 +1601,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1611,8 +1611,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1624,8 +1624,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1634,8 +1634,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1647,8 +1647,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>BUYPRICE</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1657,8 +1657,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1670,8 +1670,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <origin>PRODUCTS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1680,8 +1680,8 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
