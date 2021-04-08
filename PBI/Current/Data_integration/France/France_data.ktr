@@ -879,7 +879,7 @@ WHERE COUNTRY = 'France'
       <name>${Internal.Entry.Current.Directory}/France_Data</name>
       <extention>xls</extention>
       <do_not_open_newfile_init>N</do_not_open_newfile_init>
-      <create_parent_folder>N</create_parent_folder>
+      <create_parent_folder>Y</create_parent_folder>
       <split>N</split>
       <add_date>N</add_date>
       <add_time>N</add_time>
@@ -1894,6 +1894,7 @@ AND c.COUNTRY = 'France'
   DISTINCT(PRODUCTCODE)
 , PRODUCTNAME
 , PRODUCTVENDOR
+, PRODUCTLINE
 , QUANTITYINSTOCK
 , BUYPRICE
 , MSRP
@@ -1919,8 +1920,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1929,8 +1930,8 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1942,8 +1943,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1952,8 +1953,8 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1965,8 +1966,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1975,8 +1976,31 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTLINE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>PRODUCTS</origin>
+        <comments>PRODUCTLINE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1988,8 +2012,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1998,8 +2022,8 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2011,8 +2035,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>BUYPRICE</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2021,8 +2045,8 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2034,8 +2058,8 @@ AND c.COUNTRY = 'France'</sql>
         <origin>PRODUCTS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2044,8 +2068,8 @@ AND c.COUNTRY = 'France'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_PT</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -2120,18 +2144,23 @@ AND c.COUNTRY = 'France'</sql>
         <format/>
       </field>
       <field>
+        <name>PRODUCTLINE</name>
+        <type>String</type>
+        <format/>
+      </field>
+      <field>
         <name>QUANTITYINSTOCK</name>
         <type>Integer</type>
         <format/>
       </field>
       <field>
-        <name>PRIXEENEURO</name>
+        <name>PRIXENEURO</name>
         <type>Number</type>
         <format/>
       </field>
       <field>
         <name>MSRP</name>
-        <type>Integer</type>
+        <type>Number</type>
         <format/>
       </field>
     </fields>
@@ -2228,22 +2257,31 @@ AND c.COUNTRY = 'France'</sql>
     <fields>
       <field>
         <name>PRODUCTCODE</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
+        <rename/>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
+        <rename/>
       </field>
       <field>
         <name>BUYPRICE</name>
-        <rename>PRIXEENEURO</rename>
+        <rename>PRIXENEURO</rename>
       </field>
       <field>
         <name>MSRP</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

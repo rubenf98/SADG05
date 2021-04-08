@@ -441,7 +441,7 @@
     <server/>
     <type>SQLITE</type>
     <access>Native</access>
-    <database>${Internal.Entry.Current.Directory}\structure.sqlite</database>
+    <database>${Internal.Entry.Current.Directory}/structure.sqlite</database>
     <port>-1</port>
     <username/>
     <password>Encrypted </password>

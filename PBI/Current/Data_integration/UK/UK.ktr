@@ -455,6 +455,61 @@
       </attribute>
     </attributes>
   </connection>
+  <connection>
+    <name>RemoteMysql</name>
+    <server>45.13.252.84 </server>
+    <type>MYSQL</type>
+    <access>Native</access>
+    <database>u435441883_uk</database>
+    <port>3306</port>
+    <username>u435441883_root</username>
+    <password>Encrypted 2be98c2ab2bec97909f5cbb478bd8a9d1</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
   <order>
     <hop>
       <from>CUSTOMER_W_TER</from>
@@ -463,22 +518,7 @@
     </hop>
     <hop>
       <from>Select values</from>
-      <to> JSON_CUSTOMER_W_TER</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>DIM_TIME</from>
-      <to>JSON_DIM_TIME</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ORDERS</from>
-      <to>JSON_ORDERS</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>PRODUCTS</from>
-      <to>Select values 4</to>
+      <to>REMOTE CUSTOMER_W_TER</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -487,91 +527,36 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Modified JavaScript value</from>
-      <to>JSON_PRODUCTS</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>ORDERFACT</from>
       <to>Modified JavaScript value 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
+      <from>PRODUCTS</from>
+      <to>Select values 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DIM_TIME</from>
+      <to>REMOTE DIM_TIME</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ORDERS</from>
+      <to>REMOTE ORDERS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>REMOTE PRODUCTS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
       <from>Modified JavaScript value 2</from>
-      <to>JSON_ORDERFACT</to>
+      <to>REMOTE ORDERFACT</to>
       <enabled>Y</enabled>
     </hop>
   </order>
-  <step>
-    <name> JSON_CUSTOMER_W_TER</name>
-    <type>JsonOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>CUSTOMER_W_TER</jsonBloc>
-    <nrRowsInBloc/>
-    <operation_type>writetofile</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\DATA\CUSTOMER_W_TER</name>
-      <extention>json</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-    </file>
-    <fields>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-        <element>CUSTOMERNUMBER</element>
-      </field>
-      <field>
-        <name>CUSTOMERFIRSTNAME</name>
-        <element>CUSTOMERFIRSTNAME</element>
-      </field>
-      <field>
-        <name>CUSTOMERSURNAME</name>
-        <element>CUSTOMERSURNAME</element>
-      </field>
-      <field>
-        <name>PHONE</name>
-        <element>PHONE</element>
-      </field>
-      <field>
-        <name>ADRESSLINE</name>
-        <element>ADRESSLINE</element>
-      </field>
-      <field>
-        <name>CITY</name>
-        <element>CITY</element>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>160</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>CUSTOMER_W_TER</name>
     <type>TableInput</type>
@@ -891,282 +876,6 @@ WHERE ct.COUNTRY = 'UK'</sql>
     </GUI>
   </step>
   <step>
-    <name>JSON_DIM_TIME</name>
-    <type>JsonOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>DIM_TIME</jsonBloc>
-    <nrRowsInBloc/>
-    <operation_type>writetofile</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\DATA\DIM_TIME</name>
-      <extention>json</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-    </file>
-    <fields>
-      <field>
-        <name>TIME_ID</name>
-        <element>TIME_ID</element>
-      </field>
-      <field>
-        <name>MONTH_ID</name>
-        <element>MONTH_ID</element>
-      </field>
-      <field>
-        <name>QTR_ID</name>
-        <element>QTR_ID</element>
-      </field>
-      <field>
-        <name>YEAR_ID</name>
-        <element>YEAR_ID</element>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>JSON_ORDERFACT</name>
-    <type>JsonOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>ORDERFACT</jsonBloc>
-    <nrRowsInBloc/>
-    <operation_type>writetofile</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\DATA\ORDERFACT</name>
-      <extention>json</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-    </file>
-    <fields>
-      <field>
-        <name>ORDERNUMBER</name>
-        <element>ORDERNUMBER</element>
-      </field>
-      <field>
-        <name>PRODUCTCODE</name>
-        <element>PRODUCTCODE</element>
-      </field>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-        <element>CUSTOMERNUMBER</element>
-      </field>
-      <field>
-        <name>TIME_ID</name>
-        <element>TIME_ID</element>
-      </field>
-      <field>
-        <name>QUANTITYORDERED</name>
-        <element>QUANTITYORDERED</element>
-      </field>
-      <field>
-        <name>PRICEEACH</name>
-        <element>PRICEEACH</element>
-      </field>
-      <field>
-        <name>TOTALPRICE</name>
-        <element>TOTALPRICE</element>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>544</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>JSON_ORDERS</name>
-    <type>JsonOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>ORDERS</jsonBloc>
-    <nrRowsInBloc/>
-    <operation_type>writetofile</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\DATA\ORDERS</name>
-      <extention>json</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-    </file>
-    <fields>
-      <field>
-        <name>ORDERNUMBER</name>
-        <element>ORDERNUMBER</element>
-      </field>
-      <field>
-        <name>ORDERDATE</name>
-        <element>ORDERDATE</element>
-      </field>
-      <field>
-        <name>REQUIREDDATE</name>
-        <element>REQUIREDDATE</element>
-      </field>
-      <field>
-        <name>SHIPPEDDATE</name>
-        <element>SHIPPEDDATE</element>
-      </field>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-        <element>CUSTOMERNUMBER</element>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>352</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>JSON_PRODUCTS</name>
-    <type>JsonOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <outputValue>outputValue</outputValue>
-    <jsonBloc>PRODUCTS</jsonBloc>
-    <nrRowsInBloc/>
-    <operation_type>writetofile</operation_type>
-    <compatibility_mode>N</compatibility_mode>
-    <encoding>UTF-8</encoding>
-    <addtoresult>N</addtoresult>
-    <file>
-      <name>${Internal.Entry.Current.Directory}\DATA\PRODUCTS</name>
-      <extention>json</extention>
-      <append>Y</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <create_parent_folder>N</create_parent_folder>
-      <DoNotOpenNewFileInit>N</DoNotOpenNewFileInit>
-      <servlet_output>N</servlet_output>
-    </file>
-    <fields>
-      <field>
-        <name>PRODUCTCODE</name>
-        <element>PRODUCTCODE</element>
-      </field>
-      <field>
-        <name>PRODUCTNAME</name>
-        <element>PRODUCTNAME</element>
-      </field>
-      <field>
-        <name>PRODUCTLINE</name>
-        <element>PRODUCTLINE</element>
-      </field>
-      <field>
-        <name>PRODUCTVENDOR</name>
-        <element>PRODUCTVENDOR</element>
-      </field>
-      <field>
-        <name>QUANTITYINSTOCK</name>
-        <element>QUANTITYINSTOCK</element>
-      </field>
-      <field>
-        <name>PRICEINPOUNDS</name>
-        <element>PRICEINPOUNDS</element>
-      </field>
-      <field>
-        <name>MSRP</name>
-        <element>MSRP</element>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Modified JavaScript value</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -1216,7 +925,7 @@ var MSRP =MSRP * 0.72;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>496</xloc>
       <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1646,6 +1355,56 @@ WHERE ct.COUNTRY = 'UK'</sql>
     </GUI>
   </step>
   <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+      </field>
+      <field>
+        <name>QUANTITYINSTOCK</name>
+      </field>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>PRICEINPOUNDS</rename>
+      </field>
+      <field>
+        <name>MSRP</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>PRODUCTS</name>
     <type>TableInput</type>
     <description/>
@@ -1904,8 +1663,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
     </GUI>
   </step>
   <step>
-    <name>Select values 4</name>
-    <type>SelectValues</type>
+    <name>REMOTE CUSTOMER_W_TER</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1914,30 +1673,24 @@ WHERE ct.COUNTRY = 'UK'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>CUSTOMER_W_TER</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
-      <field>
-        <name>PRODUCTCODE</name>
-      </field>
-      <field>
-        <name>PRODUCTNAME</name>
-      </field>
-      <field>
-        <name>PRODUCTLINE</name>
-      </field>
-      <field>
-        <name>PRODUCTVENDOR</name>
-      </field>
-      <field>
-        <name>QUANTITYINSTOCK</name>
-      </field>
-      <field>
-        <name>BUYPRICE</name>
-        <rename>PRICEINPOUNDS</rename>
-      </field>
-      <field>
-        <name>MSRP</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1948,8 +1701,184 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>304</xloc>
+      <xloc>832</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>REMOTE DIM_TIME</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>DIM_TIME</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>REMOTE ORDERS</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>ORDERS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>352</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>REMOTE PRODUCTS</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>PRODUCTS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
       <yloc>448</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>REMOTE ORDERFACT</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>ORDERFACT</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
