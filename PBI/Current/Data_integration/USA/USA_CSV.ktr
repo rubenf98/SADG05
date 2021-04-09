@@ -1905,8 +1905,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
 , REQUIREDDATE
 , SHIPPEDDATE
 , STATUS
-, COMMENTS
-, COUNTRY
+, CUSTOMERNUMBER
 FROM "PUBLIC".ORDERS, "PUBLIC".CUSTOMER_W_TER
 WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
 </sql>
@@ -1926,8 +1925,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>ORDERS</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1936,8 +1935,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1949,8 +1948,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>ORDERS</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1959,8 +1958,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1972,8 +1971,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>ORDERS</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1982,8 +1981,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1995,8 +1994,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>ORDERS</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2005,8 +2004,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2018,8 +2017,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>ORDERS</origin>
         <comments>STATUS</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2028,21 +2027,21 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>COMMENTS</name>
-        <length>16777216</length>
-        <precision>-1</precision>
+        <name>CUSTOMERNUMBER</name>
+        <length>9</length>
+        <precision>0</precision>
         <origin>ORDERS</origin>
-        <comments>COMMENTS</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <comments>CUSTOMERNUMBER</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2051,31 +2050,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>COUNTRY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>ORDERS</origin>
-        <comments>COUNTRY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -2182,6 +2158,18 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <trim_type>none</trim_type>
         <length>6</length>
         <precision>-1</precision>
+      </field>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <type>String</type>
+        <format>####0;-####0</format>
+        <currency/>
+        <decimal>.</decimal>
+        <group>,</group>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>9</length>
+        <precision>0</precision>
       </field>
     </fields>
     <attributes/>
@@ -2705,6 +2693,9 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
       <field>
         <name>SHIPPEDDATE</name>
       </field>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+      </field>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
@@ -2735,23 +2726,18 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
     <fields>
       <field>
         <name>PRODUCTCODE</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTLINE</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
-        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
-        <rename/>
       </field>
       <field>
         <name>BUYPRICE</name>
@@ -2759,7 +2745,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
       </field>
       <field>
         <name>MSRP</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
