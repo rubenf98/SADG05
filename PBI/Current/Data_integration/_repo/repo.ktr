@@ -436,14 +436,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>ConexaoRepoPHPMYADMIN</name>
+    <name>ConexaoPHPMYADMIN</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>repo</database>
+    <database>DW</database>
     <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -548,8 +548,8 @@
     <access>Native</access>
     <database>australia_db</database>
     <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -605,61 +605,6 @@
     <port>3306</port>
     <username>u435441883_root</username>
     <password>Encrypted 2be98c2ab2bec97909f5cbb478bd8a9d1</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>RubenPhpMyAdmin</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>australia_db</database>
-    <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -1628,12 +1573,12 @@ var TOTALPRICE = TOTALPRICE / 1.31;
     <connection>PHPMYADMIN</connection>
     <sql>SELECT
   CUSTOMERNUMBER
-, NAME
 , PHONE
-, ADDRESSLINE1
+, ADDRESSLINE
 , CITY
 , STATE
-FROM australia_db.CUSTOMERS_W_TER
+, NAME
+FROM australia_db.customers_w_ter
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -1651,8 +1596,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <origin>Australia</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1661,31 +1606,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>NAME</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>Australia</origin>
-        <comments>NAME</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1697,8 +1619,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <origin>Australia</origin>
         <comments>PHONE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1707,21 +1629,21 @@ FROM australia_db.CUSTOMERS_W_TER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>ADDRESSLINE1</name>
+        <name>ADDRESSLINE</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Australia</origin>
-        <comments>ADDRESSLINE1</comments>
+        <comments>ADDRESSLINE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1730,8 +1652,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1743,8 +1665,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <origin>Australia</origin>
         <comments>CITY</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1753,8 +1675,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1766,8 +1688,8 @@ FROM australia_db.CUSTOMERS_W_TER
         <origin>Australia</origin>
         <comments>STATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1776,8 +1698,31 @@ FROM australia_db.CUSTOMERS_W_TER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>NAME</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>Australia</origin>
+        <comments>NAME</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1809,27 +1754,21 @@ FROM australia_db.CUSTOMERS_W_TER
     <fields>
       <field>
         <name>PRODUCTCODE</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
-        <rename/>
       </field>
       <field>
         <name>PRODUCTLINE</name>
-        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
-        <rename/>
       </field>
       <field>
         <name>MSRP</name>
-        <rename/>
       </field>
       <field>
         <name>PRICEINAUD</name>
@@ -3627,9 +3566,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3671,9 +3610,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3715,9 +3654,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3779,9 +3718,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3823,9 +3762,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3867,9 +3806,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3911,9 +3850,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -3955,9 +3894,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4027,9 +3966,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4071,9 +4010,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4115,9 +4054,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4159,9 +4098,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4203,9 +4142,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4247,9 +4186,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4291,9 +4230,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4335,9 +4274,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4379,9 +4318,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4423,9 +4362,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4467,9 +4406,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4511,9 +4450,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4555,9 +4494,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>PRODUCTS</table>
+    <table>NC_PRODUCTS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4599,9 +4538,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>DIM_TIME</table>
+    <table>NC_DIM_TIME</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4643,9 +4582,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERS</table>
+    <table>NC_ORDERS</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4687,9 +4626,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>ORDERFACT</table>
+    <table>NC_ORDERFACT</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -4982,9 +4921,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -5026,9 +4965,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -5070,9 +5009,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -5114,14 +5053,14 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
+    <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -5132,6 +5071,34 @@ var TOTALPRICE = TOTALPRICE / 0.84
     <return_keys>N</return_keys>
     <return_field/>
     <fields>
+      <field>
+        <column_name>CUSTOMERNUMBER</column_name>
+        <stream_name>CUSTOMERNUMBER</stream_name>
+      </field>
+      <field>
+        <column_name>PHONE</column_name>
+        <stream_name>PHONE</stream_name>
+      </field>
+      <field>
+        <column_name>ADDRESSLINE</column_name>
+        <stream_name>ADDRESSLINE</stream_name>
+      </field>
+      <field>
+        <column_name>CITY</column_name>
+        <stream_name>CITY</stream_name>
+      </field>
+      <field>
+        <column_name>COUNTRY</column_name>
+        <stream_name>COUNTRY</stream_name>
+      </field>
+      <field>
+        <column_name>TERRITORY</column_name>
+        <stream_name>TERRITORY</stream_name>
+      </field>
+      <field>
+        <column_name>CUSTOMERNAME</column_name>
+        <stream_name>CUSTOMERNAME</stream_name>
+      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -5158,9 +5125,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -5202,9 +5169,9 @@ var TOTALPRICE = TOTALPRICE / 0.84
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConexaoRepoPHPMYADMIN</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <schema/>
-    <table>CUSTOMER_W_TER</table>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
@@ -5524,7 +5491,7 @@ FROM CUSTOMER_W_TER
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>ConexaoPHPMYADMIN</connection>
     <sql>SELECT
   ORDERNUMBER
 , PRODUCTCODE
@@ -5551,8 +5518,8 @@ FROM australia_db.ORDERFACT
         <origin>ORDERFACT_Australia_MySQL 2</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -5561,8 +5528,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5574,8 +5541,8 @@ FROM australia_db.ORDERFACT
         <origin>ORDERFACT_Australia_MySQL 2</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -5584,8 +5551,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5597,8 +5564,8 @@ FROM australia_db.ORDERFACT
         <origin>ORDERFACT_Australia_MySQL 2</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -5607,8 +5574,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5620,8 +5587,8 @@ FROM australia_db.ORDERFACT
         <origin>ORDERFACT_Australia_MySQL 2</origin>
         <comments>TIME_ID</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -5630,8 +5597,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5643,8 +5610,8 @@ FROM australia_db.ORDERFACT
         <origin>ORDERFACT_Australia_MySQL 2</origin>
         <comments>QUANTITYORDERED</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -5653,8 +5620,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5676,8 +5643,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -5699,8 +5666,8 @@ FROM australia_db.ORDERFACT
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -8511,21 +8478,20 @@ FROM u435441883_uk.PRODUCTS
         <name>CUSTOMERNUMBER</name>
       </field>
       <field>
-        <name>NAME</name>
-        <rename>CUSTOMERNAME</rename>
-      </field>
-      <field>
         <name>PHONE</name>
       </field>
       <field>
-        <name>ADDRESSLINE1</name>
-        <rename>ADDRESSLINE</rename>
+        <name>ADDRESSLINE</name>
       </field>
       <field>
         <name>CITY</name>
       </field>
       <field>
         <name>STATE</name>
+      </field>
+      <field>
+        <name>NAME</name>
+        <rename>CUSTOMERNAME</rename>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -9499,12 +9465,130 @@ FROM u435441883_uk.CUSTOMER_W_TER
       </field>
       <field>
         <name>PRICEINDOLLARS</name>
-        <rename>BUYPRICE</rename>
       </field>
       <field>
         <name>MSRP</name>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>PRODUCTCODE</name>
+        <rename>PRODUCTCODE</rename>
+        <type>None</type>
+        <length>9</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRODUCTNAME</name>
+        <rename>PRODUCTNAME</rename>
+        <type>None</type>
+        <length>43</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRODUCTLINE</name>
+        <rename>PRODUCTLINE</rename>
+        <type>None</type>
+        <length>16</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRODUCTVENDOR</name>
+        <rename>PRODUCTVENDOR</rename>
+        <type>None</type>
+        <length>25</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>QUANTITYINSTOCK</name>
+        <rename>QUANTITYINSTOCK</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRICEINDOLLARS</name>
+        <rename>BUYPRICE</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>MSRP</name>
+        <rename>MSRP</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -9554,6 +9638,125 @@ FROM u435441883_uk.CUSTOMER_W_TER
         <name>TIME_ID</name>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>ORDERNUMBER</name>
+        <rename>ORDERNUMBER</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRODUCTCODE</name>
+        <rename>PRODUCTCODE</rename>
+        <type>None</type>
+        <length>8</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>QUANTITYORDERED</name>
+        <rename>QUANTITYORDERED</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>PRICEEACH</name>
+        <rename>PRICEEACH</rename>
+        <type>None</type>
+        <length>8</length>
+        <precision>4</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>TOTALPRICE</name>
+        <rename>TOTALPRICE</rename>
+        <type>None</type>
+        <length>37</length>
+        <precision>32</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>CUSTOMERNUMBER</name>
+        <rename>CUSTOMERNUMBER</rename>
+        <type>None</type>
+        <length>15</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>TIME_ID</name>
+        <rename>TIME_ID</rename>
+        <type>None</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
