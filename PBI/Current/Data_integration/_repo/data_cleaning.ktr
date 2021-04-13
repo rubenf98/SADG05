@@ -543,18 +543,13 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Modified JavaScript value</from>
-      <to>Update DIM_TIME</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Modified JavaScript value</from>
-      <to>DC_DIM_TIME</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>DIM_TIME_NULLs</from>
       <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>NC_DIM_TIME</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -695,50 +690,6 @@
     </GUI>
   </step>
   <step>
-    <name>DC_DIM_TIME</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PhpMyAdmin</connection>
-    <schema/>
-    <table>dc_dim_time</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>976</xloc>
-      <yloc>512</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>DIM_TIME_NULLs</name>
     <type>TableInput</type>
     <description/>
@@ -755,11 +706,7 @@
 , MONTH_ID
 , QTR_ID
 , YEAR_ID
-FROM dw.nc_dim_time
-WHERE 
-MONTH_ID IS NULL
-OR QTR_ID IS NULL
-OR YEAR_ID IS NULL</sql>
+FROM dw.nc_dim_time</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -771,7 +718,7 @@ OR YEAR_ID IS NULL</sql>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>TIME_ID</name>
-        <length>10</length>
+        <length>20</length>
         <precision>-1</precision>
         <origin>DIM_TIME_NULLs</origin>
         <comments>TIME_ID</comments>
@@ -1666,64 +1613,6 @@ setVariable("MODE", MODE, "r");</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Update DIM_TIME</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>PhpMyAdmin</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>nc_dim_time</table>
-      <key>
-        <name>TIME_ID</name>
-        <field>TIME_ID</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>TIME_ID</name>
-        <rename>TIME_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>MONTH_ID</name>
-        <rename>MONTH_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>QTR_ID</name>
-        <rename>QTR_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>YEAR_ID</name>
-        <rename>YEAR_ID</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>1168</xloc>
-      <yloc>608</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Update ORDERS</name>
     <type>InsertUpdate</type>
     <description/>
@@ -1904,6 +1793,50 @@ setVariable("MODE", MODE, "r");</jsScript_script>
     <GUI>
       <xloc>1168</xloc>
       <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>NC_DIM_TIME</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PhpMyAdmin</connection>
+    <schema/>
+    <table>nc_dim_time</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

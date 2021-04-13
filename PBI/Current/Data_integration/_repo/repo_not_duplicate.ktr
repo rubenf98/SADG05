@@ -534,6 +534,8 @@
 , TERRITORY
 , STATE
 FROM dw.nc_customer_w_ter
+GROUP BY CUSTOMERNUMBER
+ORDER BY CUSTOMERNUMBER
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -759,6 +761,9 @@ FROM dw.nc_customer_w_ter
 , QTR_ID
 , YEAR_ID
 FROM dw.nc_dim_time
+GROUP BY TIME_ID
+ORDER BY TIME_ID
+
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -893,7 +898,8 @@ FROM dw.nc_dim_time
 , SHIPPEDDATE
 , CUSTOMERNUMBER
 FROM dw.nc_orders
-</sql>
+GROUP BY ORDERNUMBER
+ORDER BY ORDERNUMBER</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1052,6 +1058,8 @@ FROM dw.nc_orders
 , MSRP
 , BUYPRICE
 FROM dw.nc_products
+GROUP BY PRODUCTCODE
+ORDER BY PRODUCTCODE
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -1251,7 +1259,7 @@ FROM dw.nc_products
     <schema/>
     <table>nc_customer_w_ter</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>N</specify_fields>
