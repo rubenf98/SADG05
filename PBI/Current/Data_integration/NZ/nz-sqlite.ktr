@@ -733,7 +733,7 @@
     <name>CUSTOMERS_W_TER</name>
     <type>TableInput</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
@@ -1530,6 +1530,7 @@ AND c.COUNTRY = 'New Zealand'</sql>
   DISTINCT(PRODUCTCODE)
 , PRODUCTNAME
 , PRODUCTVENDOR
+, PRODUCTLINE
 , QUANTITYINSTOCK
 , BUYPRICE
 , MSRP
@@ -1600,6 +1601,29 @@ AND c.COUNTRY = 'New Zealand'</sql>
         <precision>-1</precision>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTLINE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>PRODUCTS</origin>
+        <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -2021,6 +2045,9 @@ AND c.COUNTRY = 'New Zealand'</sql>
       </field>
       <field>
         <name>MSRP</name>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

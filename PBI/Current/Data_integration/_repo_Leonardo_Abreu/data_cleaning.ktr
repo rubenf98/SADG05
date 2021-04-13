@@ -437,14 +437,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>dataCleaning</name>
+    <name>LeonardoPhpMyAdmin</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>repo</database>
+    <database>DW</database>
     <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -597,6 +597,21 @@
       <to>SET MODE</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Insert / update</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Table output 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DIM_TIME_With_NULLS</from>
+      <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>DC ORDERS</name>
@@ -609,7 +624,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>LeonardoPhpMyAdmin</connection>
     <schema/>
     <table>DC_ORDERS</table>
     <commit>1000</commit>
@@ -673,11 +688,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>LeonardoPhpMyAdmin</connection>
     <schema/>
     <table>DC_PRODUCTS</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -731,6 +746,49 @@
     <GUI>
       <xloc>976</xloc>
       <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DIM_TIME_With_NULLS</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LeonardoPhpMyAdmin</connection>
+    <sql>SELECT
+  TIME_ID
+, MONTH_ID
+, QTR_ID
+, YEAR_ID
+FROM steelwheels.dim_time_test_transform
+WHERE 
+MONTH_ID IS NULL
+OR QTR_ID IS NULL
+OR YEAR_ID IS NULL</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta/>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -831,6 +889,147 @@ var CUSTOMERNUMBER = getVariable("MODE", "");
     <GUI>
       <xloc>976</xloc>
       <yloc>432</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Insert / update</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LeonardoPhpMyAdmin</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>dim_time</table>
+      <key>
+        <name>TIME_ID</name>
+        <field>TIME_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>TIME_ID</name>
+        <rename>TIME_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>688</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var date = TIME_ID.split('-')
+
+var MONTH_ID = str2num(date[1])
+
+var YEAR_ID = parseInt(date[0])
+
+
+
+switch(true){
+	case 1&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;4:
+		var QTR_ID = 1
+		break
+	case 4&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;7:
+		var QTR_ID = 2
+		break
+	case 7&lt;=MONTH_ID &amp;&amp; MONTH_ID &lt;10:
+		var QTR_ID = 3
+		break
+	case 10&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;13:
+		var QTR_ID = 4
+		break
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>576</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1255,7 +1454,7 @@ WHERE CUSTOMERNUMBER IS NULL
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>LeonardoPhpMyAdmin</connection>
     <sql>SELECT CUSTOMERNUMBER AS MODE
 FROM repo.ORDERS
 GROUP BY CUSTOMERNUMBER
@@ -1443,6 +1642,50 @@ setVariable("MODE", MODE, "r");</jsScript_script>
     </GUI>
   </step>
   <step>
+    <name>Table output 2</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>LeonardoPhpMyAdmin</connection>
+    <schema/>
+    <table>dc_dim_time</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>576</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Update ORDERS</name>
     <type>InsertUpdate</type>
     <description/>
@@ -1453,7 +1696,7 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>LeonardoPhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
@@ -1534,7 +1777,7 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>LeonardoPhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>

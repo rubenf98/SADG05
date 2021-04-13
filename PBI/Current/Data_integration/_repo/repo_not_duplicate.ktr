@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>Australia-data</name>
+    <name>repo_not_duplicate</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -427,20 +427,20 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/03/31 00:02:23.816</created_date>
+    <created_date>2021/04/13 07:47:02.582</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/03/31 00:02:23.816</modified_date>
-    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
+    <modified_date>2021/04/13 07:47:02.582</modified_date>
+    <key_for_session_key/>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
   </notepads>
   <connection>
-    <name>ConnectionToMySQLPHPMYADMIN</name>
+    <name>FrancoPHPMyAdmin</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>australia_db</database>
+    <database>dw</database>
     <port>3306</port>
     <username>root</username>
     <password>Encrypted </password>
@@ -490,260 +490,30 @@
       </attribute>
     </attributes>
   </connection>
-  <connection>
-    <name>SteelWheelsConection</name>
-    <server>localhost</server>
-    <type>HYPERSONIC</type>
-    <access>Native</access>
-    <database>SampleData</database>
-    <port>9001</port>
-    <username>pentaho_user</username>
-    <password>Encrypted 2be98afc86aa7f2e4bb18bd63c99dbdde</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>9001</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
   <order>
     <hop>
-      <from>DIM_TIME</from>
-      <to>Block this step until CUSTOMERS_W_TER finish</to>
+      <from>NC_PRODUCTS</from>
+      <to>ND_PRODUCTS_TO _REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Block this step until CUSTOMERS_W_TER finish</from>
-      <to>SQL DIM_TIME</to>
+      <from>NC_DIM_TIME</from>
+      <to>ND_DIM_TIME_TO_REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Block this step until DIM_TIME finish</from>
-      <to>SQL ORDERS</to>
+      <from>NC_ORDERS</from>
+      <to>ND_ORDERS_TO_REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>ORDERFACT</from>
-      <to>Convert_USD_AUD</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Block this step until ORDERS finish</from>
-      <to>SQL ORDERFACT</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>PRODUCTS</from>
-      <to>Convert_USD_AUD_2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Block this step until ORDERFACT finish</from>
-      <to>SQL PRODUCTS</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>CUSTOMERS_W_TER</from>
-      <to>RenameAttributes</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>RenameAttributes</from>
-      <to>SQL CUSTOMERS_W_TER</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>ORDERS</from>
-      <to>RenameAttributes2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>RenameAttributes2</from>
-      <to>Block this step until DIM_TIME finish</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Convert_USD_AUD_2</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values</from>
-      <to>Block this step until ORDERFACT finish</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Convert_USD_AUD</from>
-      <to>Select values 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Select values 2</from>
-      <to>Block this step until ORDERS finish</to>
+      <from>NC_CUSTOMER_W_TER</from>
+      <to>ND_CUSTOMER_W_TER_TO_REPO</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Block this step until CUSTOMERS_W_TER finish</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <steps>
-      <step>
-        <name>SQL CUSTOMERS_W_TER</name>
-        <CopyNr>0</CopyNr>
-      </step>
-    </steps>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Block this step until DIM_TIME finish</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <steps>
-      <step>
-        <name>SQL DIM_TIME</name>
-        <CopyNr>0</CopyNr>
-      </step>
-    </steps>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Block this step until ORDERFACT finish</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <steps>
-      <step>
-        <name>SQL ORDERFACT</name>
-        <CopyNr>0</CopyNr>
-      </step>
-    </steps>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Block this step until ORDERS finish</name>
-    <type>BlockUntilStepsFinish</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <steps>
-      <step>
-        <name>SQL ORDERS</name>
-        <CopyNr>0</CopyNr>
-      </step>
-    </steps>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>CUSTOMERS_W_TER</name>
+    <name>NC_PRODUCTS</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -753,16 +523,17 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SteelWheelsConection</connection>
+    <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  CUSTOMERNUMBER
-, CUSTOMERNAME
-, PHONE
-, ADDRESSLINE1 AS ADDRESSLINE
-, CITY
-, STATE
-FROM CUSTOMER_W_TER
-WHERE COUNTRY = 'Australia'</sql>
+  DISTINCT (PRODUCTCODE)
+, PRODUCTNAME
+, PRODUCTVENDOR
+, QUANTITYINSTOCK
+, BUYPRICE
+, MSRP
+, PRODUCTLINE
+FROM dw.nc_products
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -771,13 +542,82 @@ WHERE COUNTRY = 'Australia'</sql>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTCODE</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTCODE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTNAME</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTNAME</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTVENDOR</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTVENDOR</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>QUANTITYINSTOCK</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <origin>NC_PRODUCTS</origin>
+        <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -794,16 +634,39 @@ WHERE COUNTRY = 'Australia'</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNAME</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>CUSTOMERNAME</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <name>BUYPRICE</name>
+        <length>16</length>
+        <precision>2</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>BUYPRICE</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>MSRP</name>
+        <length>16</length>
+        <precision>2</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>MSRP</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -819,80 +682,11 @@ WHERE COUNTRY = 'Australia'</sql>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PHONE</name>
-        <length>50</length>
+        <name>PRODUCTLINE</name>
+        <length>536870911</length>
         <precision>-1</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>PHONE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>ADDRESSLINE1</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>ADDRESSLINE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CITY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>CITY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>STATE</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>CUSTOMERS_W_TER</origin>
-        <comments>STATE</comments>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -918,14 +712,14 @@ WHERE COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>176</yloc>
+      <xloc>128</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Convert_USD_AUD</name>
-    <type>ScriptValueMod</type>
+    <name>ND_PRODUCTS_TO _REPO</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -934,35 +728,24 @@ WHERE COUNTRY = 'Australia'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script here
-
-var PRICEEACH = PRICEEACH * 1.31;
-var TOTALPRICE = TOTALPRICE * 1.31;</jsScript_script>
-      </jsScript>
-    </jsScripts>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>NC_PRODUCTS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
-      <field>
-        <name>PRICEEACH</name>
-        <rename>PRICEEACH</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>
-      <field>
-        <name>TOTALPRICE</name>
-        <rename>TOTALPRICE</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -973,14 +756,14 @@ var TOTALPRICE = TOTALPRICE * 1.31;</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>464</yloc>
+      <xloc>416</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Convert_USD_AUD_2</name>
-    <type>ScriptValueMod</type>
+    <name>ND_DIM_TIME_TO_REPO</name>
+    <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -989,27 +772,24 @@ var TOTALPRICE = TOTALPRICE * 1.31;</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>
-      <jsScript>
-        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>//Script here
-
-var BUYPRICE = BUYPRICE * 1.31;
-var MSRP = MSRP * 1.31</jsScript_script>
-      </jsScript>
-    </jsScripts>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>NC_DIM_tiME</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
     <fields>
-      <field>
-        <name>BUYPRICE</name>
-        <rename>BUYPRICE</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1020,13 +800,13 @@ var MSRP = MSRP * 1.31</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>560</yloc>
+      <xloc>416</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>DIM_TIME</name>
+    <name>NC_DIM_TIME</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1036,18 +816,14 @@ var MSRP = MSRP * 1.31</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SteelWheelsConection</connection>
+    <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT(TIME_ID)
+  DISTINCT (TIME_ID)
 , MONTH_ID
 , QTR_ID
 , YEAR_ID
-FROM DIM_TIME AS t
-INNER JOIN ORDERFACT AS orderf
-ON t.TIME_ID = orderf.TIME_ID
-INNER JOIN CUSTOMER_W_TER AS c
-ON orderf.CUSTOMERNUMBER = c.CUSTOMERNUMBER
-AND c.COUNTRY = 'Australia'</sql>
+FROM dw.nc_dim_time
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1059,9 +835,9 @@ AND c.COUNTRY = 'Australia'</sql>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>TIME_ID</name>
-        <length>10</length>
+        <length>536870911</length>
         <precision>-1</precision>
-        <origin>DIM_TIME</origin>
+        <origin>Table input</origin>
         <comments>TIME_ID</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1084,7 +860,7 @@ AND c.COUNTRY = 'Australia'</sql>
         <name>MONTH_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>DIM_TIME</origin>
+        <origin>Table input</origin>
         <comments>MONTH_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1107,7 +883,7 @@ AND c.COUNTRY = 'Australia'</sql>
         <name>QTR_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>DIM_TIME</origin>
+        <origin>Table input</origin>
         <comments>QTR_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1130,7 +906,7 @@ AND c.COUNTRY = 'Australia'</sql>
         <name>YEAR_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>DIM_TIME</origin>
+        <origin>Table input</origin>
         <comments>YEAR_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1157,13 +933,13 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>272</yloc>
+      <xloc>128</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>ORDERFACT</name>
+    <name>NC_ORDERS</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1173,224 +949,15 @@ AND c.COUNTRY = 'Australia'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SteelWheelsConection</connection>
+    <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  ORDERNUMBER
-, PRODUCTCODE
-, CUSTOMERNUMBER
-, TIME_ID
-, QUANTITYORDERED
-, PRICEEACH
-, TOTALPRICE 
-FROM ORDERFACT AS o
-INNER JOIN CUSTOMER_W_TER AS c
-ON c.CUSTOMERNUMBER = o.CUSTOMERNUMBER
-AND c.COUNTRY = 'Australia'</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>ORDERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>ORDERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTCODE</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>PRODUCTCODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>TIME_ID</name>
-        <length>10</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>TIME_ID</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>QUANTITYORDERED</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>QUANTITYORDERED</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>BigNumber</type>
-        <storagetype>normal</storagetype>
-        <name>PRICEEACH</name>
-        <length>18</length>
-        <precision>4</precision>
-        <origin>ORDERFACT</origin>
-        <comments>PRICEEACH</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>BigNumber</type>
-        <storagetype>normal</storagetype>
-        <name>TOTALPRICE</name>
-        <length>64</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>TOTALPRICE</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ORDERS</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>SteelWheelsConection</connection>
-    <sql>SELECT
-  DISTINCT(ORDERNUMBER)
+  DISTINCT (ORDERNUMBER)
 , ORDERDATE
-, REQUIREDDATE 
+, REQUIREDDATE
 , SHIPPEDDATE
 , CUSTOMERNUMBER
-FROM ORDERS AS o
-INNER JOIN CUSTOMER_W_TER AS c
-ON o.CUSTOMERNUMBER = c.CUSTOMERNUMBER
-AND c.COUNTRY = 'Australia'</sql>
+FROM dw.nc_orders
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1404,7 +971,7 @@ AND c.COUNTRY = 'Australia'</sql>
         <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>ORDERS</origin>
+        <origin>Table input</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1425,9 +992,9 @@ AND c.COUNTRY = 'Australia'</sql>
         <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>ORDERDATE</name>
-        <length>6</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>ORDERS</origin>
+        <origin>Table input</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1448,9 +1015,9 @@ AND c.COUNTRY = 'Australia'</sql>
         <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>REQUIREDDATE</name>
-        <length>6</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>ORDERS</origin>
+        <origin>Table input</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1471,9 +1038,9 @@ AND c.COUNTRY = 'Australia'</sql>
         <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>SHIPPEDDATE</name>
-        <length>6</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>ORDERS</origin>
+        <origin>Table input</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
@@ -1496,7 +1063,7 @@ AND c.COUNTRY = 'Australia'</sql>
         <name>CUSTOMERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>ORDERS</origin>
+        <origin>Table input</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
@@ -1523,13 +1090,57 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>272</xloc>
-      <yloc>368</yloc>
+      <xloc>128</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>PRODUCTS</name>
+    <name>ND_ORDERS_TO_REPO</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>NC_ORDERS</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>NC_CUSTOMER_W_TER</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1539,21 +1150,18 @@ AND c.COUNTRY = 'Australia'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>SteelWheelsConection</connection>
+    <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT(PRODUCTCODE)
-, PRODUCTNAME
-, PRODUCTVENDOR
-, PRODUCTLINE
-, QUANTITYINSTOCK
-, BUYPRICE
-, MSRP
-FROM PRODUCTS AS p
-INNER JOIN ORDERFACT AS o
-ON p.PRODUCTCODE = o.PRODUCTCODE
-INNER JOIN CUSTOMER_W_TER AS c
-ON o.CUSTOMERNUMBER = c.CUSTOMERNUMBER
-AND c.COUNTRY = 'Australia'</sql>
+  DISTINCT (CUSTOMERNUMBER)
+, PHONE
+, ADDRESSLINE
+, CITY
+, CUSTOMERNAME
+, COUNTRY
+, TERRITORY
+, STATE
+FROM dw.nc_customer_w_ter
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1562,108 +1170,16 @@ AND c.COUNTRY = 'Australia'</sql>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTCODE</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>PRODUCTS</origin>
-        <comments>PRODUCTCODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
-        <precision>-1</precision>
-        <origin>PRODUCTS</origin>
-        <comments>PRODUCTNAME</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTVENDOR</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>PRODUCTS</origin>
-        <comments>PRODUCTVENDOR</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTLINE</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>PRODUCTS</origin>
-        <comments>PRODUCTLINE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>QUANTITYINSTOCK</name>
-        <length>4</length>
+        <name>CUSTOMERNUMBER</name>
+        <length>9</length>
         <precision>0</precision>
-        <origin>PRODUCTS</origin>
-        <comments>QUANTITYINSTOCK</comments>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1672,21 +1188,21 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>BUYPRICE</name>
-        <length>17</length>
-        <precision>0</precision>
-        <origin>PRODUCTS</origin>
-        <comments>BUYPRICE</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <name>PHONE</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>PHONE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1695,21 +1211,21 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>MSRP</name>
-        <length>17</length>
-        <precision>0</precision>
-        <origin>PRODUCTS</origin>
-        <comments>MSRP</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <name>ADDRESSLINE</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>ADDRESSLINE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1718,8 +1234,123 @@ AND c.COUNTRY = 'Australia'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_PT</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CITY</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CITY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CUSTOMERNAME</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CUSTOMERNAME</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>COUNTRY</name>
+        <length>63</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>COUNTRY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TERRITORY</name>
+        <length>63</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>TERRITORY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>STATE</name>
+        <length>536870911</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>STATE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1732,105 +1363,13 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>560</yloc>
+      <xloc>128</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>RenameAttributes</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-      </field>
-      <field>
-        <name>CUSTOMERNAME</name>
-        <rename>NAME</rename>
-      </field>
-      <field>
-        <name>PHONE</name>
-      </field>
-      <field>
-        <name>ADDRESSLINE1</name>
-        <rename>ADDRESSLINE</rename>
-      </field>
-      <field>
-        <name>CITY</name>
-      </field>
-      <field>
-        <name>STATE</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>464</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>RenameAttributes2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ORDERNUMBER</name>
-      </field>
-      <field>
-        <name>ORDERDATE</name>
-      </field>
-      <field>
-        <name>REQUIREDDATE</name>
-        <rename>DATE</rename>
-      </field>
-      <field>
-        <name>SHIPPEDDATE</name>
-      </field>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>400</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SQL CUSTOMERS_W_TER</name>
+    <name>ND_CUSTOMER_W_TER_TO_REPO</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1840,11 +1379,11 @@ AND c.COUNTRY = 'Australia'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>ConnectionToMySQLPHPMYADMIN</connection>
-    <schema>australia_db</schema>
-    <table>CUSTOMERS_W_TER</table>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>NC_CUSTOMER_W_TER</table>
     <commit>1000</commit>
-    <truncate>Y</truncate>
+    <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>N</specify_fields>
@@ -1868,283 +1407,8 @@ AND c.COUNTRY = 'Australia'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>736</xloc>
-      <yloc>176</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SQL DIM_TIME</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ConnectionToMySQLPHPMYADMIN</connection>
-    <schema>australia_db</schema>
-    <table>DIM_TIME</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>272</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SQL ORDERFACT</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ConnectionToMySQLPHPMYADMIN</connection>
-    <schema>australia_db</schema>
-    <table>ORDERFACT</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>464</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SQL ORDERS</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ConnectionToMySQLPHPMYADMIN</connection>
-    <schema>australia_db</schema>
-    <table>ORDERS</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>368</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>SQL PRODUCTS</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>ConnectionToMySQLPHPMYADMIN</connection>
-    <schema>australia_db</schema>
-    <table>PRODUCTS</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>736</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>PRODUCTCODE</name>
-      </field>
-      <field>
-        <name>PRODUCTNAME</name>
-      </field>
-      <field>
-        <name>PRODUCTVENDOR</name>
-      </field>
-      <field>
-        <name>PRODUCTLINE</name>
-      </field>
-      <field>
-        <name>QUANTITYINSTOCK</name>
-      </field>
-      <field>
-        <name>BUYPRICE</name>
-        <rename>PRICEINAUD</rename>
-      </field>
-      <field>
-        <name>MSRP</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>560</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>ORDERNUMBER</name>
-      </field>
-      <field>
-        <name>PRODUCTCODE</name>
-      </field>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-      </field>
-      <field>
-        <name>TIME_ID</name>
-      </field>
-      <field>
-        <name>QUANTITYORDERED</name>
-      </field>
-      <field>
-        <name>PRICEEACH</name>
-      </field>
-      <field>
-        <name>TOTALPRICE</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>464</yloc>
+      <xloc>416</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2153,9 +1417,5 @@ AND c.COUNTRY = 'Australia'</sql>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
   <slave_transformation>N</slave_transformation>
-  <attributes>
-    <group>
-      <name>explorerState</name>
-    </group>
-  </attributes>
+  <attributes/>
 </transformation>
