@@ -6,6 +6,7 @@
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -3263,7 +3264,7 @@ FROM u435441883_uk.DIM_TIME
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>Y</lazy_conversion>
@@ -3407,8 +3408,8 @@ var MSRP = MSRP / 0.84
         <jsScript_name>Script 1</jsScript_name>
         <jsScript_script>//Script here
 
-var BUYPRICE = BUYPRICE / 0.84;
-var MSRP = MSRP / 0.84;</jsScript_script>
+var BUYPRICE = BUYPRICE / 0.84998;
+var MSRP = MSRP / 0.84998;</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
@@ -3462,8 +3463,8 @@ var MSRP = MSRP / 0.84;</jsScript_script>
         <jsScript_name>Script 1</jsScript_name>
         <jsScript_script>//Script here
 
-var PRICEEACH = PRICEEACH / 0.84;
-var TOTALPRICE = TOTALPRICE / 0.84
+var PRICEEACH = PRICEEACH / 0.84998;
+var TOTALPRICE = TOTALPRICE / 0.84998;
 </jsScript_script>
       </jsScript>
     </jsScripts>
@@ -6418,7 +6419,7 @@ FROM u435441883_uk.ORDERFACT
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>Y</lazy_conversion>
@@ -7261,7 +7262,7 @@ FROM ORDERS
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>N</lazy_conversion>
@@ -8387,7 +8388,7 @@ FROM u435441883_uk.PRODUCTS
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>,</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>Y</lazy_conversion>
@@ -9372,7 +9373,7 @@ FROM u435441883_uk.CUSTOMER_W_TER
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
-    <enclosure/>
+    <enclosure>"</enclosure>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
     <lazy_conversion>Y</lazy_conversion>
@@ -9819,21 +9820,14 @@ FROM u435441883_uk.CUSTOMER_W_TER
         <jsScript_script>//Script here
 
 var BUYPRICE = BUYPRICE / 1.42;
-var MSRP = MSRP / 1.42;</jsScript_script>
+
+</jsScript_script>
       </jsScript>
     </jsScripts>
     <fields>
       <field>
         <name>BUYPRICE</name>
         <rename>BUYPRICE</rename>
-        <type>Number</type>
-        <length>16</length>
-        <precision>2</precision>
-        <replace>Y</replace>
-      </field>
-      <field>
-        <name>MSRP</name>
-        <rename>MSRP</rename>
         <type>Number</type>
         <length>16</length>
         <precision>2</precision>
