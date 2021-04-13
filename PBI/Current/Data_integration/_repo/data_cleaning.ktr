@@ -437,69 +437,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>dataCleaning</name>
+    <name>PhpMyAdmin</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>repo</database>
+    <database>dw</database>
     <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>RubenPhpMyAdmin</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>repo</database>
-    <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -597,6 +542,26 @@
       <to>SET MODE</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>Update DIM_TIME</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Modified JavaScript value</from>
+      <to>DC_DIM_TIME</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DIM_TIME_NULLs</from>
+      <to>Modified JavaScript value</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NULL_BUYPRICE</from>
+      <to>Table input 2</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>DC ORDERS</name>
@@ -609,7 +574,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>PhpMyAdmin</connection>
     <schema/>
     <table>DC_ORDERS</table>
     <commit>1000</commit>
@@ -673,7 +638,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>PhpMyAdmin</connection>
     <schema/>
     <table>DC_PRODUCTS</table>
     <commit>1000</commit>
@@ -845,7 +810,7 @@ var CUSTOMERNUMBER = getVariable("MODE", "");
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
   PRODUCTCODE
 , PRODUCTNAME
@@ -854,7 +819,7 @@ var CUSTOMERNUMBER = getVariable("MODE", "");
 , QUANTITYINSTOCK
 , BUYPRICE
 , MSRP
-FROM repo.PRODUCTS
+FROM dw.NC_PRODUCTS
 WHERE BUYPRICE IS NULL
 </sql>
     <limit>0</limit>
@@ -883,21 +848,21 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>PRODUCTCODE</name>
-        <length>50</length>
+        <length>2147483647</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -906,21 +871,21 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>PRODUCTNAME</name>
-        <length>70</length>
+        <length>2147483647</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -929,21 +894,21 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>PRODUCTVENDOR</name>
-        <length>50</length>
+        <length>2147483647</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -952,21 +917,21 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>PRODUCTLINE</name>
-        <length>50</length>
+        <length>2147483647</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -975,8 +940,8 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -985,11 +950,11 @@ WHERE BUYPRICE IS NULL
         <name>QUANTITYINSTOCK</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -998,8 +963,8 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1008,7 +973,7 @@ WHERE BUYPRICE IS NULL
         <name>BUYPRICE</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>BUYPRICE</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1021,8 +986,8 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1031,7 +996,7 @@ WHERE BUYPRICE IS NULL
         <name>MSRP</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>MSRP</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1044,8 +1009,8 @@ WHERE BUYPRICE IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1074,14 +1039,14 @@ WHERE BUYPRICE IS NULL
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
   ORDERNUMBER
 , ORDERDATE
 , REQUIREDDATE
 , SHIPPEDDATE
 , CUSTOMERNUMBER
-FROM repo.ORDERS
+FROM dw.NC_ORDERS
 WHERE CUSTOMERNUMBER IS NULL
 </sql>
     <limit>0</limit>
@@ -1092,16 +1057,16 @@ WHERE CUSTOMERNUMBER IS NULL
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>MODE</name>
-        <length>65535</length>
-        <precision>-1</precision>
+        <length>9</length>
+        <precision>0</precision>
         <origin>ORDERS_MODE</origin>
         <comments>MODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1110,21 +1075,21 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>BigNumber</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>ORDERNUMBER</name>
-        <length>22</length>
-        <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>ORDERNUMBER</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1133,21 +1098,21 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>ORDERDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1156,21 +1121,21 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>REQUIREDDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1179,21 +1144,21 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>SHIPPEDDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1202,21 +1167,21 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>CUSTOMERNUMBER</name>
-        <length>65535</length>
-        <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1225,8 +1190,8 @@ WHERE CUSTOMERNUMBER IS NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1255,9 +1220,9 @@ WHERE CUSTOMERNUMBER IS NULL
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT CUSTOMERNUMBER AS MODE
-FROM repo.ORDERS
+FROM dw.NC_ORDERS
 GROUP BY CUSTOMERNUMBER
 ORDER BY COUNT(*) DESC
 LIMIT 1</sql>
@@ -1269,16 +1234,16 @@ LIMIT 1</sql>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>MODE</name>
-        <length>65535</length>
-        <precision>-1</precision>
+        <length>9</length>
+        <precision>0</precision>
         <origin>ORDERS_MODE</origin>
         <comments>MODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1287,8 +1252,8 @@ LIMIT 1</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1317,10 +1282,10 @@ LIMIT 1</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
 AVG(p.BUYPRICE) AS AVERAGE
-FROM repo.PRODUCTS as p
+FROM dw.NC_PRODUCTS as p
 WHERE p.BUYPRICE IS NOT NULL
 	</sql>
     <limit>0</limit>
@@ -1349,8 +1314,8 @@ WHERE p.BUYPRICE IS NOT NULL
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1453,12 +1418,12 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>PhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>ORDERS</table>
+      <table>NC_ORDERS</table>
       <key>
         <name>ORDERNUMBER</name>
         <field>ORDERNUMBER</field>
@@ -1534,12 +1499,12 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>dataCleaning</connection>
+    <connection>PhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>PRODUCTS</table>
+      <table>NC_PRODUCTS</table>
       <key>
         <name>PRODUCTCODE</name>
         <field>PRODUCTCODE</field>
@@ -1623,6 +1588,393 @@ setVariable("MODE", MODE, "r");</jsScript_script>
     <GUI>
       <xloc>1168</xloc>
       <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Update DIM_TIME</name>
+    <type>InsertUpdate</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PhpMyAdmin</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>nc_dim_time</table>
+      <key>
+        <name>TIME_ID</name>
+        <field>TIME_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>TIME_ID</name>
+        <rename>TIME_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>1168</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Modified JavaScript value</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>
+      <jsScript>
+        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>//Script here
+
+var date = TIME_ID.split('-')
+
+var MONTH_ID = str2num(date[1])
+
+var YEAR_ID = parseInt(date[0])
+
+
+
+switch(true){
+	case 1&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;4:
+		var QTR_ID = 1
+		break
+	case 4&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;7:
+		var QTR_ID = 2
+		break
+	case 7&lt;=MONTH_ID &amp;&amp; MONTH_ID &lt;10:
+		var QTR_ID = 3
+		break
+	case 10&lt;=MONTH_ID &amp;&amp; MONTH_ID&lt;13:
+		var QTR_ID = 4
+		break
+}</jsScript_script>
+      </jsScript>
+    </jsScripts>
+    <fields>
+      <field>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <type>Number</type>
+        <length>16</length>
+        <precision>2</precision>
+        <replace>Y</replace>
+      </field>
+      <field>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>Y</replace>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DIM_TIME_NULLs</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PhpMyAdmin</connection>
+    <sql>SELECT
+  TIME_ID
+, MONTH_ID
+, QTR_ID
+, YEAR_ID
+FROM dw.NC_dim_time
+WHERE 
+MONTH_ID IS NULL
+OR QTR_ID IS NULL
+OR YEAR_ID IS NULL</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TIME_ID</name>
+        <length>10</length>
+        <precision>-1</precision>
+        <origin>Table input</origin>
+        <comments>TIME_ID</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>MONTH_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>MONTH_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>QTR_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>QTR_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>YEAR_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>Table input</origin>
+        <comments>YEAR_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>608</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DC_DIM_TIME</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PhpMyAdmin</connection>
+    <schema/>
+    <table>dc_dim_time</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>512</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input 2</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection/>
+    <sql>SELECT &lt;values> FROM &lt;table name> WHERE &lt;conditions></sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>920</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table input 3</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection/>
+    <sql>SELECT &lt;values> FROM &lt;table name> WHERE &lt;conditions></sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>752</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
