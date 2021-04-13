@@ -489,28 +489,8 @@
   </connection>
   <order>
     <hop>
-      <from>CUSTOMER_W_TER</from>
-      <to>If field value is null</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null</from>
-      <to>Select values</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values</from>
       <to>CUSTOMERS CSV</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>DIM_TIME</from>
-      <to>If field value is null 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null 2</from>
-      <to>Select values 2</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -519,28 +499,8 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>ORDERS</from>
-      <to>If field value is null 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null 3</from>
-      <to>Select values 3</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values 3</from>
       <to>ORDERS CSV</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>PRODUCTS</from>
-      <to>If field value is null 4</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null 4</from>
-      <to>Select values 4</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -549,18 +509,33 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>ORDERFACT</from>
-      <to>If field value is null 4 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null 4 2</from>
-      <to>Select values 4 2</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>Select values 4 2</from>
       <to>ORDERFACT CSV </to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>CUSTOMER_W_TER</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>DIM_TIME</from>
+      <to>Select values 2</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ORDERS</from>
+      <to>Select values 3</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>PRODUCTS</from>
+      <to>Select values 4</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>ORDERFACT</from>
+      <to>Select values 4 2</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -1130,176 +1105,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
     </GUI>
   </step>
   <step>
-    <name>If field value is null</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>32</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null 2</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>128</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null 3</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>224</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null 4</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>If field value is null 4 2</name>
-    <type>IfNull</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>N</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      </valuetypes>
-    <fields>
-      </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>432</xloc>
-      <yloc>416</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>ORDERFACT</name>
     <type>TableInput</type>
     <description/>
@@ -1316,21 +1121,12 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
 , PRODUCTCODE
 , QUANTITYORDERED
 , PRICEEACH
-, ORDERLINENUMBER
 , TOTALPRICE
-, ORDERDATE
-, REQUIREDDATE
-, SHIPPEDDATE
-, STATUS
-, COMMENTS
 , CUSTOMERNUMBER
 , TIME_ID
-, QTR_ID
-, MONTH_ID
-, YEAR_ID
-, COUNTRY
 FROM "PUBLIC".ORDERFACT, "PUBLIC".CUSTOMER_W_TER
 WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
+GROUP BY ORDERNUMBER, PRODUCTCODE, CUSTOMERNUMBER, PRICEEACH, TOTALPRICE, QUANTITYORDERED, TIME_ID
 
 </sql>
     <limit>0</limit>
@@ -1433,29 +1229,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>ORDERLINENUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>ORDERLINENUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
         <type>BigNumber</type>
         <storagetype>normal</storagetype>
         <name>TOTALPRICE</name>
@@ -1466,121 +1239,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol/>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>ORDERDATE</name>
-        <length>6</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>ORDERDATE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>REQUIREDDATE</name>
-        <length>6</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>REQUIREDDATE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Timestamp</type>
-        <storagetype>normal</storagetype>
-        <name>SHIPPEDDATE</name>
-        <length>6</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>SHIPPEDDATE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>STATUS</name>
-        <length>15</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>STATUS</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>COMMENTS</name>
-        <length>16777216</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>COMMENTS</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1624,98 +1282,6 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <precision>-1</precision>
         <origin>ORDERFACT</origin>
         <comments>TIME_ID</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>QTR_ID</name>
-        <length>15</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>QTR_ID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>MONTH_ID</name>
-        <length>15</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>MONTH_ID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>YEAR_ID</name>
-        <length>15</length>
-        <precision>0</precision>
-        <origin>ORDERFACT</origin>
-        <comments>YEAR_ID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>COUNTRY</name>
-        <length>50</length>
-        <precision>-1</precision>
-        <origin>ORDERFACT</origin>
-        <comments>COUNTRY</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -2227,8 +1793,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2237,8 +1803,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2250,8 +1816,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2260,8 +1826,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2273,8 +1839,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2283,8 +1849,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2296,8 +1862,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTSCALE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2306,8 +1872,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2319,8 +1885,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2329,8 +1895,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2342,8 +1908,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>PRODUCTDESCRIPTION</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2352,8 +1918,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2365,8 +1931,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2375,8 +1941,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2388,8 +1954,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>BUYPRICE</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2398,8 +1964,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -2411,8 +1977,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <origin>PRODUCTS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -2421,8 +1987,8 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -2490,7 +2056,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>50</length>
         <precision>-1</precision>
       </field>
@@ -2502,7 +2068,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>70</length>
         <precision>-1</precision>
       </field>
@@ -2514,7 +2080,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>50</length>
         <precision>-1</precision>
       </field>
@@ -2526,7 +2092,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal/>
         <group/>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>50</length>
         <precision>-1</precision>
       </field>
@@ -2538,7 +2104,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal>,</decimal>
         <group>.</group>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>4</length>
         <precision>0</precision>
       </field>
@@ -2550,7 +2116,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal>,</decimal>
         <group>.</group>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>17</length>
         <precision>0</precision>
       </field>
@@ -2562,7 +2128,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
         <decimal>,</decimal>
         <group>.</group>
         <nullif/>
-        <trim_type>none</trim_type>
+        <trim_type>both</trim_type>
         <length>17</length>
         <precision>0</precision>
       </field>
@@ -2726,18 +2292,23 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
     <fields>
       <field>
         <name>PRODUCTCODE</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTNAME</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTLINE</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTVENDOR</name>
+        <rename/>
       </field>
       <field>
         <name>QUANTITYINSTOCK</name>
+        <rename/>
       </field>
       <field>
         <name>BUYPRICE</name>
@@ -2745,6 +2316,7 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
       </field>
       <field>
         <name>MSRP</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -2776,24 +2348,31 @@ WHERE CUSTOMER_W_TER.COUNTRY = 'USA'
     <fields>
       <field>
         <name>ORDERNUMBER</name>
+        <rename/>
       </field>
       <field>
         <name>PRODUCTCODE</name>
+        <rename/>
       </field>
       <field>
         <name>QUANTITYORDERED</name>
+        <rename/>
       </field>
       <field>
         <name>PRICEEACH</name>
+        <rename/>
       </field>
       <field>
         <name>TOTALPRICE</name>
+        <rename/>
       </field>
       <field>
         <name>CUSTOMERNUMBER</name>
+        <rename/>
       </field>
       <field>
         <name>TIME_ID</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>

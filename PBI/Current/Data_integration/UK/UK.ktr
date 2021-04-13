@@ -733,7 +733,7 @@ WHERE COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>96</xloc>
       <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
@@ -870,7 +870,7 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>96</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -903,7 +903,7 @@ var MSRP =MSRP * 0.72;</jsScript_script>
         <name>PRICEINPOUNDS</name>
         <rename>PRICEINPOUNDS</rename>
         <type>Number</type>
-        <length>16</length>
+        <length>-1</length>
         <precision>2</precision>
         <replace>Y</replace>
       </field>
@@ -911,7 +911,7 @@ var MSRP =MSRP * 0.72;</jsScript_script>
         <name>MSRP</name>
         <rename>MSRP</rename>
         <type>Number</type>
-        <length>16</length>
+        <length>-1</length>
         <precision>2</precision>
         <replace>Y</replace>
       </field>
@@ -1188,7 +1188,7 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>96</xloc>
       <yloc>544</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1349,58 +1349,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>96</xloc>
       <yloc>352</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values 4</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>PRODUCTCODE</name>
-      </field>
-      <field>
-        <name>PRODUCTNAME</name>
-      </field>
-      <field>
-        <name>PRODUCTLINE</name>
-      </field>
-      <field>
-        <name>PRODUCTVENDOR</name>
-      </field>
-      <field>
-        <name>QUANTITYINSTOCK</name>
-      </field>
-      <field>
-        <name>BUYPRICE</name>
-        <rename>PRICEINPOUNDS</rename>
-      </field>
-      <field>
-        <name>MSRP</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>304</xloc>
-      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1446,8 +1396,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1456,8 +1406,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1469,8 +1419,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1479,8 +1429,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1492,8 +1442,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1502,8 +1452,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1515,8 +1465,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1525,8 +1475,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1538,8 +1488,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1548,8 +1498,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1561,8 +1511,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>PRICEINPOUNDS</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1571,8 +1521,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1584,8 +1534,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <origin>PRODUCTS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1594,8 +1544,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1608,57 +1558,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>176</xloc>
+      <xloc>96</xloc>
       <yloc>448</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Select values</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-      </field>
-      <field>
-        <name>CONTACTFIRSTNAME</name>
-        <rename>CUSTOMERFIRSTNAME</rename>
-      </field>
-      <field>
-        <name>CONTACTLASTNAME</name>
-        <rename>CUSTOMERSURNAME</rename>
-      </field>
-      <field>
-        <name>PHONE</name>
-      </field>
-      <field>
-        <name>ADDRESSLINE1</name>
-        <rename>ADRESSLINE</rename>
-      </field>
-      <field>
-        <name>CITY</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>304</xloc>
-      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1751,6 +1652,50 @@ WHERE ct.COUNTRY = 'UK'</sql>
     </GUI>
   </step>
   <step>
+    <name>REMOTE ORDERFACT</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>RemoteMysql</connection>
+    <schema/>
+    <table>ORDERFACT</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>832</xloc>
+      <yloc>544</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>REMOTE ORDERS</name>
     <type>TableOutput</type>
     <description/>
@@ -1839,8 +1784,8 @@ WHERE ct.COUNTRY = 'UK'</sql>
     </GUI>
   </step>
   <step>
-    <name>REMOTE ORDERFACT</name>
-    <type>TableOutput</type>
+    <name>Select values</name>
+    <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1849,24 +1794,29 @@ WHERE ct.COUNTRY = 'UK'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RemoteMysql</connection>
-    <schema/>
-    <table>ORDERFACT</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
     <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+      </field>
+      <field>
+        <name>CONTACTFIRSTNAME</name>
+        <rename>CUSTOMERFIRSTNAME</rename>
+      </field>
+      <field>
+        <name>CONTACTLASTNAME</name>
+        <rename>CUSTOMERSURNAME</rename>
+      </field>
+      <field>
+        <name>PHONE</name>
+      </field>
+      <field>
+        <name>ADDRESSLINE1</name>
+        <rename>ADRESSLINE</rename>
+      </field>
+      <field>
+        <name>CITY</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -1877,8 +1827,58 @@ WHERE ct.COUNTRY = 'UK'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>832</xloc>
-      <yloc>544</yloc>
+      <xloc>304</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values 4</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+      </field>
+      <field>
+        <name>PRODUCTNAME</name>
+      </field>
+      <field>
+        <name>PRODUCTLINE</name>
+      </field>
+      <field>
+        <name>PRODUCTVENDOR</name>
+      </field>
+      <field>
+        <name>QUANTITYINSTOCK</name>
+      </field>
+      <field>
+        <name>BUYPRICE</name>
+        <rename>PRICEINPOUNDS</rename>
+      </field>
+      <field>
+        <name>MSRP</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>304</xloc>
+      <yloc>448</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

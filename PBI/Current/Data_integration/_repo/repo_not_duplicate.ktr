@@ -430,7 +430,7 @@
     <created_date>2021/04/13 07:47:02.582</created_date>
     <modified_user>-</modified_user>
     <modified_date>2021/04/13 07:47:02.582</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -442,8 +442,8 @@
     <access>Native</access>
     <database>dw</database>
     <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
+    <username>admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -513,7 +513,7 @@
     </hop>
   </order>
   <step>
-    <name>NC_PRODUCTS</name>
+    <name>NC_CUSTOMER_W_TER</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -525,14 +525,15 @@
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT (PRODUCTCODE)
-, PRODUCTNAME
-, PRODUCTVENDOR
-, QUANTITYINSTOCK
-, BUYPRICE
-, MSRP
-, PRODUCTLINE
-FROM dw.nc_products
+  DISTINCT (CUSTOMERNUMBER)
+, PHONE
+, ADDRESSLINE
+, CITY
+, CUSTOMERNAME
+, COUNTRY
+, TERRITORY
+, STATE
+FROM dw.nc_customer_w_ter
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -542,108 +543,16 @@ FROM dw.nc_products
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTCODE</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>PRODUCTCODE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>PRODUCTNAME</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PRODUCTVENDOR</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>PRODUCTVENDOR</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>QUANTITYINSTOCK</name>
+        <name>CUSTOMERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>QUANTITYINSTOCK</comments>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>BigNumber</type>
-        <storagetype>normal</storagetype>
-        <name>BUYPRICE</name>
-        <length>16</length>
-        <precision>2</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>BUYPRICE</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -652,44 +561,21 @@ FROM dw.nc_products
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>BigNumber</type>
-        <storagetype>normal</storagetype>
-        <name>MSRP</name>
-        <length>16</length>
-        <precision>2</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>MSRP</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTLINE</name>
-        <length>536870911</length>
+        <name>PHONE</name>
+        <length>50</length>
         <precision>-1</precision>
-        <origin>NC_PRODUCTS</origin>
-        <comments>PRODUCTLINE</comments>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>PHONE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -698,8 +584,146 @@ FROM dw.nc_products
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>ADDRESSLINE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>ADDRESSLINE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CITY</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CITY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>CUSTOMERNAME</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>CUSTOMERNAME</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>COUNTRY</name>
+        <length>255</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>COUNTRY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TERRITORY</name>
+        <length>255</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>TERRITORY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>STATE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_CUSTOMER_W_TER</origin>
+        <comments>STATE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -713,95 +737,7 @@ FROM dw.nc_products
     </remotesteps>
     <GUI>
       <xloc>128</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ND_PRODUCTS_TO _REPO</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
-    <schema/>
-    <table>NC_PRODUCTS</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ND_DIM_TIME_TO_REPO</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
-    <schema/>
-    <table>NC_DIM_tiME</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>208</yloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -835,13 +771,13 @@ FROM dw.nc_dim_time
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>TIME_ID</name>
-        <length>536870911</length>
+        <length>20</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>NC_DIM_TIME</origin>
         <comments>TIME_ID</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -850,8 +786,8 @@ FROM dw.nc_dim_time
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -860,11 +796,11 @@ FROM dw.nc_dim_time
         <name>MONTH_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>NC_DIM_TIME</origin>
         <comments>MONTH_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -873,8 +809,8 @@ FROM dw.nc_dim_time
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -883,11 +819,11 @@ FROM dw.nc_dim_time
         <name>QTR_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>NC_DIM_TIME</origin>
         <comments>QTR_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -896,8 +832,8 @@ FROM dw.nc_dim_time
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -906,11 +842,11 @@ FROM dw.nc_dim_time
         <name>YEAR_ID</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>NC_DIM_TIME</origin>
         <comments>YEAR_ID</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -919,8 +855,8 @@ FROM dw.nc_dim_time
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -971,11 +907,11 @@ FROM dw.nc_orders
         <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>NC_ORDERS</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -984,8 +920,8 @@ FROM dw.nc_orders
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -994,11 +930,11 @@ FROM dw.nc_orders
         <name>ORDERDATE</name>
         <length>0</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>NC_ORDERS</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1007,8 +943,8 @@ FROM dw.nc_orders
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1017,11 +953,11 @@ FROM dw.nc_orders
         <name>REQUIREDDATE</name>
         <length>0</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>NC_ORDERS</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1030,8 +966,8 @@ FROM dw.nc_orders
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1040,11 +976,11 @@ FROM dw.nc_orders
         <name>SHIPPEDDATE</name>
         <length>0</length>
         <precision>-1</precision>
-        <origin>Table input</origin>
+        <origin>NC_ORDERS</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1053,8 +989,8 @@ FROM dw.nc_orders
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -1063,11 +999,11 @@ FROM dw.nc_orders
         <name>CUSTOMERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Table input</origin>
+        <origin>NC_ORDERS</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1076,8 +1012,8 @@ FROM dw.nc_orders
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -1096,6 +1032,299 @@ FROM dw.nc_orders
     </GUI>
   </step>
   <step>
+    <name>NC_PRODUCTS</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>FrancoPHPMyAdmin</connection>
+    <sql>SELECT
+  DISTINCT(PRODUCTCODE)
+, PRODUCTNAME
+, PRODUCTVENDOR
+, PRODUCTLINE
+, QUANTITYINSTOCK
+, MSRP
+, BUYPRICE
+FROM dw.nc_products
+</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <cached_row_meta_active>N</cached_row_meta_active>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTCODE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTCODE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTNAME</name>
+        <length>70</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTNAME</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTVENDOR</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTVENDOR</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>PRODUCTLINE</name>
+        <length>50</length>
+        <precision>-1</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>PRODUCTLINE</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>QUANTITYINSTOCK</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>QUANTITYINSTOCK</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>MSRP</name>
+        <length>16</length>
+        <precision>2</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>MSRP</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>BigNumber</type>
+        <storagetype>normal</storagetype>
+        <name>BUYPRICE</name>
+        <length>16</length>
+        <precision>2</precision>
+        <origin>NC_PRODUCTS</origin>
+        <comments>BUYPRICE</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>128</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ND_CUSTOMER_W_TER_TO_REPO</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>nc_customer_w_ter</table>
+    <commit>1000</commit>
+    <truncate>N</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ND_DIM_TIME_TO_REPO</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>FrancoPHPMyAdmin</connection>
+    <schema/>
+    <table>nc_dim_time</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>416</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>ND_ORDERS_TO_REPO</name>
     <type>TableOutput</type>
     <description/>
@@ -1108,7 +1337,7 @@ FROM dw.nc_orders
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <schema/>
-    <table>NC_ORDERS</table>
+    <table>nc_orders</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -1140,236 +1369,7 @@ FROM dw.nc_orders
     </GUI>
   </step>
   <step>
-    <name>NC_CUSTOMER_W_TER</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
-    <sql>SELECT
-  DISTINCT (CUSTOMERNUMBER)
-, PHONE
-, ADDRESSLINE
-, CITY
-, CUSTOMERNAME
-, COUNTRY
-, TERRITORY
-, STATE
-FROM dw.nc_customer_w_ter
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>PHONE</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>PHONE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>ADDRESSLINE</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>ADDRESSLINE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CITY</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>CITY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>CUSTOMERNAME</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>CUSTOMERNAME</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>COUNTRY</name>
-        <length>63</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>COUNTRY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>TERRITORY</name>
-        <length>63</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>TERRITORY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>STATE</name>
-        <length>536870911</length>
-        <precision>-1</precision>
-        <origin>NC_CUSTOMER_W_TER</origin>
-        <comments>STATE</comments>
-        <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>128</xloc>
-      <yloc>400</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>ND_CUSTOMER_W_TER_TO_REPO</name>
+    <name>ND_PRODUCTS_TO _REPO</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1381,9 +1381,9 @@ FROM dw.nc_customer_w_ter
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <schema/>
-    <table>NC_CUSTOMER_W_TER</table>
+    <table>nc_products</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>N</specify_fields>
@@ -1408,7 +1408,7 @@ FROM dw.nc_customer_w_ter
     </remotesteps>
     <GUI>
       <xloc>416</xloc>
-      <yloc>400</yloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
