@@ -1,0 +1,50 @@
+<Schema name="dw">
+  <Cube name="dw" visible="true" cache="true" enabled="true">
+    <Table name="nc_orderfact">
+    </Table>
+    <Dimension type="TimeDimension" visible="true" foreignKey="TIME_ID" highCardinality="false" name="Time">
+      <Hierarchy name="default" visible="true" hasAll="true" primaryKey="TIME_ID">
+        <Table name="nc_dim_time">
+        </Table>
+        <Level name="Years" visible="true" column="YEAR_ID" type="String" uniqueMembers="false" levelType="TimeYears" hideMemberIf="Never">
+        </Level>
+        <Level name="Quarters" visible="true" column="QTR_ID" type="String" uniqueMembers="false" levelType="TimeQuarters" hideMemberIf="Never">
+        </Level>
+        <Level name="Months" visible="true" column="MONTH_ID" type="String" uniqueMembers="false" levelType="TimeMonths" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="PRODUCTCODE" highCardinality="false" name="Product">
+      <Hierarchy name="default" visible="true" hasAll="true" primaryKey="PRODUCTCODE">
+        <Table name="nc_products">
+        </Table>
+        <Level name="line" visible="true" table="nc_products" column="PRODUCTLINE" nameColumn="PRODUCTLINE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="vendor" visible="true" table="nc_products" column="PRODUCTVENDOR" nameColumn="PRODUCTVENDOR" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="name" visible="true" table="nc_products" column="PRODUCTNAME" nameColumn="PRODUCTNAME" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="CUSTOMERNUMBER" highCardinality="false" name="Customer">
+      <Hierarchy name="default" visible="true" hasAll="true" primaryKey="CUSTOMERNUMBER">
+        <Table name="nc_customer_w_ter">
+        </Table>
+        <Level name="territory" visible="true" table="nc_customer_w_ter" column="TERRITORY" nameColumn="TERRITORY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="country" visible="true" table="nc_customer_w_ter" column="COUNTRY" nameColumn="COUNTRY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="state" visible="true" table="nc_customer_w_ter" column="STATE" nameColumn="STATE" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="city" visible="true" table="nc_customer_w_ter" column="CITY" nameColumn="CITY" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Quantity" column="QUANTITYORDERED" datatype="Numeric" formatString="###" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Price Each" column="PRICEEACH" datatype="Numeric" formatString="###.00 $" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Total Price" column="TOTALPRICE" datatype="Numeric" formatString="###.00 $" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>
