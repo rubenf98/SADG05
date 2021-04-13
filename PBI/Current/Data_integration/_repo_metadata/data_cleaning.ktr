@@ -437,66 +437,11 @@
   <notepads>
   </notepads>
   <connection>
-    <name>LeonardoPhpMyAdmin</name>
+    <name>PhpMyAdmin</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
-    <database>DW</database>
-    <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
-    <servername/>
-    <data_tablespace/>
-    <index_tablespace/>
-    <attributes>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>IS_CLUSTERED</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>PORT_NUMBER</code>
-        <attribute>3306</attribute>
-      </attribute>
-      <attribute>
-        <code>PRESERVE_RESERVED_WORD_CASE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>QUOTE_ALL_FIELDS</code>
-        <attribute>N</attribute>
-      </attribute>
-      <attribute>
-        <code>STREAM_RESULTS</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
-        <attribute>Y</attribute>
-      </attribute>
-      <attribute>
-        <code>USE_POOLING</code>
-        <attribute>N</attribute>
-      </attribute>
-    </attributes>
-  </connection>
-  <connection>
-    <name>RubenPhpMyAdmin</name>
-    <server>localhost</server>
-    <type>MYSQL</type>
-    <access>Native</access>
-    <database>repo</database>
+    <database>dw</database>
     <port>3306</port>
     <username>admin</username>
     <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
@@ -599,16 +544,16 @@
     </hop>
     <hop>
       <from>Modified JavaScript value</from>
-      <to>Insert / update</to>
+      <to>Update DIM_TIME</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Modified JavaScript value</from>
-      <to>Table output 2</to>
+      <to>DC_DIM_TIME</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>DIM_TIME_With_NULLS</from>
+      <from>DIM_TIME_NULLs</from>
       <to>Modified JavaScript value</to>
       <enabled>Y</enabled>
     </hop>
@@ -624,9 +569,9 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <schema/>
-    <table>DC_ORDERS</table>
+    <table>dc_orders</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
@@ -688,11 +633,11 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <schema/>
-    <table>DC_PRODUCTS</table>
+    <table>dc_products</table>
     <commit>1000</commit>
-    <truncate>N</truncate>
+    <truncate>Y</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>Y</specify_fields>
@@ -750,7 +695,51 @@
     </GUI>
   </step>
   <step>
-    <name>DIM_TIME_With_NULLS</name>
+    <name>DC_DIM_TIME</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>PhpMyAdmin</connection>
+    <schema/>
+    <table>dc_dim_time</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>N</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>976</xloc>
+      <yloc>512</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>DIM_TIME_NULLs</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -760,13 +749,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
   TIME_ID
 , MONTH_ID
 , QTR_ID
 , YEAR_ID
-FROM steelwheels.dim_time_test_transform
+FROM dw.nc_dim_time
 WHERE 
 MONTH_ID IS NULL
 OR QTR_ID IS NULL
@@ -777,7 +766,100 @@ OR YEAR_ID IS NULL</sql>
     <variables_active>N</variables_active>
     <lazy_conversion_active>N</lazy_conversion_active>
     <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta/>
+    <row-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TIME_ID</name>
+        <length>10</length>
+        <precision>-1</precision>
+        <origin>DIM_TIME_NULLs</origin>
+        <comments>TIME_ID</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>MONTH_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>DIM_TIME_NULLs</origin>
+        <comments>MONTH_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>QTR_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>DIM_TIME_NULLs</origin>
+        <comments>QTR_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>YEAR_ID</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>DIM_TIME_NULLs</origin>
+        <comments>YEAR_ID</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+    </row-meta>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -788,7 +870,7 @@ OR YEAR_ID IS NULL</sql>
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
-      <yloc>576</yloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -893,64 +975,6 @@ var CUSTOMERNUMBER = getVariable("MODE", "");
     </GUI>
   </step>
   <step>
-    <name>Insert / update</name>
-    <type>InsertUpdate</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
-    <commit>100</commit>
-    <update_bypassed>N</update_bypassed>
-    <lookup>
-      <schema/>
-      <table>dim_time</table>
-      <key>
-        <name>TIME_ID</name>
-        <field>TIME_ID</field>
-        <condition>=</condition>
-        <name2/>
-      </key>
-      <value>
-        <name>TIME_ID</name>
-        <rename>TIME_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>MONTH_ID</name>
-        <rename>MONTH_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>QTR_ID</name>
-        <rename>QTR_ID</rename>
-        <update>Y</update>
-      </value>
-      <value>
-        <name>YEAR_ID</name>
-        <rename>YEAR_ID</rename>
-        <update>Y</update>
-      </value>
-    </lookup>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>656</xloc>
-      <yloc>688</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>Modified JavaScript value</name>
     <type>ScriptValueMod</type>
     <description/>
@@ -1028,8 +1052,8 @@ switch(true){
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>576</yloc>
+      <xloc>976</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1044,7 +1068,7 @@ switch(true){
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
   PRODUCTCODE
 , PRODUCTNAME
@@ -1053,7 +1077,7 @@ switch(true){
 , QUANTITYINSTOCK
 , BUYPRICE
 , MSRP
-FROM repo.PRODUCTS
+FROM dw.nc_products
 WHERE BUYPRICE IS NULL
 </sql>
     <limit>0</limit>
@@ -1092,7 +1116,7 @@ WHERE BUYPRICE IS NULL
         <name>PRODUCTCODE</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1115,7 +1139,7 @@ WHERE BUYPRICE IS NULL
         <name>PRODUCTNAME</name>
         <length>70</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1138,7 +1162,7 @@ WHERE BUYPRICE IS NULL
         <name>PRODUCTVENDOR</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1161,7 +1185,7 @@ WHERE BUYPRICE IS NULL
         <name>PRODUCTLINE</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1184,7 +1208,7 @@ WHERE BUYPRICE IS NULL
         <name>QUANTITYINSTOCK</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1207,7 +1231,7 @@ WHERE BUYPRICE IS NULL
         <name>BUYPRICE</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>BUYPRICE</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1230,7 +1254,7 @@ WHERE BUYPRICE IS NULL
         <name>MSRP</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>NULL_PRODUCTS</origin>
+        <origin>NULL_BUYPRICE</origin>
         <comments>MSRP</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -1273,14 +1297,14 @@ WHERE BUYPRICE IS NULL
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
   ORDERNUMBER
 , ORDERDATE
 , REQUIREDDATE
 , SHIPPEDDATE
 , CUSTOMERNUMBER
-FROM repo.ORDERS
+FROM dw.nc_orders
 WHERE CUSTOMERNUMBER IS NULL
 </sql>
     <limit>0</limit>
@@ -1291,14 +1315,14 @@ WHERE CUSTOMERNUMBER IS NULL
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>MODE</name>
-        <length>65535</length>
-        <precision>-1</precision>
+        <length>9</length>
+        <precision>0</precision>
         <origin>ORDERS_MODE</origin>
         <comments>MODE</comments>
-        <conversion_Mask/>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -1314,16 +1338,16 @@ WHERE CUSTOMERNUMBER IS NULL
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>BigNumber</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>ORDERNUMBER</name>
-        <length>22</length>
-        <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>ORDERNUMBER</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -1337,12 +1361,12 @@ WHERE CUSTOMERNUMBER IS NULL
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>ORDERDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>ORDERDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1360,12 +1384,12 @@ WHERE CUSTOMERNUMBER IS NULL
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>REQUIREDDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>REQUIREDDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1383,12 +1407,12 @@ WHERE CUSTOMERNUMBER IS NULL
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Timestamp</type>
         <storagetype>normal</storagetype>
         <name>SHIPPEDDATE</name>
-        <length>255</length>
+        <length>0</length>
         <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>SHIPPEDDATE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -1406,14 +1430,14 @@ WHERE CUSTOMERNUMBER IS NULL
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>CUSTOMERNUMBER</name>
-        <length>65535</length>
-        <precision>-1</precision>
-        <origin>NULL_PRODUCTS 2</origin>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>NULL_CUSTOMERNUMBER</origin>
         <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask/>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -1454,9 +1478,9 @@ WHERE CUSTOMERNUMBER IS NULL
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT CUSTOMERNUMBER AS MODE
-FROM repo.ORDERS
+FROM dw.nc_orders
 GROUP BY CUSTOMERNUMBER
 ORDER BY COUNT(*) DESC
 LIMIT 1</sql>
@@ -1468,14 +1492,14 @@ LIMIT 1</sql>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
         <name>MODE</name>
-        <length>65535</length>
-        <precision>-1</precision>
+        <length>9</length>
+        <precision>0</precision>
         <origin>ORDERS_MODE</origin>
         <comments>MODE</comments>
-        <conversion_Mask/>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -1516,10 +1540,10 @@ LIMIT 1</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>RubenPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <sql>SELECT
 AVG(p.BUYPRICE) AS AVERAGE
-FROM repo.PRODUCTS as p
+FROM dw.nc_products as p
 WHERE p.BUYPRICE IS NOT NULL
 	</sql>
     <limit>0</limit>
@@ -1642,8 +1666,8 @@ setVariable("MODE", MODE, "r");</jsScript_script>
     </GUI>
   </step>
   <step>
-    <name>Table output 2</name>
-    <type>TableOutput</type>
+    <name>Update DIM_TIME</name>
+    <type>InsertUpdate</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -1652,25 +1676,39 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
-    <schema/>
-    <table>dc_dim_time</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-    </fields>
+    <connection>PhpMyAdmin</connection>
+    <commit>100</commit>
+    <update_bypassed>N</update_bypassed>
+    <lookup>
+      <schema/>
+      <table>nc_dim_time</table>
+      <key>
+        <name>TIME_ID</name>
+        <field>TIME_ID</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>TIME_ID</name>
+        <rename>TIME_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <update>Y</update>
+      </value>
+      <value>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <update>Y</update>
+      </value>
+    </lookup>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -1680,8 +1718,8 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
-      <yloc>576</yloc>
+      <xloc>1168</xloc>
+      <yloc>608</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1696,12 +1734,12 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>ORDERS</table>
+      <table>nc_orders</table>
       <key>
         <name>ORDERNUMBER</name>
         <field>ORDERNUMBER</field>
@@ -1777,12 +1815,12 @@ setVariable("MODE", MODE, "r");</jsScript_script>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>LeonardoPhpMyAdmin</connection>
+    <connection>PhpMyAdmin</connection>
     <commit>100</commit>
     <update_bypassed>N</update_bypassed>
     <lookup>
       <schema/>
-      <table>PRODUCTS</table>
+      <table>nc_products</table>
       <key>
         <name>PRODUCTCODE</name>
         <field>PRODUCTCODE</field>
