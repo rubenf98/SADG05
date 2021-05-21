@@ -436,14 +436,14 @@
   <notepads>
   </notepads>
   <connection>
-    <name>FrancoPHPMyAdmin</name>
+    <name>PHPMyAdmin</name>
     <server>localhost</server>
     <type>MYSQL</type>
     <access>Native</access>
     <database>dw</database>
     <port>3306</port>
-    <username>admin</username>
-    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
+    <username>root</username>
+    <password>Encrypted </password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -563,7 +563,7 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <sql>SELECT
   CUSTOMERNUMBER
 , PHONE
@@ -792,7 +792,7 @@ FROM dw.nc_customer_w_ter
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <sql>SELECT
   TIME_ID
 , MONTH_ID
@@ -926,7 +926,7 @@ FROM dw.nc_dim_time
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <sql>SELECT
   ORDERNUMBER
 , ORDERDATE
@@ -1082,7 +1082,7 @@ FROM dw.nc_orders</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <sql>SELECT
   PRODUCTCODE
 , PRODUCTNAME
@@ -1286,7 +1286,7 @@ FROM dw.nc_products</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <schema/>
     <table>nc_customer_w_ter</table>
     <commit>1000</commit>
@@ -1330,7 +1330,7 @@ FROM dw.nc_products</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <schema/>
     <table>nc_dim_time</table>
     <commit>1000</commit>
@@ -1374,7 +1374,7 @@ FROM dw.nc_products</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <schema/>
     <table>nc_orders</table>
     <commit>1000</commit>
@@ -1418,7 +1418,7 @@ FROM dw.nc_products</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>FrancoPHPMyAdmin</connection>
+    <connection>PHPMyAdmin</connection>
     <schema/>
     <table>nc_products</table>
     <commit>1000</commit>
