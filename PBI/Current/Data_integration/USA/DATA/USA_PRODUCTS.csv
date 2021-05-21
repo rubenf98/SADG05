@@ -9,7 +9,7 @@ S12_1099;1968 Ford Mustang;Classic Cars;Autoart Studio Design;68;95;195
 S12_1108;2001 Ferrari Enzo;Classic Cars;Second Gear Diecast;3619;96;208
 S12_1666;1958 Setra Bus;Trucks and Buses;Welly Diecast Productions;1579;78;137
 S12_2823;2002 Suzuki XREO;Motorcycles;Unimax Art Galleries;9997;66;151
-S12_3148;1969 Corvair Monza;Classic Cars;Welly Diecast Productions;6906;;151
+S12_3148;1969 Corvair Monza;Classic Cars;Welly Diecast Productions;6906;89;151
 S12_3380;1968 Dodge Charger;Classic Cars;Welly Diecast Productions;9123;75;117
 S12_3891;1969 Ford Falcon;Classic Cars;Second Gear Diecast;1049;83;173
 S12_3990;1970 Plymouth Hemi Cuda;Classic Cars;Studio M Art Models;5663;32;80
@@ -18,7 +18,7 @@ S12_4675;1969 Dodge Charger;Classic Cars;Welly Diecast Productions;7323;59;115
 S18_1097;1940 Ford Pickup Truck;Trucks and Buses;Studio M Art Models;2613;58;117
 S18_1129;1993 Mazda RX-7;Classic Cars;Highway 66 Mini Classics;3975;84;142
 S18_1342;1937 Lincoln Berline;Vintage Cars;Motor City Art Classics;8693;61;103
-S18_1367;1936 Mercedes-Benz 500K Special Roadster;Vintage Cars;Studio M Art Models;8635;;54
+S18_1367;1936 Mercedes-Benz 500K Special Roadster;Vintage Cars;Studio M Art Models;8635;24;54
 S18_1589;1965 Aston Martin DB5;Classic Cars;Classic Metal Creations;9042;66;124
 S18_1662;1980s Black Hawk Helicopter;Planes;Red Start Diecast;5330;77;158
 S18_1749;1917 Grand Touring Sedan;Vintage Cars;Welly Diecast Productions;2724;87;170
@@ -52,7 +52,7 @@ S18_4409;1932 Alfa Romeo 8C2300 Spider Sport;Vintage Cars;Exoto Designs;6553;43;
 S18_4522;1904 Buick Runabout;Vintage Cars;Exoto Designs;8290;53;88
 S18_4600;1940s Ford truck;Trucks and Buses;Motor City Art Classics;3128;85;121
 S18_4668;1939 Cadillac Limousine;Vintage Cars;Studio M Art Models;6645;23;50
-S18_4721;1957 Corvette Convertible;Classic Cars;Classic Metal Creations;1249;;149
+S18_4721;1957 Corvette Convertible;Classic Cars;Classic Metal Creations;1249;70;149
 S18_4933;1957 Ford Thunderbird;Classic Cars;Studio M Art Models;3209;34;71
 S24_1046;1970 Chevy Chevelle SS 454;Classic Cars;Unimax Art Galleries;1005;49;73
 S24_1444;1970 Dodge Coronet;Classic Cars;Highway 66 Mini Classics;4074;32;58

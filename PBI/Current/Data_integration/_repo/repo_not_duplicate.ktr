@@ -492,23 +492,63 @@
   </connection>
   <order>
     <hop>
-      <from>NC_PRODUCTS</from>
+      <from>UNQ_PRODUCTS</from>
       <to>ND_PRODUCTS_TO _REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>NC_DIM_TIME</from>
+      <from>UNQ_TIME</from>
       <to>ND_DIM_TIME_TO_REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>NC_ORDERS</from>
+      <from>UNQ_ORDERS</from>
       <to>ND_ORDERS_TO_REPO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>NC_CUSTOMER_W_TER</from>
+      <from>UNQ_CUSTOMER</from>
       <to>ND_CUSTOMER_W_TER_TO_REPO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NC_PRODUCTS</from>
+      <to>SORT_PRODUCTS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SORT_PRODUCTS</from>
+      <to>UNQ_PRODUCTS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NC_DIM_TIME</from>
+      <to>SORT_TIME</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SORT_TIME</from>
+      <to>UNQ_TIME</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NC_ORDERS</from>
+      <to>SORT_ORDERS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SORT_ORDERS</from>
+      <to>UNQ_ORDERS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>NC_CUSTOMER_W_TER</from>
+      <to>SORT_CUSTOMERS</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>SORT_CUSTOMERS</from>
+      <to>UNQ_CUSTOMER</to>
       <enabled>Y</enabled>
     </hop>
   </order>
@@ -525,7 +565,7 @@
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT (CUSTOMERNUMBER)
+  CUSTOMERNUMBER
 , PHONE
 , ADDRESSLINE
 , CITY
@@ -534,8 +574,6 @@
 , TERRITORY
 , STATE
 FROM dw.nc_customer_w_ter
-GROUP BY CUSTOMERNUMBER
-ORDER BY CUSTOMERNUMBER
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -756,13 +794,11 @@ ORDER BY CUSTOMERNUMBER
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT (TIME_ID)
+  TIME_ID
 , MONTH_ID
 , QTR_ID
 , YEAR_ID
 FROM dw.nc_dim_time
-GROUP BY TIME_ID
-ORDER BY TIME_ID
 
 </sql>
     <limit>0</limit>
@@ -776,7 +812,7 @@ ORDER BY TIME_ID
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>TIME_ID</name>
-        <length>20</length>
+        <length>10</length>
         <precision>-1</precision>
         <origin>NC_DIM_TIME</origin>
         <comments>TIME_ID</comments>
@@ -892,14 +928,12 @@ ORDER BY TIME_ID
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT (ORDERNUMBER)
+  ORDERNUMBER
 , ORDERDATE
 , REQUIREDDATE
 , SHIPPEDDATE
 , CUSTOMERNUMBER
-FROM dw.nc_orders
-GROUP BY ORDERNUMBER
-ORDER BY ORDERNUMBER</sql>
+FROM dw.nc_orders</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1050,17 +1084,14 @@ ORDER BY ORDERNUMBER</sql>
     </partitioning>
     <connection>FrancoPHPMyAdmin</connection>
     <sql>SELECT
-  DISTINCT(PRODUCTCODE)
+  PRODUCTCODE
 , PRODUCTNAME
 , PRODUCTVENDOR
 , PRODUCTLINE
 , QUANTITYINSTOCK
 , MSRP
 , BUYPRICE
-FROM dw.nc_products
-GROUP BY PRODUCTCODE
-ORDER BY PRODUCTCODE
-</sql>
+FROM dw.nc_products</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -1283,7 +1314,7 @@ ORDER BY PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>688</xloc>
       <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1327,7 +1358,7 @@ ORDER BY PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>688</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1371,7 +1402,7 @@ ORDER BY PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>688</xloc>
       <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1415,8 +1446,316 @@ ORDER BY PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
+      <xloc>688</xloc>
       <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UNQ_CUSTOMER</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>400</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UNQ_ORDERS</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>ORDERNUMBER</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UNQ_PRODUCTS</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UNQ_TIME</name>
+    <type>Unique</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <count_rows>N</count_rows>
+    <count_field/>
+    <reject_duplicate_row>N</reject_duplicate_row>
+    <error_description/>
+    <fields>
+      <field>
+        <name>TIME_ID</name>
+        <case_insensitive>N</case_insensitive>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SORT_PRODUCTS</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>PRODUCTCODE</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SORT_TIME</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>TIME_ID</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SORT_ORDERS</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>ORDERNUMBER</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>304</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>SORT_CUSTOMERS</name>
+    <type>SortRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>out</prefix>
+    <sort_size>1000000</sort_size>
+    <free_memory/>
+    <compress>N</compress>
+    <compress_variable/>
+    <unique_rows>N</unique_rows>
+    <fields>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+        <ascending>Y</ascending>
+        <case_sensitive>N</case_sensitive>
+        <collator_enabled>N</collator_enabled>
+        <collator_strength>0</collator_strength>
+        <presorted>N</presorted>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>288</xloc>
+      <yloc>400</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
