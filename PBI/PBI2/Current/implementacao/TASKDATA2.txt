@@ -1,1 +1,0 @@
-Cliente que compra uma linha de produtos também compra outra linha de produtos nos EUA;

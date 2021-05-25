@@ -1,23 +1,22 @@
 José Freitas
     	Pentaho - 9.1.0.0-324 - /home/ruben/apps/pentaho-server-ce-9.1.0.0-324/pentaho-server/start-pentaho.sh
-    	Eclipse - 2019-12 (4.14.0) - /snap/eclipse/48/eclipse
-   	Weka - 3.8.5 - /home/ruben/apps/weka/weka.sh
+    	NetBeans - Apache NetBeans IDE 12.3 - /home/ruben/snap/netbeans/common/data/12.3
+   	Weka - 3.8.5 - /home/ruben/apps/weka/weka.jar
 	Kettle - 9.1.0.0-324 - /home/ruben/apps/pdi-ce-9.1.0.0-324/data-integration/spoon.sh
 	JDK - 1.8.0_282 - /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 
 Leonardo Abreu
-    	Pentaho - 9.1.0.0-324 - 
-   	Eclipse - 2019-12 (4.14.0) - 
-   	Weka - 3.8.5 - 
-	Kettle - 9.1.0.0-324 - 
-	JDK - 1.8.0_282 - 
+    	Pentaho - 9.1.0.0.324 - C:\pentaho\pentaho-server\start-pentaho.bat
+	NetBeans - Apache NetBeans IDE 12.3 - C:\Users\tadeu\AppData\Roaming\NetBeans\12.3\
+	Weka - 3.8.5 -  C:\Program Files\Weka-3-8-5\weka.jar
+	Kettle - 9.1.0.0-324 -C:\pentaho\data-integration\Spoon.bat
+	JDK - 1.8.0_281 - C:\Program Files\Java\jdk1.8.0_281\bin\java.exe
 
 
 João Franco
-    	Pentaho - 9.1.0.0-324 - 
-    	Eclipse - 2019-12 (4.14.0) - 
-    	Weka - 3.8.5 - 
-	Kettle - 9.1.0.0-324 - 
-	JDK - 1.8.0_282 - 
-
+    	Pentaho - 9.1.0.0-324 - C:\Pentaho\pentaho-server\start-pentaho.bat
+        NetBeans IDE - 8.2 - C:\Program Files\NetBeans 8.2\bin\netbeans64.exe
+        Weka - 3.8.5 - C:\Program Files\Weka-3-8-5\jre\zulu11.43.55-ca-fx-jre11.0.9.1-win_x64\bin\javaw.exe
+	Kettle - 9.1.0.0-324 - C:\Pentaho\data-integration\spoon.bat
+	JDK - 1.8.0_281 - C:\Program Files\Java\jdk1.8.0_281\bin\java.exe
