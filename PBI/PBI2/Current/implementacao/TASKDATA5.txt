@@ -1,0 +1,1 @@
+Clientes que compram Classic Cars com CREDITLIMIT superior a 100000 também compram outro tipo de PRODUCTLINE

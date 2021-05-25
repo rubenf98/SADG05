@@ -1,0 +1,23 @@
+José Freitas
+    	Pentaho - 9.1.0.0-324 - /home/ruben/apps/pentaho-server-ce-9.1.0.0-324/pentaho-server/start-pentaho.sh
+    	Eclipse - 2019-12 (4.14.0) - /snap/eclipse/48/eclipse
+   	Weka - 3.8.5 - /home/ruben/apps/weka/weka.sh
+	Kettle - 9.1.0.0-324 - /home/ruben/apps/pdi-ce-9.1.0.0-324/data-integration/spoon.sh
+	JDK - 1.8.0_282 - /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
+
+
+Leonardo Abreu
+    	Pentaho - 9.1.0.0-324 - 
+   	Eclipse - 2019-12 (4.14.0) - 
+   	Weka - 3.8.5 - 
+	Kettle - 9.1.0.0-324 - 
+	JDK - 1.8.0_282 - 
+
+
+João Franco
+    	Pentaho - 9.1.0.0-324 - 
+    	Eclipse - 2019-12 (4.14.0) - 
+    	Weka - 3.8.5 - 
+	Kettle - 9.1.0.0-324 - 
+	JDK - 1.8.0_282 - 
+
