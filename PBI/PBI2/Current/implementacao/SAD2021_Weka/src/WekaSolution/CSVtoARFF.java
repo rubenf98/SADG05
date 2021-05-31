@@ -24,10 +24,13 @@ public class CSVtoARFF {
     
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
     */
     
-    public static void main(String[] args) throws Exception {
-        
+    public CSVtoARFF() {
+    }
+
+    public static void ConvertFiles() {
         String folderPath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\";
         
         ArrayList<String> csvFilesList = GetCSVFilesList(folderPath);
@@ -39,7 +42,7 @@ public class CSVtoARFF {
             
             ConvertCSVtoARFF(filePath, fileName);
         }
-
+        return;
     }
     
     private static ArrayList<String> GetCSVFilesList(String path) {

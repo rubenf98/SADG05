@@ -8,15 +8,18 @@ import weka.associations.Apriori;
 // Java
 import weka.associations.FPGrowth;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 /**
  *
  * @author tadeu
  */
 
 public class WekaApriori {
-    /*
-    public static void main(String args[]) throws Exception {
+    public WekaApriori(){}
+   
+    public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
         
         String filePath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\TASKDATA1.arff";
         
@@ -32,6 +35,5 @@ public class WekaApriori {
 	FPGrowth fpgModel = new FPGrowth();
 	fpgModel.buildAssociations(data);
 	System.out.println(fpgModel);
-    }
-    */
+    }   
 }
