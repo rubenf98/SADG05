@@ -517,9 +517,7 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE EXISTS
-(SELECT * FROM PRODUCTS p WHERE p.PRODUCTLINE='Classic Cars')
-AND c.CREDITLIMIT > 100000 
+WHERE c.CREDITLIMIT > 100000 
 </sql>
     <limit>0</limit>
     <lookup/>

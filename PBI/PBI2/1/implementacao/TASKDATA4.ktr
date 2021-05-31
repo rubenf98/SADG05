@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>TASKDATA1</name>
+    <name>TASKDATA3</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
-    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -428,9 +427,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/05/24 15:11:12.066</created_date>
+    <created_date>2021/05/25 11:08:15.092</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/05/24 15:11:12.066</modified_date>
+    <modified_date>2021/05/25 11:08:15.092</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -507,9 +506,9 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	p.PRODUCTNAME,
-	c.CUSTOMERNUMBER,
-	orft.YEAR_ID
+	p.PRODUCTCODE,
+	p.QUANTITYINSTOCK,
+	SUM(orft.QUANTITYORDERED) AS QUANTITYORDERED
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -517,7 +516,9 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE t.YEAR_ID=2004</sql>
+WHERE c.COUNTRY='France'
+AND t.YEAR_ID=2003
+GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -528,11 +529,11 @@ WHERE t.YEAR_ID=2004</sql>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
+        <name>PRODUCTCODE</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -551,11 +552,11 @@ WHERE t.YEAR_ID=2004</sql>
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
-        <length>9</length>
+        <name>QUANTITYINSTOCK</name>
+        <length>4</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -574,11 +575,11 @@ WHERE t.YEAR_ID=2004</sql>
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>YEAR_ID</name>
+        <name>QUANTITYORDERED</name>
         <length>15</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>YEAR_ID</comments>
+        <comments>QUANTITYORDERED</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -604,8 +605,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>484</xloc>
-      <yloc>375</yloc>
+      <xloc>432</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -634,7 +635,7 @@ WHERE t.YEAR_ID=2004</sql>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${Internal.Entry.Current.Directory}/TASKDATA1</name>
+      <name>${Internal.Entry.Current.Directory}/TASKDATA4</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -652,7 +653,7 @@ WHERE t.YEAR_ID=2004</sql>
     </file>
     <fields>
       <field>
-        <name>PRODUCTNAME</name>
+        <name>PRODUCTCODE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -660,11 +661,11 @@ WHERE t.YEAR_ID=2004</sql>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>70</length>
+        <length>50</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>QUANTITYINSTOCK</name>
         <type>Integer</type>
         <format>####0;-####0</format>
         <currency/>
@@ -672,11 +673,11 @@ WHERE t.YEAR_ID=2004</sql>
         <group>,</group>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>9</length>
+        <length>4</length>
         <precision>0</precision>
       </field>
       <field>
-        <name>YEAR_ID</name>
+        <name>QUANTITYORDERED</name>
         <type>Integer</type>
         <format>####0;-####0</format>
         <currency/>
@@ -697,8 +698,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>676</xloc>
-      <yloc>375</yloc>
+      <xloc>624</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

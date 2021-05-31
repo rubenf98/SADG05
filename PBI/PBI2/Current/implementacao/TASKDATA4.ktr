@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>TASKDATA3</name>
+    <name>TASKDATA4</name>
     <description/>
     <extended_description/>
     <trans_version/>
     <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
     <directory>/</directory>
     <parameters>
     </parameters>
@@ -489,6 +490,11 @@
   <order>
     <hop>
       <from>Retrieve Data</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Select values</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
@@ -506,19 +512,18 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	p.PRODUCTCODE,
-	p.QUANTITYINSTOCK,
-	SUM(orft.QUANTITYORDERED) AS QUANTITYORDERED
-from CUSTOMER_W_TER c
+	p.PRODUCTVENDOR,
+	c.TERRITORY,
+	case 
+	when COUNT(p.PRODUCTVENDOR) > 60 then '> 60'
+	else '&lt; 60'
+	end
+from PRODUCTS p
 inner join ORDERFACT orft
-on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
-inner join DIM_TIME t
-on orft.TIME_ID=t.TIME_ID
-inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE c.COUNTRY='France'
-AND t.YEAR_ID=2003
-GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
+inner join CUSTOMER_W_TER c
+on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
+GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -529,11 +534,11 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTCODE</name>
+        <name>PRODUCTVENDOR</name>
         <length>50</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTCODE</comments>
+        <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -550,14 +555,14 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>QUANTITYINSTOCK</name>
-        <length>4</length>
-        <precision>0</precision>
+        <name>TERRITORY</name>
+        <length>10</length>
+        <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>QUANTITYINSTOCK</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>TERRITORY</comments>
+        <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -573,14 +578,14 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>QUANTITYORDERED</name>
-        <length>15</length>
-        <precision>0</precision>
+        <name>C3</name>
+        <length>4</length>
+        <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>QUANTITYORDERED</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>C3</comments>
+        <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -605,7 +610,7 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>320</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -653,7 +658,7 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
     </file>
     <fields>
       <field>
-        <name>PRODUCTCODE</name>
+        <name>PRODUCTVENDOR</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -665,28 +670,28 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
         <precision>-1</precision>
       </field>
       <field>
-        <name>QUANTITYINSTOCK</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
+        <name>TERRITORY</name>
+        <type>String</type>
+        <format/>
         <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>10</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>NMR_ORDERS</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
         <nullif/>
         <trim_type>none</trim_type>
         <length>4</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>QUANTITYORDERED</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>15</length>
-        <precision>0</precision>
+        <precision>-1</precision>
       </field>
     </fields>
     <attributes/>
@@ -699,6 +704,46 @@ GROUP BY p.PRODUCTCODE, p.QUANTITYINSTOCK</sql>
     </remotesteps>
     <GUI>
       <xloc>624</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>PRODUCTVENDOR</name>
+        <rename/>
+      </field>
+      <field>
+        <name>TERRITORY</name>
+        <rename/>
+      </field>
+      <field>
+        <name>C3</name>
+        <rename>NMR_ORDERS</rename>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
