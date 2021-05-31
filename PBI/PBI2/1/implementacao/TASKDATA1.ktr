@@ -507,8 +507,9 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	p.PRODUCTNAME,
-	c.CUSTOMERNUMBER,
+	p.PRODUCTVENDOR,
+	c.COUNTRY,
+	c.TERRITORY,
 	orft.YEAR_ID
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
@@ -517,7 +518,7 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE t.YEAR_ID=2004</sql>
+WHERE t.YEAR_ID=2005</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -528,11 +529,11 @@ WHERE t.YEAR_ID=2004</sql>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
+        <name>PRODUCTVENDOR</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -549,14 +550,37 @@ WHERE t.YEAR_ID=2004</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
+        <name>COUNTRY</name>
+        <length>50</length>
+        <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>COUNTRY</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>TERRITORY</name>
+        <length>10</length>
+        <precision>-1</precision>
+        <origin>Retrieve Data</origin>
+        <comments>TERRITORY</comments>
+        <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
@@ -604,8 +628,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>484</xloc>
-      <yloc>375</yloc>
+      <xloc>256</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -652,7 +676,7 @@ WHERE t.YEAR_ID=2004</sql>
     </file>
     <fields>
       <field>
-        <name>PRODUCTNAME</name>
+        <name>PRODUCTVENDOR</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -660,20 +684,32 @@ WHERE t.YEAR_ID=2004</sql>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>70</length>
+        <length>50</length>
         <precision>-1</precision>
       </field>
       <field>
-        <name>CUSTOMERNUMBER</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
+        <name>COUNTRY</name>
+        <type>String</type>
+        <format/>
         <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
+        <decimal/>
+        <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
+        <length>50</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>TERRITORY</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>50</length>
+        <precision>-1</precision>
       </field>
       <field>
         <name>YEAR_ID</name>
@@ -697,8 +733,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>676</xloc>
-      <yloc>375</yloc>
+      <xloc>448</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>TASKDATA1</name>
+    <name>TASKDATA5</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -428,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2021/05/24 15:11:12.066</created_date>
+    <created_date>2021/05/25 11:08:15.092</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2021/05/24 15:11:12.066</modified_date>
+    <modified_date>2021/05/25 11:08:15.092</modified_date>
     <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -507,9 +507,9 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	p.PRODUCTNAME,
+	p.PRODUCTLINE,
 	c.CUSTOMERNUMBER,
-	orft.YEAR_ID
+	c.CREDITLIMIT
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -517,7 +517,10 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE t.YEAR_ID=2004</sql>
+WHERE EXISTS
+(SELECT * FROM PRODUCTS p WHERE p.PRODUCTLINE='Classic Cars')
+AND c.CREDITLIMIT > 100000 
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -528,11 +531,11 @@ WHERE t.YEAR_ID=2004</sql>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
+        <name>PRODUCTLINE</name>
+        <length>50</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -572,16 +575,16 @@ WHERE t.YEAR_ID=2004</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>BigNumber</type>
         <storagetype>normal</storagetype>
-        <name>YEAR_ID</name>
-        <length>15</length>
-        <precision>0</precision>
+        <name>CREDITLIMIT</name>
+        <length>18</length>
+        <precision>4</precision>
         <origin>Retrieve Data</origin>
-        <comments>YEAR_ID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>CREDITLIMIT</comments>
+        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -604,8 +607,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>484</xloc>
-      <yloc>375</yloc>
+      <xloc>432</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -634,7 +637,7 @@ WHERE t.YEAR_ID=2004</sql>
     <fileNameField/>
     <create_parent_folder>Y</create_parent_folder>
     <file>
-      <name>${Internal.Entry.Current.Directory}/TASKDATA1</name>
+      <name>${Internal.Entry.Current.Directory}/TASKDATA5</name>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
       <extention>csv</extention>
@@ -652,7 +655,7 @@ WHERE t.YEAR_ID=2004</sql>
     </file>
     <fields>
       <field>
-        <name>PRODUCTNAME</name>
+        <name>PRODUCTLINE</name>
         <type>String</type>
         <format/>
         <currency/>
@@ -660,7 +663,7 @@ WHERE t.YEAR_ID=2004</sql>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>70</length>
+        <length>50</length>
         <precision>-1</precision>
       </field>
       <field>
@@ -676,16 +679,16 @@ WHERE t.YEAR_ID=2004</sql>
         <precision>0</precision>
       </field>
       <field>
-        <name>YEAR_ID</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
+        <name>CREDITLIMIT</name>
+        <type>BigNumber</type>
+        <format>######0.0###################;-######0.0###################</format>
         <currency/>
         <decimal>.</decimal>
-        <group>,</group>
+        <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>15</length>
-        <precision>0</precision>
+        <length>18</length>
+        <precision>4</precision>
       </field>
     </fields>
     <attributes/>
@@ -697,8 +700,8 @@ WHERE t.YEAR_ID=2004</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>676</xloc>
-      <yloc>375</yloc>
+      <xloc>624</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
