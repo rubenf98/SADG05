@@ -620,7 +620,7 @@ WHERE t.YEAR_ID=2004</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <separator>;</separator>
+    <separator>,</separator>
     <enclosure>"</enclosure>
     <enclosure_forced>N</enclosure_forced>
     <enclosure_fix_disabled>N</enclosure_fix_disabled>
@@ -628,7 +628,7 @@ WHERE t.YEAR_ID=2004</sql>
     <footer>N</footer>
     <format>DOS</format>
     <compression>None</compression>
-    <encoding/>
+    <encoding>windows-1252</encoding>
     <endedLine/>
     <fileNameInField>N</fileNameInField>
     <fileNameField/>
@@ -636,7 +636,7 @@ WHERE t.YEAR_ID=2004</sql>
     <file>
       <name>${Internal.Entry.Current.Directory}/TASKDATA1</name>
       <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <do_not_open_new_file_init>Y</do_not_open_new_file_init>
       <extention>csv</extention>
       <append>N</append>
       <split>N</split>
@@ -647,7 +647,7 @@ WHERE t.YEAR_ID=2004</sql>
       <date_time_format/>
       <add_to_result_filenames>Y</add_to_result_filenames>
       <pad>N</pad>
-      <fast_dump>N</fast_dump>
+      <fast_dump>Y</fast_dump>
       <splitevery/>
     </file>
     <fields>
