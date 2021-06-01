@@ -8,7 +8,7 @@ package WekaSolution;
 import java.util.Scanner;
 
 /**
- *
+ *1
  * @author tadeu
  */
 public class Main {

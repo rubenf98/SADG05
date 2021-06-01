@@ -42,7 +42,6 @@ public class CSVtoARFF {
             
             ConvertCSVtoARFF(filePath, fileName);
         }
-        return;
     }
     
     private static ArrayList<String> GetCSVFilesList(String path) {
