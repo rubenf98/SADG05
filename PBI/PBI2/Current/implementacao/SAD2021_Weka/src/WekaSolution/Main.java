@@ -8,10 +8,13 @@ package WekaSolution;
 import java.util.Scanner;
 
 /**
- *
+ *1
  * @author tadeu
  */
+
+
 public class Main {
+    
      public static void main(String[] args) throws Exception{
          Scanner scan = new Scanner(System.in);
          Boolean running = true;

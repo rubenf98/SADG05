@@ -6,14 +6,18 @@
 package WekaSolution;
 
 // Weka
+import java.io.BufferedWriter;
 import weka.core.Instances;
 import weka.core.converters.CSVLoader;
 import weka.core.converters.ArffSaver;
 
 // Java
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 /**
@@ -29,9 +33,9 @@ public class CSVtoARFF {
     
     public CSVtoARFF() {
     }
-
+   
     public static void ConvertFiles() {
-        String folderPath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\";
+        String folderPath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\";
         
         ArrayList<String> csvFilesList = GetCSVFilesList(folderPath);
         for (int i = 0; i < csvFilesList.size(); i++){
@@ -42,7 +46,6 @@ public class CSVtoARFF {
             
             ConvertCSVtoARFF(filePath, fileName);
         }
-        return;
     }
     
     private static ArrayList<String> GetCSVFilesList(String path) {
@@ -64,29 +67,54 @@ public class CSVtoARFF {
     }
     
     private static void ConvertCSVtoARFF(String filePath, String fileName){
+        
         try{
+            ModifyCSVFile(filePath);
+            
             //Load CSV
             CSVLoader loader = new CSVLoader();
-            loader.setSource(new File(filePath+".csv"));
+            loader.setSource(new File(filePath+"_mod.csv"));
             Instances data = loader.getDataSet();
-
-            System.out.println(data.size());
-
+            
             // Save ARFF
             ArffSaver saver = new ArffSaver();
-            saver.setInstances(data);
 
             // Save as ARFF
-            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\"+fileName+".arff"));
+            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\"+fileName+".arff"));
+            saver.setInstances(data);
             saver.writeBatch();
-            System.out.println("SUCCESS: File Created");
+            System.out.println("SUCCESS: File Created -> "+fileName);
         }
         catch(IOException E){
             System.out.println("ERROR: The File "+ fileName +" cannot be converted");
             System.out.println(E);
         }
     }
-    
-    
-    
+
+    private static void ModifyCSVFile(String filePath) throws IOException {
+       File csvFile = new File(filePath+".csv");
+        
+        try {
+            
+            BufferedWriter bw = new BufferedWriter(new FileWriter(filePath+"_mod.csv"));
+            
+            Scanner csvFileScanner = new Scanner(csvFile);
+            csvFileScanner.useDelimiter("\n");
+            
+            while(csvFileScanner.hasNext()){
+                String data = csvFileScanner.next();
+                data = data.trim();
+                data = data.replaceAll(" ","_");
+                data = data.replaceAll("'","_");
+                bw.write(data);
+                bw.newLine();
+            }
+            bw.close();
+            csvFileScanner.close();            
+        } catch (FileNotFoundException ex) {
+            //Se der erro
+            System.out.println(ex);
+        }
+    }
+
 }

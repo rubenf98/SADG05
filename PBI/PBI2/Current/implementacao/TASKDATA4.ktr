@@ -515,8 +515,8 @@
 	p.PRODUCTVENDOR,
 	c.TERRITORY,
 	case 
-	when COUNT(p.PRODUCTVENDOR) > 60 then '> 60'
-	else '&lt; 60'
+	when COUNT(p.PRODUCTVENDOR) > 60 then '>60'
+	else '&lt;60'
 	end
 from PRODUCTS p
 inner join ORDERFACT orft
@@ -540,8 +540,8 @@ GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
         <origin>Retrieve Data</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -550,8 +550,8 @@ GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -563,8 +563,8 @@ GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
         <origin>Retrieve Data</origin>
         <comments>TERRITORY</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -573,21 +573,21 @@ GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>C3</name>
-        <length>4</length>
+        <length>3</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
         <comments>C3</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -596,8 +596,8 @@ GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>

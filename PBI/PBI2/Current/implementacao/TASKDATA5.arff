@@ -1,1358 +1,1360 @@
 @relation TASKDATA5
 
-@attribute PRODUCTLINE;CUSTOMERNUMBER;CREDITLIMIT {'Motorcycles                                       ;114;117300.0','Planes                                            ;114;117300.0','Vintage Cars                                      ;114;117300.0','Classic Cars                                      ;114;117300.0','Trucks and Buses                                  ;114;117300.0','Classic Cars                                      ;276;107800.0','Vintage Cars                                      ;276;107800.0','Motorcycles                                       ;276;107800.0','Trucks and Buses                                  ;276;107800.0','Vintage Cars                                      ;496;110000.0','Classic Cars                                      ;496;110000.0','Planes                                            ;496;110000.0','Motorcycles                                       ;496;110000.0','Ships                                             ;496;110000.0','Trains                                            ;496;110000.0','Motorcycles                                       ;119;118200.0','Planes                                            ;119;118200.0','Vintage Cars                                      ;119;118200.0','Ships                                             ;119;118200.0','Classic Cars                                      ;119;118200.0','Trucks and Buses                                  ;119;118200.0','Classic Cars                                      ;141;227600.0','Trucks and Buses                                  ;141;227600.0','Trains                                            ;141;227600.0','Vintage Cars                                      ;141;227600.0','Ships                                             ;141;227600.0','Planes                                            ;141;227600.0','Motorcycles                                       ;141;227600.0','Classic Cars                                      ;146;123900.0','Trucks and Buses                                  ;146;123900.0','Vintage Cars                                      ;146;123900.0','Trains                                            ;146;123900.0','Ships                                             ;146;123900.0','Classic Cars                                      ;167;9680000.0','Motorcycles                                       ;167;9680000.0','Planes                                            ;167;9680000.0','Vintage Cars                                      ;167;9680000.0','Classic Cars                                      ;187;136800.0','Vintage Cars                                      ;187;136800.0','Trains                                            ;187;136800.0','Ships                                             ;187;136800.0','Classic Cars                                      ;227;120800.0','Trucks and Buses                                  ;227;120800.0','Vintage Cars                                      ;227;120800.0','Trains                                            ;227;120800.0','Ships                                             ;227;120800.0','Classic Cars                                      ;249;113000.0','Trucks and Buses                                  ;249;113000.0','Vintage Cars                                      ;249;113000.0','Trains                                            ;249;113000.0','Ships                                             ;249;113000.0','Classic Cars                                      ;259;120400.0','Motorcycles                                       ;259;120400.0','Planes                                            ;278;119600.0','Ships                                             ;278;119600.0','Vintage Cars                                      ;278;119600.0','Classic Cars                                      ;278;119600.0','Classic Cars                                      ;298;141300.0','Classic Cars                                      ;386;121400.0','Trains                                            ;386;121400.0','Trucks and Buses                                  ;386;121400.0','Planes                                            ;386;121400.0','Motorcycles                                       ;386;121400.0','Vintage Cars                                      ;386;121400.0','Classic Cars                                      ;448;116400.0','Planes                                            ;448;116400.0','Ships                                             ;448;116400.0','Vintage Cars                                      ;448;116400.0','Trucks and Buses                                  ;448;116400.0','Motorcycles                                       ;448;116400.0','Classic Cars                                      ;458;104600.0','Trucks and Buses                                  ;458;104600.0','Vintage Cars                                      ;458;104600.0','Classic Cars                                      ;148;103800.0','Vintage Cars                                      ;148;103800.0','Trains                                            ;148;103800.0','Ships                                             ;148;103800.0','Trucks and Buses                                  ;148;103800.0','Motorcycles                                       ;148;103800.0','Trucks and Buses                                  ;124;210500.0','Vintage Cars                                      ;124;210500.0','Classic Cars                                      ;124;210500.0','Motorcycles                                       ;124;210500.0','Trains                                            ;124;210500.0','Ships                                             ;124;210500.0','Motorcycles                                       ;131;114900.0','Classic Cars                                      ;131;114900.0','Ships                                             ;131;114900.0','Vintage Cars                                      ;131;114900.0','Trains                                            ;131;114900.0','Trucks and Buses                                  ;131;114900.0','Planes                                            ;131;114900.0','Classic Cars                                      ;151;138500.0','Trucks and Buses                                  ;151;138500.0','Trains                                            ;151;138500.0','Vintage Cars                                      ;151;138500.0','Classic Cars                                      ;157;100600.0','Trains                                            ;157;100600.0','Trucks and Buses                                  ;157;100600.0','Vintage Cars                                      ;157;100600.0','Motorcycles                                       ;157;100600.0','Planes                                            ;157;100600.0','Classic Cars                                      ;239;105000.0','Planes                                            ;239;105000.0','Ships                                             ;239;105000.0','Vintage Cars                                      ;239;105000.0','Motorcycles                                       ;286;123700.0','Planes                                            ;286;123700.0','Classic Cars                                      ;286;123700.0','Trucks and Buses                                  ;286;123700.0','Trucks and Buses                                  ;319;102700.0','Classic Cars                                      ;319;102700.0','Trains                                            ;319;102700.0','Motorcycles                                       ;319;102700.0','Planes                                            ;319;102700.0','Vintage Cars                                      ;319;102700.0','Motorcycles                                       ;321;105000.0','Classic Cars                                      ;321;105000.0','Vintage Cars                                      ;321;105000.0','Trucks and Buses                                  ;321;105000.0','Ships                                             ;321;105000.0','Vintage Cars                                      ;363;114200.0','Classic Cars                                      ;363;114200.0','Trucks and Buses                                  ;363;114200.0'}
+@attribute PRODUCTLINE {Motorcycles,Planes,'Vintage Cars','Classic Cars','Trucks and Buses',Ships,Trains}
+@attribute CUSTOMERNUMBER numeric
+@attribute CREDITLIMIT numeric
 
 @data
-'Motorcycles                                       ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Planes                                            ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Motorcycles                                       ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Classic Cars                                      ;114;117300.0'
-'Trucks and Buses                                  ;114;117300.0'
-'Trucks and Buses                                  ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Trucks and Buses                                  ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Vintage Cars                                      ;114;117300.0'
-'Trucks and Buses                                  ;114;117300.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Motorcycles                                       ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Classic Cars                                      ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Trucks and Buses                                  ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Vintage Cars                                      ;276;107800.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Classic Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Trains                                            ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Planes                                            ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Vintage Cars                                      ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Ships                                             ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;496;110000.0'
-'Motorcycles                                       ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Ships                                             ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Ships                                             ;119;118200.0'
-'Ships                                             ;119;118200.0'
-'Ships                                             ;119;118200.0'
-'Ships                                             ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Vintage Cars                                      ;119;118200.0'
-'Motorcycles                                       ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Planes                                            ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Classic Cars                                      ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Trucks and Buses                                  ;119;118200.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Planes                                            ;141;227600.0'
-'Ships                                             ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trains                                            ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Motorcycles                                       ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Vintage Cars                                      ;141;227600.0'
-'Trucks and Buses                                  ;141;227600.0'
-'Classic Cars                                      ;141;227600.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Trucks and Buses                                  ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Trains                                            ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Trains                                            ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Ships                                             ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Classic Cars                                      ;146;123900.0'
-'Vintage Cars                                      ;146;123900.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Motorcycles                                       ;167;9680000.0'
-'Planes                                            ;167;9680000.0'
-'Vintage Cars                                      ;167;9680000.0'
-'Vintage Cars                                      ;167;9680000.0'
-'Vintage Cars                                      ;167;9680000.0'
-'Vintage Cars                                      ;167;9680000.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Trains                                            ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Trains                                            ;187;136800.0'
-'Trains                                            ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Ships                                             ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Classic Cars                                      ;187;136800.0'
-'Vintage Cars                                      ;187;136800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Trucks and Buses                                  ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Vintage Cars                                      ;227;120800.0'
-'Trains                                            ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Classic Cars                                      ;227;120800.0'
-'Trains                                            ;227;120800.0'
-'Trucks and Buses                                  ;227;120800.0'
-'Trains                                            ;227;120800.0'
-'Ships                                             ;227;120800.0'
-'Classic Cars                                      ;249;113000.0'
-'Trucks and Buses                                  ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Classic Cars                                      ;249;113000.0'
-'Classic Cars                                      ;249;113000.0'
-'Classic Cars                                      ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Trains                                            ;249;113000.0'
-'Vintage Cars                                      ;249;113000.0'
-'Ships                                             ;249;113000.0'
-'Ships                                             ;249;113000.0'
-'Ships                                             ;249;113000.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Motorcycles                                       ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Motorcycles                                       ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Classic Cars                                      ;259;120400.0'
-'Motorcycles                                       ;259;120400.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Ships                                             ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Ships                                             ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Classic Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Classic Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Vintage Cars                                      ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Ships                                             ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Planes                                            ;278;119600.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;298;141300.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Trains                                            ;386;121400.0'
-'Trucks and Buses                                  ;386;121400.0'
-'Trains                                            ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Classic Cars                                      ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Motorcycles                                       ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Motorcycles                                       ;386;121400.0'
-'Vintage Cars                                      ;386;121400.0'
-'Vintage Cars                                      ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Planes                                            ;386;121400.0'
-'Classic Cars                                      ;448;116400.0'
-'Planes                                            ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Planes                                            ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Planes                                            ;448;116400.0'
-'Ships                                             ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Vintage Cars                                      ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Trucks and Buses                                  ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Classic Cars                                      ;448;116400.0'
-'Motorcycles                                       ;448;116400.0'
-'Motorcycles                                       ;448;116400.0'
-'Motorcycles                                       ;448;116400.0'
-'Classic Cars                                      ;458;104600.0'
-'Classic Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Classic Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Classic Cars                                      ;458;104600.0'
-'Classic Cars                                      ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Vintage Cars                                      ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Trucks and Buses                                  ;458;104600.0'
-'Classic Cars                                      ;458;104600.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Trains                                            ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Ships                                             ;148;103800.0'
-'Trains                                            ;148;103800.0'
-'Ships                                             ;148;103800.0'
-'Ships                                             ;148;103800.0'
-'Ships                                             ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Vintage Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trains                                            ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Trains                                            ;148;103800.0'
-'Trucks and Buses                                  ;148;103800.0'
-'Trains                                            ;148;103800.0'
-'Classic Cars                                      ;148;103800.0'
-'Motorcycles                                       ;148;103800.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Trucks and Buses                                  ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Motorcycles                                       ;124;210500.0'
-'Classic Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Trains                                            ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Ships                                             ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Vintage Cars                                      ;124;210500.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Vintage Cars                                      ;131;114900.0'
-'Trains                                            ;131;114900.0'
-'Vintage Cars                                      ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Vintage Cars                                      ;131;114900.0'
-'Vintage Cars                                      ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Ships                                             ;131;114900.0'
-'Trucks and Buses                                  ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Trucks and Buses                                  ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Trucks and Buses                                  ;131;114900.0'
-'Trains                                            ;131;114900.0'
-'Trucks and Buses                                  ;131;114900.0'
-'Trains                                            ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Classic Cars                                      ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Motorcycles                                       ;131;114900.0'
-'Planes                                            ;131;114900.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Trains                                            ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Trains                                            ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Vintage Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Vintage Cars                                      ;151;138500.0'
-'Vintage Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Vintage Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Vintage Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Classic Cars                                      ;151;138500.0'
-'Trucks and Buses                                  ;151;138500.0'
-'Classic Cars                                      ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Trains                                            ;157;100600.0'
-'Trains                                            ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Vintage Cars                                      ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Trucks and Buses                                  ;157;100600.0'
-'Classic Cars                                      ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Planes                                            ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Motorcycles                                       ;157;100600.0'
-'Planes                                            ;157;100600.0'
-'Vintage Cars                                      ;157;100600.0'
-'Vintage Cars                                      ;157;100600.0'
-'Classic Cars                                      ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Vintage Cars                                      ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Vintage Cars                                      ;239;105000.0'
-'Vintage Cars                                      ;239;105000.0'
-'Vintage Cars                                      ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Planes                                            ;239;105000.0'
-'Ships                                             ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Classic Cars                                      ;239;105000.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Motorcycles                                       ;286;123700.0'
-'Planes                                            ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Classic Cars                                      ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Trucks and Buses                                  ;286;123700.0'
-'Trucks and Buses                                  ;319;102700.0'
-'Classic Cars                                      ;319;102700.0'
-'Trucks and Buses                                  ;319;102700.0'
-'Classic Cars                                      ;319;102700.0'
-'Classic Cars                                      ;319;102700.0'
-'Classic Cars                                      ;319;102700.0'
-'Classic Cars                                      ;319;102700.0'
-'Trucks and Buses                                  ;319;102700.0'
-'Trains                                            ;319;102700.0'
-'Trucks and Buses                                  ;319;102700.0'
-'Motorcycles                                       ;319;102700.0'
-'Motorcycles                                       ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Motorcycles                                       ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Motorcycles                                       ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Motorcycles                                       ;319;102700.0'
-'Vintage Cars                                      ;319;102700.0'
-'Vintage Cars                                      ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Planes                                            ;319;102700.0'
-'Motorcycles                                       ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Motorcycles                                       ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Trucks and Buses                                  ;321;105000.0'
-'Trucks and Buses                                  ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Trucks and Buses                                  ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Classic Cars                                      ;321;105000.0'
-'Ships                                             ;321;105000.0'
-'Vintage Cars                                      ;321;105000.0'
-'Ships                                             ;321;105000.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Classic Cars                                      ;363;114200.0'
-'Trucks and Buses                                  ;363;114200.0'
-'Trucks and Buses                                  ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Trucks and Buses                                  ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
-'Vintage Cars                                      ;363;114200.0'
+Motorcycles,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+Planes,114,117300
+Planes,114,117300
+Planes,114,117300
+Planes,114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+Motorcycles,114,117300
+Motorcycles,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+Planes,114,117300
+Motorcycles,114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+Planes,114,117300
+Planes,114,117300
+Planes,114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+Motorcycles,114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Classic Cars',114,117300
+'Trucks and Buses',114,117300
+'Trucks and Buses',114,117300
+'Vintage Cars',114,117300
+'Trucks and Buses',114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+'Vintage Cars',114,117300
+'Trucks and Buses',114,117300
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Vintage Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+Motorcycles,276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+Motorcycles,276,107800
+'Classic Cars',276,107800
+Motorcycles,276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+Motorcycles,276,107800
+Motorcycles,276,107800
+Motorcycles,276,107800
+'Classic Cars',276,107800
+'Trucks and Buses',276,107800
+'Trucks and Buses',276,107800
+'Trucks and Buses',276,107800
+'Trucks and Buses',276,107800
+'Classic Cars',276,107800
+'Trucks and Buses',276,107800
+'Vintage Cars',276,107800
+'Trucks and Buses',276,107800
+'Classic Cars',276,107800
+'Classic Cars',276,107800
+'Trucks and Buses',276,107800
+'Trucks and Buses',276,107800
+'Vintage Cars',276,107800
+'Vintage Cars',276,107800
+'Trucks and Buses',276,107800
+'Vintage Cars',276,107800
+'Vintage Cars',276,107800
+'Vintage Cars',276,107800
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+'Classic Cars',496,110000
+'Classic Cars',496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+'Classic Cars',496,110000
+'Classic Cars',496,110000
+'Classic Cars',496,110000
+'Classic Cars',496,110000
+'Vintage Cars',496,110000
+Planes,496,110000
+Planes,496,110000
+Planes,496,110000
+Motorcycles,496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+Planes,496,110000
+Planes,496,110000
+Planes,496,110000
+Planes,496,110000
+Planes,496,110000
+Ships,496,110000
+'Vintage Cars',496,110000
+Trains,496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+Planes,496,110000
+Ships,496,110000
+Planes,496,110000
+'Vintage Cars',496,110000
+'Vintage Cars',496,110000
+Ships,496,110000
+Ships,496,110000
+Ships,496,110000
+Ships,496,110000
+Ships,496,110000
+Ships,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,496,110000
+Motorcycles,119,118200
+Motorcycles,119,118200
+Motorcycles,119,118200
+Planes,119,118200
+Motorcycles,119,118200
+Motorcycles,119,118200
+Planes,119,118200
+Motorcycles,119,118200
+Planes,119,118200
+Planes,119,118200
+Motorcycles,119,118200
+'Vintage Cars',119,118200
+'Vintage Cars',119,118200
+Planes,119,118200
+Planes,119,118200
+Planes,119,118200
+Planes,119,118200
+Planes,119,118200
+'Vintage Cars',119,118200
+Ships,119,118200
+'Vintage Cars',119,118200
+Ships,119,118200
+Ships,119,118200
+Ships,119,118200
+Ships,119,118200
+Motorcycles,119,118200
+'Classic Cars',119,118200
+Motorcycles,119,118200
+Motorcycles,119,118200
+Motorcycles,119,118200
+Planes,119,118200
+Motorcycles,119,118200
+'Vintage Cars',119,118200
+Motorcycles,119,118200
+'Vintage Cars',119,118200
+Motorcycles,119,118200
+Planes,119,118200
+Planes,119,118200
+Planes,119,118200
+Planes,119,118200
+'Classic Cars',119,118200
+'Trucks and Buses',119,118200
+'Classic Cars',119,118200
+'Trucks and Buses',119,118200
+'Trucks and Buses',119,118200
+'Classic Cars',119,118200
+'Trucks and Buses',119,118200
+'Classic Cars',119,118200
+'Trucks and Buses',119,118200
+'Classic Cars',119,118200
+'Trucks and Buses',119,118200
+'Trucks and Buses',119,118200
+'Trucks and Buses',119,118200
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+'Vintage Cars',141,227600
+Trains,141,227600
+'Vintage Cars',141,227600
+Ships,141,227600
+Planes,141,227600
+Planes,141,227600
+Planes,141,227600
+Motorcycles,141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Planes,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+Trains,141,227600
+'Vintage Cars',141,227600
+Ships,141,227600
+Trains,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+Planes,141,227600
+Ships,141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Planes,141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Ships,141,227600
+Planes,141,227600
+Planes,141,227600
+Planes,141,227600
+Planes,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+Ships,141,227600
+'Vintage Cars',141,227600
+Trains,141,227600
+'Vintage Cars',141,227600
+Ships,141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+Trains,141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+Ships,141,227600
+'Classic Cars',141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+Motorcycles,141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Trucks and Buses',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+Trains,141,227600
+'Classic Cars',141,227600
+'Vintage Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+Planes,141,227600
+Planes,141,227600
+Ships,141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Planes,141,227600
+'Vintage Cars',141,227600
+Planes,141,227600
+Planes,141,227600
+Ships,141,227600
+Planes,141,227600
+Ships,141,227600
+Planes,141,227600
+Ships,141,227600
+Ships,141,227600
+Planes,141,227600
+Planes,141,227600
+Ships,141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+Trains,141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+Motorcycles,141,227600
+'Classic Cars',141,227600
+'Trucks and Buses',141,227600
+'Trucks and Buses',141,227600
+'Vintage Cars',141,227600
+'Trucks and Buses',141,227600
+'Classic Cars',141,227600
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Trucks and Buses',146,123900
+'Trucks and Buses',146,123900
+'Trucks and Buses',146,123900
+'Trucks and Buses',146,123900
+'Vintage Cars',146,123900
+'Trucks and Buses',146,123900
+'Trucks and Buses',146,123900
+'Trucks and Buses',146,123900
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Vintage Cars',146,123900
+Trains,146,123900
+'Vintage Cars',146,123900
+Ships,146,123900
+'Vintage Cars',146,123900
+Trains,146,123900
+Ships,146,123900
+Ships,146,123900
+Ships,146,123900
+Ships,146,123900
+Ships,146,123900
+Ships,146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Classic Cars',146,123900
+'Vintage Cars',146,123900
+'Vintage Cars',146,123900
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Classic Cars',146,123900
+'Vintage Cars',146,123900
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+'Classic Cars',167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Motorcycles,167,9680000
+Planes,167,9680000
+'Vintage Cars',167,9680000
+'Vintage Cars',167,9680000
+'Vintage Cars',167,9680000
+'Vintage Cars',167,9680000
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+Trains,187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+Ships,187,136800
+'Vintage Cars',187,136800
+Trains,187,136800
+Trains,187,136800
+Ships,187,136800
+Ships,187,136800
+Ships,187,136800
+Ships,187,136800
+Ships,187,136800
+Ships,187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Classic Cars',187,136800
+'Vintage Cars',187,136800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Trucks and Buses',227,120800
+'Classic Cars',227,120800
+'Vintage Cars',227,120800
+Trains,227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+'Classic Cars',227,120800
+Trains,227,120800
+'Trucks and Buses',227,120800
+Trains,227,120800
+Ships,227,120800
+'Classic Cars',249,113000
+'Trucks and Buses',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Vintage Cars',249,113000
+'Classic Cars',249,113000
+'Classic Cars',249,113000
+'Classic Cars',249,113000
+'Vintage Cars',249,113000
+Trains,249,113000
+'Vintage Cars',249,113000
+Ships,249,113000
+Ships,249,113000
+Ships,249,113000
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+Motorcycles,259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+Motorcycles,259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+'Classic Cars',259,120400
+Motorcycles,259,120400
+Planes,278,119600
+Planes,278,119600
+Ships,278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Planes,278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Planes,278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Ships,278,119600
+Planes,278,119600
+Planes,278,119600
+Planes,278,119600
+Planes,278,119600
+Planes,278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Classic Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Classic Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Planes,278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Planes,278,119600
+'Vintage Cars',278,119600
+'Vintage Cars',278,119600
+Planes,278,119600
+Ships,278,119600
+Planes,278,119600
+Planes,278,119600
+Planes,278,119600
+Planes,278,119600
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',298,141300
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+Trains,386,121400
+'Trucks and Buses',386,121400
+Trains,386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+'Classic Cars',386,121400
+Planes,386,121400
+Planes,386,121400
+Planes,386,121400
+Motorcycles,386,121400
+Planes,386,121400
+Planes,386,121400
+Motorcycles,386,121400
+'Vintage Cars',386,121400
+'Vintage Cars',386,121400
+Planes,386,121400
+Planes,386,121400
+Planes,386,121400
+Planes,386,121400
+Planes,386,121400
+'Classic Cars',448,116400
+Planes,448,116400
+Ships,448,116400
+'Vintage Cars',448,116400
+Ships,448,116400
+Planes,448,116400
+'Vintage Cars',448,116400
+'Vintage Cars',448,116400
+'Vintage Cars',448,116400
+Ships,448,116400
+Ships,448,116400
+Ships,448,116400
+Ships,448,116400
+Ships,448,116400
+Planes,448,116400
+Ships,448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+'Trucks and Buses',448,116400
+'Trucks and Buses',448,116400
+'Trucks and Buses',448,116400
+'Vintage Cars',448,116400
+'Vintage Cars',448,116400
+'Vintage Cars',448,116400
+'Trucks and Buses',448,116400
+'Vintage Cars',448,116400
+'Trucks and Buses',448,116400
+'Trucks and Buses',448,116400
+'Trucks and Buses',448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+'Classic Cars',448,116400
+Motorcycles,448,116400
+Motorcycles,448,116400
+Motorcycles,448,116400
+'Classic Cars',458,104600
+'Classic Cars',458,104600
+'Trucks and Buses',458,104600
+'Trucks and Buses',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Trucks and Buses',458,104600
+'Classic Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Vintage Cars',458,104600
+'Classic Cars',458,104600
+'Classic Cars',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Vintage Cars',458,104600
+'Trucks and Buses',458,104600
+'Trucks and Buses',458,104600
+'Classic Cars',458,104600
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Vintage Cars',148,103800
+Trains,148,103800
+'Classic Cars',148,103800
+'Vintage Cars',148,103800
+Ships,148,103800
+Trains,148,103800
+Ships,148,103800
+Ships,148,103800
+Ships,148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Trucks and Buses',148,103800
+'Trucks and Buses',148,103800
+'Vintage Cars',148,103800
+'Vintage Cars',148,103800
+'Vintage Cars',148,103800
+'Trucks and Buses',148,103800
+'Vintage Cars',148,103800
+'Trucks and Buses',148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Trucks and Buses',148,103800
+'Classic Cars',148,103800
+'Trucks and Buses',148,103800
+'Trucks and Buses',148,103800
+'Classic Cars',148,103800
+Trains,148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Trucks and Buses',148,103800
+'Classic Cars',148,103800
+'Classic Cars',148,103800
+'Trucks and Buses',148,103800
+Trains,148,103800
+'Trucks and Buses',148,103800
+Trains,148,103800
+'Classic Cars',148,103800
+Motorcycles,148,103800
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+Motorcycles,124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+Trains,124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+Ships,124,210500
+'Vintage Cars',124,210500
+Trains,124,210500
+Trains,124,210500
+Ships,124,210500
+Ships,124,210500
+Ships,124,210500
+Ships,124,210500
+Ships,124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+Trains,124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+Trains,124,210500
+'Trucks and Buses',124,210500
+Trains,124,210500
+Ships,124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+Trains,124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Vintage Cars',124,210500
+'Trucks and Buses',124,210500
+'Trucks and Buses',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+Ships,124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+'Classic Cars',124,210500
+Motorcycles,124,210500
+Motorcycles,124,210500
+Motorcycles,124,210500
+'Classic Cars',124,210500
+'Vintage Cars',124,210500
+Trains,124,210500
+'Vintage Cars',124,210500
+Ships,124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+Ships,124,210500
+'Vintage Cars',124,210500
+'Vintage Cars',124,210500
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+'Classic Cars',131,114900
+Ships,131,114900
+'Vintage Cars',131,114900
+Trains,131,114900
+'Vintage Cars',131,114900
+Ships,131,114900
+'Vintage Cars',131,114900
+'Vintage Cars',131,114900
+Ships,131,114900
+Ships,131,114900
+Ships,131,114900
+Ships,131,114900
+Ships,131,114900
+Ships,131,114900
+'Trucks and Buses',131,114900
+'Classic Cars',131,114900
+'Trucks and Buses',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Trucks and Buses',131,114900
+Trains,131,114900
+'Trucks and Buses',131,114900
+Trains,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+'Classic Cars',131,114900
+Motorcycles,131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+'Classic Cars',131,114900
+Motorcycles,131,114900
+'Classic Cars',131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Motorcycles,131,114900
+Planes,131,114900
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+Trains,151,138500
+'Trucks and Buses',151,138500
+Trains,151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Vintage Cars',151,138500
+'Classic Cars',151,138500
+'Vintage Cars',151,138500
+'Vintage Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Vintage Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Vintage Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Classic Cars',151,138500
+'Trucks and Buses',151,138500
+'Classic Cars',157,100600
+'Classic Cars',157,100600
+'Classic Cars',157,100600
+'Classic Cars',157,100600
+Trains,157,100600
+Trains,157,100600
+'Classic Cars',157,100600
+'Trucks and Buses',157,100600
+'Trucks and Buses',157,100600
+'Trucks and Buses',157,100600
+'Trucks and Buses',157,100600
+'Classic Cars',157,100600
+'Trucks and Buses',157,100600
+'Vintage Cars',157,100600
+'Trucks and Buses',157,100600
+'Classic Cars',157,100600
+'Trucks and Buses',157,100600
+'Trucks and Buses',157,100600
+'Trucks and Buses',157,100600
+'Classic Cars',157,100600
+Motorcycles,157,100600
+Motorcycles,157,100600
+Motorcycles,157,100600
+Planes,157,100600
+Motorcycles,157,100600
+Motorcycles,157,100600
+Motorcycles,157,100600
+Motorcycles,157,100600
+Planes,157,100600
+'Vintage Cars',157,100600
+'Vintage Cars',157,100600
+'Classic Cars',239,105000
+Planes,239,105000
+Ships,239,105000
+'Vintage Cars',239,105000
+Planes,239,105000
+'Vintage Cars',239,105000
+'Vintage Cars',239,105000
+'Vintage Cars',239,105000
+Planes,239,105000
+Ships,239,105000
+Ships,239,105000
+Planes,239,105000
+Ships,239,105000
+Ships,239,105000
+Ships,239,105000
+Planes,239,105000
+Planes,239,105000
+Ships,239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+'Classic Cars',239,105000
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Motorcycles,286,123700
+Planes,286,123700
+'Classic Cars',286,123700
+'Trucks and Buses',286,123700
+'Classic Cars',286,123700
+'Trucks and Buses',286,123700
+'Trucks and Buses',286,123700
+'Classic Cars',286,123700
+'Trucks and Buses',286,123700
+'Classic Cars',286,123700
+'Trucks and Buses',286,123700
+'Classic Cars',286,123700
+'Classic Cars',286,123700
+'Trucks and Buses',286,123700
+'Trucks and Buses',286,123700
+'Trucks and Buses',286,123700
+'Trucks and Buses',319,102700
+'Classic Cars',319,102700
+'Trucks and Buses',319,102700
+'Classic Cars',319,102700
+'Classic Cars',319,102700
+'Classic Cars',319,102700
+'Classic Cars',319,102700
+'Trucks and Buses',319,102700
+Trains,319,102700
+'Trucks and Buses',319,102700
+Motorcycles,319,102700
+Motorcycles,319,102700
+Planes,319,102700
+Motorcycles,319,102700
+Planes,319,102700
+Motorcycles,319,102700
+Planes,319,102700
+Planes,319,102700
+Motorcycles,319,102700
+'Vintage Cars',319,102700
+'Vintage Cars',319,102700
+Planes,319,102700
+Planes,319,102700
+Planes,319,102700
+Planes,319,102700
+Planes,319,102700
+Motorcycles,321,105000
+Motorcycles,321,105000
+Motorcycles,321,105000
+'Classic Cars',321,105000
+Motorcycles,321,105000
+'Classic Cars',321,105000
+Motorcycles,321,105000
+'Classic Cars',321,105000
+'Classic Cars',321,105000
+Motorcycles,321,105000
+'Classic Cars',321,105000
+Motorcycles,321,105000
+Motorcycles,321,105000
+'Classic Cars',321,105000
+'Classic Cars',321,105000
+Motorcycles,321,105000
+Motorcycles,321,105000
+Motorcycles,321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Classic Cars',321,105000
+'Classic Cars',321,105000
+'Trucks and Buses',321,105000
+'Trucks and Buses',321,105000
+'Vintage Cars',321,105000
+'Trucks and Buses',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Vintage Cars',321,105000
+'Classic Cars',321,105000
+Ships,321,105000
+'Vintage Cars',321,105000
+Ships,321,105000
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Classic Cars',363,114200
+'Trucks and Buses',363,114200
+'Trucks and Buses',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Trucks and Buses',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
+'Vintage Cars',363,114200
