@@ -517,7 +517,7 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE t.YEAR_ID=2004</sql>
+--WHERE t.YEAR_ID=2004</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
