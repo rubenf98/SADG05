@@ -490,6 +490,11 @@
   <order>
     <hop>
       <from>Retrieve Data</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
@@ -507,8 +512,8 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	c.CUSTOMERNUMBER,
-	p.PRODUCTNAME
+	p.PRODUCTNAME AS PRODUCTNAME_1,
+	c.CUSTOMERNUMBER
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -527,14 +532,14 @@ ORDER BY c.CUSTOMERNUMBER</sql>
     <cached_row_meta_active>N</cached_row_meta_active>
     <row-meta>
       <value-meta>
-        <type>Integer</type>
+        <type>String</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
-        <length>9</length>
-        <precision>0</precision>
+        <name>PRODUCTNAME</name>
+        <length>70</length>
+        <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
+        <comments>PRODUCTNAME_1</comments>
+        <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -550,14 +555,14 @@ ORDER BY c.CUSTOMERNUMBER</sql>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
-        <type>String</type>
+        <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTNAME</name>
-        <length>70</length>
-        <precision>-1</precision>
+        <name>CUSTOMERNUMBER</name>
+        <length>9</length>
+        <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTNAME</comments>
-        <conversion_Mask/>
+        <comments>CUSTOMERNUMBER</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
@@ -582,8 +587,8 @@ ORDER BY c.CUSTOMERNUMBER</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>484</xloc>
-      <yloc>375</yloc>
+      <xloc>224</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -641,17 +646,51 @@ ORDER BY c.CUSTOMERNUMBER</sql>
         <length>70</length>
         <precision>-1</precision>
       </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
       <field>
         <name>CUSTOMERNUMBER</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>PRODUCTNAME</aggregate>
+        <subject>PRODUCTNAME</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
       </field>
     </fields>
     <attributes/>
@@ -663,8 +702,8 @@ ORDER BY c.CUSTOMERNUMBER</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>676</xloc>
-      <yloc>375</yloc>
+      <xloc>448</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
