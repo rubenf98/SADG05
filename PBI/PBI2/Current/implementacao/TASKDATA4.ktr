@@ -523,7 +523,8 @@ inner join ORDERFACT orft
 on orft.PRODUCTCODE=p.PRODUCTCODE
 inner join CUSTOMER_W_TER c
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
-GROUP BY p.PRODUCTVENDOR, c.TERRITORY</sql>
+GROUP BY p.PRODUCTVENDOR, c.TERRITORY
+ORDER BY PRODUCTVENDOR</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
