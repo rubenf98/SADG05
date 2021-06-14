@@ -1,0 +1,11 @@
+Jar files
+	drivers/mysql-connector-java-8.0.23.jar
+	lib/*
+	weka.jar
+
+Folders
+	plugins/pdi-core-plugins
+
+
+Add to path:
+	classes/kettle-password-encoder-plugins.xml
