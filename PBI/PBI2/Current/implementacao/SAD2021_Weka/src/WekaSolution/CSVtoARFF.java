@@ -6,6 +6,8 @@
 package WekaSolution;
 
 // Weka
+import com.opencsv.CSVReader;
+import com.opencsv.exceptions.CsvValidationException;
 import java.io.BufferedWriter;
 import weka.core.Instances;
 import weka.core.converters.CSVLoader;
@@ -14,9 +16,12 @@ import weka.core.converters.ArffSaver;
 // Java
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -35,7 +40,7 @@ public class CSVtoARFF {
     }
    
     public static void ConvertFiles() {
-        String folderPath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\";
+        String folderPath = "../test_conv/";
         
         ArrayList<String> csvFilesList = GetCSVFilesList(folderPath);
         for (int i = 0; i < csvFilesList.size(); i++){
@@ -81,9 +86,10 @@ public class CSVtoARFF {
 
             // Save as ARFF
             saver.setInstances(data);
-            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\"+fileName+".arff"));
+            saver.setFile(new File("../test_conv/"+fileName+".arff"));
             saver.writeBatch();
             System.out.println("SUCCESS: File Created -> "+fileName);
+            
         }
         catch(IOException E){
             System.out.println("ERROR: The File "+ fileName +" cannot be converted");
@@ -93,28 +99,84 @@ public class CSVtoARFF {
 
     private static void ModifyCSVFile(String filePath) throws IOException {
        File csvFile = new File(filePath+".csv");
-        
+       
+       List<String> headers = getheaders(csvFile);
+       
         try {
             
             BufferedWriter bw = new BufferedWriter(new FileWriter(filePath+"_mod.csv"));
             
+            bw.write(headers.toString().replace("[", "").replace("]", "").replace(" ", ""));
+            bw.newLine();
+            
             Scanner csvFileScanner = new Scanner(csvFile);
             csvFileScanner.useDelimiter("\n");
             
+            // SKIP Header
+            csvFileScanner.next();
+            
             while(csvFileScanner.hasNext()){
                 String data = csvFileScanner.next();
-                data = data.trim();
-                data = data.replaceAll(" ","_");
-                data = data.replaceAll("'","_");
-                bw.write(data);
+                
+                data = data.replace("\"", "");
+                String[] rowProducts = data.split(", ");
+                
+                List<String> row = new ArrayList<>();
+                
+                for (String header : headers) {
+                    boolean exist = false;
+                    for (String rowProduct : rowProducts) {
+                        rowProduct = rowProduct.replace(" ","_").replace("'","_").trim();
+                        if (header.equals(rowProduct)){
+                            exist = true;
+                        }
+                    }
+                    if(exist){
+                        row.add("y");   
+                    }
+                    else{
+                        row.add("?");
+                    }
+                }
+                System.out.println(row.size());
+                bw.write(row.toString().replace("[", "").replace("]", "").replace(" ", ""));
                 bw.newLine();
             }
+            
             bw.close();
             csvFileScanner.close();            
         } catch (FileNotFoundException ex) {
             //Se der erro
             System.out.println(ex);
         }
+    }
+    
+    private static List<String> getheaders(File csvFile){
+        try{
+            CSVReader reader = new CSVReader(new FileReader(csvFile));
+            String[] nextline;
+            // SKIP HEADER
+            reader.readNext();
+            
+            List<String> headers = new ArrayList<>();
+
+            while((nextline=reader.readNext()) != null){
+                if(nextline != null){
+                    String[] rowProducts = nextline[0].split(", ");
+                    for (String rowProduct : rowProducts) {
+                        rowProduct = rowProduct.replace(" ", "_").replace("'", "_");
+                        if(!(headers.contains(rowProduct))){
+                            headers.add(rowProduct);
+                        }
+                    }
+                }
+            }
+            
+            return headers;
+        }catch(CsvValidationException | IOException e){
+            System.out.println("ERROR: "+ e);
+        }
+        return null;
     }
 
 }

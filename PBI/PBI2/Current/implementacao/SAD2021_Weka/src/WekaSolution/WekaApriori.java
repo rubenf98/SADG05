@@ -21,7 +21,7 @@ public class WekaApriori {
    
     public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
         
-        String filePath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\TASKDATA1.arff";
+        String filePath = "../test_conv/TASKDATA1.arff";
         
 	// load data
         Instances data = new Instances(new BufferedReader(new FileReader(filePath)));

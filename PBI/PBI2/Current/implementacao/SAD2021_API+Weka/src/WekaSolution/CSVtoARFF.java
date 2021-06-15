@@ -35,7 +35,7 @@ public class CSVtoARFF {
     }
    
     public static void ConvertFiles() {
-        String folderPath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\";
+        String folderPath = "../test_conv/";
         
         ArrayList<String> csvFilesList = GetCSVFilesList(folderPath);
         for (int i = 0; i < csvFilesList.size(); i++){
@@ -80,7 +80,7 @@ public class CSVtoARFF {
             ArffSaver saver = new ArffSaver();
 
             // Save as ARFF
-            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\"+fileName+".arff"));
+            saver.setFile(new File("../test_conv/"+fileName+".arff"));
             saver.setInstances(data);
             saver.writeBatch();
             System.out.println("SUCCESS: File Created -> "+fileName);
