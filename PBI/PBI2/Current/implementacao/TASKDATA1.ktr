@@ -490,6 +490,11 @@
   <order>
     <hop>
       <from>Retrieve Data</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
@@ -507,9 +512,8 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	p.PRODUCTNAME,
-	c.CUSTOMERNUMBER,
-	orft.YEAR_ID
+	p.PRODUCTNAME AS PRODUCTNAME_1,
+	c.CUSTOMERNUMBER
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -517,7 +521,9 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
---WHERE t.YEAR_ID=2004</sql>
+WHERE t.YEAR_ID=2004
+GROUP BY c.CUSTOMERNUMBER, p.PRODUCTNAME
+ORDER BY c.CUSTOMERNUMBER</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -532,7 +538,7 @@ on orft.PRODUCTCODE=p.PRODUCTCODE
         <length>70</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTNAME</comments>
+        <comments>PRODUCTNAME_1</comments>
         <conversion_Mask/>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -571,29 +577,6 @@ on orft.PRODUCTCODE=p.PRODUCTCODE
         <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>YEAR_ID</name>
-        <length>15</length>
-        <precision>0</precision>
-        <origin>Retrieve Data</origin>
-        <comments>YEAR_ID</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -604,8 +587,8 @@ on orft.PRODUCTCODE=p.PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>484</xloc>
-      <yloc>375</yloc>
+      <xloc>224</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -663,29 +646,51 @@ on orft.PRODUCTCODE=p.PRODUCTCODE
         <length>70</length>
         <precision>-1</precision>
       </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
       <field>
         <name>CUSTOMERNUMBER</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
       </field>
+    </group>
+    <fields>
       <field>
-        <name>YEAR_ID</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>15</length>
-        <precision>0</precision>
+        <aggregate>PRODUCTNAME</aggregate>
+        <subject>PRODUCTNAME</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
       </field>
     </fields>
     <attributes/>
@@ -697,8 +702,8 @@ on orft.PRODUCTCODE=p.PRODUCTCODE
       </output>
     </remotesteps>
     <GUI>
-      <xloc>676</xloc>
-      <yloc>375</yloc>
+      <xloc>448</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

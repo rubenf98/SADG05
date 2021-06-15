@@ -80,8 +80,8 @@ public class CSVtoARFF {
             ArffSaver saver = new ArffSaver();
 
             // Save as ARFF
-            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\"+fileName+".arff"));
             saver.setInstances(data);
+            saver.setFile(new File("C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\test_conv\\"+fileName+".arff"));
             saver.writeBatch();
             System.out.println("SUCCESS: File Created -> "+fileName);
         }

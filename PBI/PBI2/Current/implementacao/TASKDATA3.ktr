@@ -494,6 +494,11 @@
     </hop>
     <hop>
       <from>Select values</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
@@ -659,6 +664,7 @@ WHERE c.TERRITORY='NA'</sql>
     <fields>
       <field>
         <name>CUSTOMERNUMBER</name>
+        <rename/>
       </field>
       <field>
         <name>C2</name>
@@ -670,6 +676,7 @@ WHERE c.TERRITORY='NA'</sql>
       </field>
       <field>
         <name>TERRITORY</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -730,18 +737,6 @@ WHERE c.TERRITORY='NA'</sql>
     </file>
     <fields>
       <field>
-        <name>CUSTOMERNUMBER</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
         <name>BUYPRICE</name>
         <type>String</type>
         <format/>
@@ -788,6 +783,64 @@ WHERE c.TERRITORY='NA'</sql>
     </remotesteps>
     <GUI>
       <xloc>624</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>BUYPRICE</aggregate>
+        <subject>BUYPRICE</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+      <field>
+        <aggregate>CREDITLIMIT</aggregate>
+        <subject>CREDITLIMIT</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+      <field>
+        <aggregate>TERRITORY</aggregate>
+        <subject>TERRITORY</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>

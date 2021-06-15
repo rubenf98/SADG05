@@ -514,7 +514,9 @@ inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE c.COUNTRY='USA'</sql>
+WHERE c.COUNTRY='USA'
+
+</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
