@@ -23,17 +23,18 @@ public class WekaApriori {
         
         String filePath = "../test_conv/TASKDATA1.arff";
         
-	// load data
+	// Carrega dados dos ficheiros
         Instances data = new Instances(new BufferedReader(new FileReader(filePath)));
         
-        System.out.println(data);
-	// build model
+	// Apriori
 	Apriori model = new Apriori();
 	model.buildAssociations(data);
 	System.out.println(model);
 	
+        /*
 	FPGrowth fpgModel = new FPGrowth();
 	fpgModel.buildAssociations(data);
 	System.out.println(fpgModel);
+        */
     }   
 }

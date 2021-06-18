@@ -129,6 +129,7 @@ public class CSVtoARFF {
                         rowProduct = rowProduct.replace(" ","_").replace("'","_").trim();
                         if (header.equals(rowProduct)){
                             exist = true;
+                            break;
                         }
                     }
                     if(exist){
