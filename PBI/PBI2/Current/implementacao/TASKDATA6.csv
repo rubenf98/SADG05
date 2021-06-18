@@ -1,429 +1,327 @@
-CUSTOMERNUMBER,PRODUCTLINE,NMR_ORDERS
-114,Motorcycles,> 5
-114,Planes,> 5
-114,Vintage Cars,> 5
-114,Classic Cars,> 5
-114,Trucks and Buses,< 5
-166,Classic Cars,> 5
-166,Trucks and Buses,> 5
-166,Vintage Cars,> 5
-276,Classic Cars,> 5
-276,Vintage Cars,> 5
-276,Motorcycles,> 5
-276,Trucks and Buses,> 5
-282,Vintage Cars,> 5
-282,Classic Cars,> 5
-282,Trucks and Buses,< 5
-282,Motorcycles,< 5
-282,Planes,> 5
-282,Ships,< 5
-323,Planes,< 5
-323,Vintage Cars,> 5
-323,Classic Cars,> 5
-323,Motorcycles,> 5
-323,Trucks and Buses,> 5
-333,Classic Cars,< 5
-333,Trains,< 5
-333,Trucks and Buses,< 5
-333,Vintage Cars,< 5
-333,Motorcycles,< 5
-333,Planes,< 5
-357,Motorcycles,< 5
-357,Classic Cars,> 5
-357,Vintage Cars,> 5
-357,Trains,< 5
-357,Ships,< 5
-412,Classic Cars,< 5
-412,Planes,< 5
-412,Ships,< 5
-412,Vintage Cars,> 5
-412,Motorcycles,< 5
-471,Vintage Cars,> 5
-471,Classic Cars,< 5
-471,Planes,< 5
-471,Ships,< 5
-496,Vintage Cars,> 5
-496,Classic Cars,> 5
-496,Planes,> 5
-496,Motorcycles,> 5
-496,Ships,> 5
-496,Trains,< 5
-103,Classic Cars,< 5
-103,Motorcycles,< 5
-103,Vintage Cars,< 5
-119,Motorcycles,> 5
-119,Planes,> 5
-119,Vintage Cars,> 5
-119,Ships,< 5
-119,Classic Cars,> 5
-119,Trucks and Buses,> 5
-121,Classic Cars,> 5
-121,Trucks and Buses,> 5
-121,Vintage Cars,> 5
-121,Motorcycles,> 5
-121,Trains,< 5
-128,Vintage Cars,< 5
-128,Classic Cars,> 5
-128,Trains,< 5
-128,Trucks and Buses,< 5
-141,Classic Cars,> 5
-141,Trucks and Buses,> 5
-141,Trains,> 5
-141,Vintage Cars,> 5
-141,Ships,> 5
-141,Planes,> 5
-141,Motorcycles,> 5
-144,Classic Cars,> 5
-144,Vintage Cars,< 5
-144,Trains,< 5
-144,Ships,< 5
-144,Trucks and Buses,< 5
-145,Classic Cars,> 5
-145,Vintage Cars,> 5
-145,Trains,< 5
-145,Ships,> 5
-145,Planes,< 5
-146,Classic Cars,> 5
-146,Trucks and Buses,> 5
-146,Vintage Cars,> 5
-146,Trains,< 5
-146,Ships,> 5
-167,Classic Cars,> 5
-167,Motorcycles,> 5
-167,Planes,< 5
-167,Vintage Cars,< 5
-171,Motorcycles,> 5
-171,Classic Cars,< 5
-172,Classic Cars,> 5
-172,Trucks and Buses,> 5
-172,Motorcycles,< 5
-172,Vintage Cars,< 5
-172,Trains,< 5
-186,Classic Cars,> 5
-186,Planes,> 5
-186,Ships,< 5
-186,Vintage Cars,< 5
-186,Motorcycles,> 5
-187,Classic Cars,> 5
-187,Vintage Cars,> 5
-187,Trains,< 5
-187,Ships,> 5
-189,Classic Cars,> 5
-189,Trains,< 5
-189,Trucks and Buses,< 5
-189,Planes,< 5
-189,Motorcycles,< 5
-189,Vintage Cars,< 5
-201,Classic Cars,> 5
-201,Vintage Cars,< 5
-201,Motorcycles,> 5
-209,Classic Cars,> 5
-209,Vintage Cars,< 5
-216,Ships,> 5
-216,Classic Cars,< 5
-216,Vintage Cars,> 5
-216,Planes,< 5
-216,Motorcycles,< 5
-227,Classic Cars,> 5
-227,Trucks and Buses,< 5
-227,Vintage Cars,< 5
-227,Trains,< 5
-227,Ships,< 5
-240,Vintage Cars,> 5
-240,Trains,< 5
-240,Ships,> 5
-240,Classic Cars,< 5
-240,Planes,> 5
-242,Classic Cars,< 5
-242,Planes,> 5
-242,Ships,> 5
-242,Vintage Cars,< 5
-249,Classic Cars,< 5
-249,Trucks and Buses,< 5
-249,Vintage Cars,> 5
-249,Trains,< 5
-249,Ships,< 5
-250,Motorcycles,> 5
-250,Classic Cars,< 5
-250,Vintage Cars,> 5
-250,Trucks and Buses,< 5
-250,Trains,< 5
-256,Trucks and Buses,< 5
-256,Classic Cars,< 5
-256,Vintage Cars,> 5
-259,Classic Cars,> 5
-259,Motorcycles,< 5
-278,Planes,> 5
-278,Ships,< 5
-278,Vintage Cars,> 5
-278,Classic Cars,< 5
-298,Classic Cars,> 5
-299,Planes,> 5
-299,Vintage Cars,< 5
-299,Classic Cars,> 5
-311,Trucks and Buses,> 5
-311,Classic Cars,> 5
-311,Planes,< 5
-311,Ships,> 5
-311,Vintage Cars,< 5
-314,Vintage Cars,> 5
-314,Trains,< 5
-314,Ships,> 5
-314,Classic Cars,< 5
-324,Classic Cars,< 5
-324,Ships,> 5
-324,Vintage Cars,< 5
-324,Trucks and Buses,> 5
-324,Planes,< 5
-334,Trucks and Buses,< 5
-334,Classic Cars,> 5
-334,Trains,< 5
-334,Motorcycles,< 5
-344,Vintage Cars,< 5
-344,Trains,< 5
-344,Ships,> 5
-344,Classic Cars,< 5
-350,Classic Cars,> 5
-350,Motorcycles,< 5
-350,Vintage Cars,< 5
-353,Motorcycles,> 5
-353,Classic Cars,> 5
-353,Trucks and Buses,< 5
-353,Trains,< 5
-353,Planes,> 5
-353,Ships,< 5
-353,Vintage Cars,< 5
-381,Trains,< 5
-381,Vintage Cars,< 5
-381,Planes,< 5
-381,Ships,< 5
-381,Classic Cars,< 5
-382,Classic Cars,> 5
-382,Planes,> 5
-382,Ships,< 5
-382,Vintage Cars,> 5
-382,Motorcycles,< 5
-386,Classic Cars,> 5
-386,Trains,< 5
-386,Trucks and Buses,< 5
-386,Planes,> 5
-386,Motorcycles,< 5
-386,Vintage Cars,< 5
-406,Motorcycles,> 5
-406,Classic Cars,> 5
-415,Planes,> 5
-415,Ships,< 5
-415,Vintage Cars,< 5
-448,Classic Cars,> 5
-448,Planes,< 5
-448,Ships,> 5
-448,Vintage Cars,> 5
-448,Trucks and Buses,> 5
-448,Motorcycles,< 5
-452,Classic Cars,> 5
-452,Trucks and Buses,< 5
-452,Vintage Cars,< 5
-458,Classic Cars,> 5
-458,Trucks and Buses,> 5
-458,Vintage Cars,> 5
-473,Planes,< 5
-473,Motorcycles,< 5
-473,Vintage Cars,< 5
-473,Trucks and Buses,< 5
-473,Classic Cars,< 5
-484,Trucks and Buses,> 5
-484,Classic Cars,< 5
-484,Trains,< 5
-484,Vintage Cars,< 5
-489,Classic Cars,< 5
-489,Planes,< 5
-489,Ships,< 5
-489,Vintage Cars,< 5
-148,Classic Cars,> 5
-148,Vintage Cars,> 5
-148,Trains,< 5
-148,Ships,< 5
-148,Trucks and Buses,> 5
-148,Motorcycles,< 5
-177,Motorcycles,< 5
-177,Planes,> 5
-177,Vintage Cars,< 5
-177,Classic Cars,< 5
-211,Planes,> 5
-211,Vintage Cars,< 5
-211,Motorcycles,< 5
-385,Classic Cars,> 5
-385,Motorcycles,> 5
-385,Planes,< 5
-385,Vintage Cars,< 5
-398,Classic Cars,< 5
-398,Trucks and Buses,< 5
-398,Vintage Cars,> 5
-398,Motorcycles,< 5
-398,Planes,> 5
-398,Ships,< 5
-398,Trains,< 5
-112,Vintage Cars,> 5
-112,Classic Cars,> 5
-124,Trucks and Buses,> 5
-124,Vintage Cars,> 5
-124,Classic Cars,> 5
-124,Motorcycles,> 5
-124,Trains,> 5
-124,Ships,> 5
-129,Vintage Cars,> 5
-129,Motorcycles,> 5
-129,Classic Cars,< 5
-129,Trucks and Buses,< 5
-131,Motorcycles,> 5
-131,Classic Cars,> 5
-131,Ships,> 5
-131,Vintage Cars,< 5
-131,Trains,< 5
-131,Trucks and Buses,< 5
-131,Planes,< 5
-151,Classic Cars,> 5
-151,Trucks and Buses,> 5
-151,Trains,< 5
-151,Vintage Cars,< 5
-157,Classic Cars,> 5
-157,Trains,< 5
-157,Trucks and Buses,> 5
-157,Vintage Cars,< 5
-157,Motorcycles,> 5
-157,Planes,< 5
-161,Classic Cars,< 5
-161,Trucks and Buses,> 5
-161,Vintage Cars,< 5
-161,Motorcycles,> 5
-161,Planes,> 5
-173,Classic Cars,< 5
-173,Trucks and Buses,< 5
-173,Vintage Cars,> 5
-173,Planes,< 5
-173,Ships,< 5
-175,Classic Cars,> 5
-175,Motorcycles,> 5
-175,Planes,< 5
-175,Trains,< 5
-181,Vintage Cars,< 5
-181,Motorcycles,> 5
-181,Classic Cars,> 5
-181,Trucks and Buses,< 5
-198,Ships,< 5
-198,Vintage Cars,< 5
-198,Planes,< 5
-202,Classic Cars,< 5
-202,Trucks and Buses,> 5
-202,Vintage Cars,> 5
-204,Classic Cars,> 5
-204,Motorcycles,> 5
-204,Ships,< 5
-205,Motorcycles,> 5
-205,Planes,< 5
-205,Classic Cars,> 5
-205,Vintage Cars,> 5
-219,Vintage Cars,< 5
-219,Ships,< 5
-219,Classic Cars,< 5
-233,Classic Cars,> 5
-233,Vintage Cars,< 5
-233,Ships,> 5
-233,Trucks and Buses,< 5
-239,Classic Cars,> 5
-239,Planes,> 5
-239,Ships,> 5
-239,Vintage Cars,< 5
-260,Planes,> 5
-260,Motorcycles,< 5
-260,Vintage Cars,> 5
-260,Classic Cars,< 5
-260,Ships,> 5
-286,Motorcycles,> 5
-286,Planes,< 5
-286,Classic Cars,> 5
-286,Trucks and Buses,> 5
-319,Trucks and Buses,< 5
-319,Classic Cars,< 5
-319,Trains,< 5
-319,Motorcycles,< 5
-319,Planes,> 5
-319,Vintage Cars,< 5
-320,Classic Cars,> 5
-320,Planes,> 5
-320,Ships,> 5
-320,Vintage Cars,> 5
-320,Trains,< 5
-320,Motorcycles,< 5
-321,Motorcycles,> 5
-321,Classic Cars,> 5
-321,Vintage Cars,> 5
-321,Trucks and Buses,< 5
-321,Ships,< 5
-328,Vintage Cars,< 5
-328,Ships,< 5
-328,Motorcycles,> 5
-328,Planes,> 5
-339,Classic Cars,< 5
-339,Trucks and Buses,< 5
-339,Vintage Cars,> 5
-339,Planes,< 5
-339,Ships,< 5
-347,Classic Cars,> 5
-347,Ships,< 5
-347,Vintage Cars,< 5
-347,Planes,< 5
-362,Motorcycles,< 5
-362,Classic Cars,< 5
-362,Vintage Cars,< 5
-362,Ships,> 5
-362,Trains,< 5
-363,Vintage Cars,> 5
-363,Classic Cars,> 5
-363,Trucks and Buses,< 5
-379,Classic Cars,> 5
-379,Planes,< 5
-379,Vintage Cars,> 5
-379,Ships,< 5
-424,Trucks and Buses,< 5
-424,Classic Cars,> 5
-424,Vintage Cars,> 5
-424,Ships,< 5
-424,Trains,< 5
-447,Planes,> 5
-447,Vintage Cars,< 5
-447,Ships,< 5
-447,Motorcycles,< 5
-447,Classic Cars,< 5
-450,Planes,> 5
-450,Motorcycles,< 5
-450,Vintage Cars,> 5
-450,Classic Cars,> 5
-450,Ships,< 5
-455,Classic Cars,> 5
-455,Vintage Cars,< 5
-455,Trains,< 5
-455,Ships,< 5
-455,Trucks and Buses,< 5
-456,Vintage Cars,< 5
-456,Motorcycles,> 5
-456,Classic Cars,< 5
-462,Vintage Cars,< 5
-462,Ships,< 5
-462,Classic Cars,> 5
-462,Motorcycles,< 5
-462,Planes,< 5
-475,Vintage Cars,> 5
-475,Planes,< 5
-475,Classic Cars,< 5
-475,Trucks and Buses,< 5
-486,Classic Cars,> 5
-486,Motorcycles,> 5
-486,Vintage Cars,< 5
-487,Vintage Cars,> 5
-487,Trucks and Buses,< 5
-487,Classic Cars,< 5
-495,Classic Cars,> 5
-495,Trucks and Buses,> 5
-495,Trains,< 5
-495,Vintage Cars,< 5
+PRODUCTLINE,NMR_ORDERS
+Vintage Cars,< 5
+Vintage Cars,< 5
+Vintage Cars,< 5
+"Classic Cars, Trucks and Buses, Vintage Cars","< 5, > 5, > 5"
+"Trucks and Buses, Classic Cars, Trains","< 5, > 5, < 5"
+"Classic Cars, Trains, Ships, Vintage Cars","< 5, < 5, > 5, < 5"
+"Vintage Cars, Ships, Planes","< 5, < 5, > 5"
+Motorcycles,> 5
+"Classic Cars, Motorcycles","> 5, < 5"
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","> 5, > 5"
+Vintage Cars,> 5
+"Classic Cars, Vintage Cars","< 5, < 5"
+"Vintage Cars, Trucks and Buses","< 5, < 5"
+"Trucks and Buses, Classic Cars","> 5, < 5"
+"Trucks and Buses, Classic Cars","< 5, < 5"
+Trains,< 5
+"Trains, Classic Cars, Ships, Vintage Cars","< 5, < 5, < 5, < 5"
+Ships,< 5
+"Ships, Classic Cars, Vintage Cars, Planes","< 5, < 5, < 5, < 5"
+"Planes, Motorcycles, Vintage Cars","> 5, > 5, < 5"
+Motorcycles,< 5
+"Motorcycles, Classic Cars","< 5, > 5"
+Classic Cars,< 5
+"Vintage Cars, Classic Cars","> 5, > 5"
+Vintage Cars,< 5
+"Trucks and Buses, Classic Cars, Vintage Cars","> 5, < 5, > 5"
+"Trucks and Buses, Trains, Classic Cars","< 5, < 5, > 5"
+"Trains, Vintage Cars, Ships","< 5, < 5, < 5"
+"Ships, Vintage Cars, Classic Cars","> 5, < 5, < 5"
+"Vintage Cars, Ships","< 5, < 5"
+"Planes, Ships, Vintage Cars","> 5, < 5, < 5"
+Planes,< 5
+"Planes, Vintage Cars, Motorcycles","< 5, < 5, < 5"
+Motorcycles,> 5
+"Classic Cars, Motorcycles","> 5, < 5"
+Classic Cars,< 5
+Classic Cars,< 5
+"Vintage Cars, Classic Cars","> 5, > 5"
+Vintage Cars,> 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, > 5"
+"Trucks and Buses, Classic Cars","< 5, < 5"
+"Classic Cars, Trains, Vintage Cars, Ships","< 5, < 5, < 5, > 5"
+"Ships, Classic Cars, Vintage Cars, Planes","< 5, < 5, < 5, > 5"
+Vintage Cars,< 5
+"Motorcycles, Planes","> 5, < 5"
+"Motorcycles, Classic Cars","< 5, < 5"
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","> 5, < 5"
+Vintage Cars,> 5
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5"
+"Trucks and Buses, Classic Cars","> 5, < 5"
+"Trains, Classic Cars","< 5, < 5"
+"Classic Cars, Vintage Cars, Trains, Ships","< 5, < 5, < 5, > 5"
+"Ships, Vintage Cars","< 5, < 5"
+"Vintage Cars, Ships, Planes, Classic Cars","< 5, < 5, > 5, < 5"
+"Planes, Vintage Cars","< 5, < 5"
+"Motorcycles, Vintage Cars, Planes","< 5, < 5, < 5"
+Motorcycles,< 5
+"Motorcycles, Classic Cars","> 5, > 5"
+Classic Cars,> 5
+Classic Cars,> 5
+Vintage Cars,> 5
+"Classic Cars, Vintage Cars","< 5, < 5"
+"Vintage Cars, Trucks and Buses, Classic Cars","< 5, < 5, < 5"
+"Trucks and Buses, Trains, Classic Cars","> 5, < 5, > 5"
+"Vintage Cars, Ships","< 5, < 5"
+"Planes, Vintage Cars, Ships, Classic Cars","< 5, < 5, > 5, < 5"
+"Motorcycles, Planes, Vintage Cars","> 5, > 5, < 5"
+"Classic Cars, Motorcycles","> 5, > 5"
+Classic Cars,< 5
+Classic Cars,< 5
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","< 5, > 5"
+"Vintage Cars, Classic Cars, Trucks and Buses","< 5, < 5, < 5"
+"Trucks and Buses, Classic Cars","> 5, < 5"
+"Classic Cars, Trains, Trucks and Buses","> 5, < 5, < 5"
+"Ships, Trains, Vintage Cars","> 5, < 5, < 5"
+"Ships, Vintage Cars, Classic Cars, Planes","< 5, < 5, < 5, > 5"
+"Motorcycles, Vintage Cars, Planes","< 5, < 5, > 5"
+"Classic Cars, Motorcycles","< 5, > 5"
+Classic Cars,> 5
+"Vintage Cars, Classic Cars","> 5, > 5"
+"Vintage Cars, Classic Cars, Trucks and Buses","< 5, < 5, < 5"
+"Classic Cars, Trains, Trucks and Buses","< 5, < 5, > 5"
+"Ships, Vintage Cars, Classic Cars, Trains","> 5, < 5, < 5, < 5"
+"Planes, Classic Cars, Ships, Vintage Cars","< 5, < 5, < 5, < 5"
+"Planes, Vintage Cars","> 5, < 5"
+"Motorcycles, Planes","> 5, < 5"
+Motorcycles,< 5
+Motorcycles,< 5
+"Motorcycles, Classic Cars","< 5, > 5"
+Classic Cars,> 5
+"Vintage Cars, Classic Cars","> 5, < 5"
+"Vintage Cars, Trucks and Buses, Classic Cars","< 5, > 5, < 5"
+"Classic Cars, Trucks and Buses, Trains","< 5, < 5, < 5"
+"Ships, Trains, Vintage Cars, Classic Cars","< 5, < 5, < 5, < 5"
+"Classic Cars, Planes, Vintage Cars, Ships","< 5, < 5, < 5, > 5"
+"Vintage Cars, Planes","< 5, < 5"
+"Vintage Cars, Planes","< 5, < 5"
+"Planes, Vintage Cars, Motorcycles","< 5, < 5, < 5"
+Motorcycles,> 5
+"Classic Cars, Motorcycles","< 5, < 5"
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","> 5, < 5"
+Vintage Cars,< 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, > 5, < 5"
+"Classic Cars, Trains, Trucks and Buses","> 5, < 5, > 5"
+"Vintage Cars, Ships, Classic Cars, Trains","< 5, > 5, < 5, < 5"
+"Planes, Vintage Cars, Classic Cars, Ships","< 5, < 5, < 5, < 5"
+"Planes, Motorcycles, Vintage Cars","> 5, < 5, < 5"
+"Classic Cars, Motorcycles","> 5, > 5"
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","< 5, < 5"
+Vintage Cars,> 5
+"Vintage Cars, Classic Cars, Trucks and Buses","> 5, < 5, < 5"
+Trucks and Buses,< 5
+"Classic Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses, Trains","> 5, < 5, < 5"
+"Ships, Trains, Vintage Cars","< 5, < 5, < 5"
+"Planes, Vintage Cars, Ships, Classic Cars","> 5, < 5, > 5, < 5"
+"Vintage Cars, Motorcycles, Planes","< 5, > 5, > 5"
+Motorcycles,> 5
+Classic Cars,> 5
+Classic Cars,> 5
+"Vintage Cars, Classic Cars","> 5, < 5"
+"Vintage Cars, Trucks and Buses, Classic Cars","< 5, < 5, < 5"
+"Trucks and Buses, Vintage Cars, Classic Cars","> 5, < 5, < 5"
+"Trains, Classic Cars, Trucks and Buses","< 5, < 5, < 5"
+Classic Cars,< 5
+"Trains, Vintage Cars, Ships","< 5, < 5, < 5"
+"Ships, Vintage Cars","< 5, < 5"
+"Classic Cars, Ships, Planes, Vintage Cars","< 5, < 5, < 5, < 5"
+"Planes, Vintage Cars, Motorcycles","> 5, < 5, < 5"
+Motorcycles,< 5
+Motorcycles,> 5
+Classic Cars,> 5
+Classic Cars,< 5
+Classic Cars,< 5
+"Classic Cars, Vintage Cars","> 5, < 5"
+Vintage Cars,< 5
+Vintage Cars,< 5
+Vintage Cars,> 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, < 5"
+"Trucks and Buses, Classic Cars","> 5, < 5"
+"Classic Cars, Trains","< 5, < 5"
+"Vintage Cars, Trains, Classic Cars, Ships","< 5, < 5, < 5, > 5"
+"Ships, Planes, Vintage Cars","< 5, < 5, < 5"
+"Motorcycles, Planes, Vintage Cars","< 5, > 5, < 5"
+Motorcycles,> 5
+"Motorcycles, Classic Cars","< 5, < 5"
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","> 5, > 5"
+Vintage Cars,< 5
+Vintage Cars,< 5
+Vintage Cars,< 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, > 5"
+"Vintage Cars, Classic Cars, Ships, Trains","< 5, < 5, < 5, < 5"
+"Classic Cars, Vintage Cars, Ships","< 5, < 5, > 5"
+"Vintage Cars, Ships, Planes","< 5, < 5, > 5"
+"Planes, Motorcycles","< 5, > 5"
+"Classic Cars, Motorcycles","< 5, < 5"
+Classic Cars,< 5
+Classic Cars,> 5
+Classic Cars,> 5
+Vintage Cars,> 5
+Vintage Cars,< 5
+"Vintage Cars, Classic Cars, Trucks and Buses","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, > 5"
+"Classic Cars, Trains","< 5, < 5"
+"Vintage Cars, Trains, Ships, Classic Cars","< 5, < 5, > 5, < 5"
+"Vintage Cars, Planes, Ships","< 5, < 5, < 5"
+"Vintage Cars, Motorcycles, Planes","< 5, > 5, > 5"
+"Motorcycles, Classic Cars","> 5, > 5"
+Classic Cars,< 5
+Classic Cars,> 5
+Classic Cars,> 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, > 5, < 5"
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, > 5"
+"Trucks and Buses, Classic Cars, Vintage Cars, Trains, Ships","< 5, > 5, < 5, < 5, < 5"
+"Ships, Classic Cars, Vintage Cars, Planes","> 5, < 5, < 5, < 5"
+"Planes, Vintage Cars","> 5, < 5"
+"Planes, Motorcycles","< 5, > 5"
+Motorcycles,< 5
+Classic Cars,> 5
+"Classic Cars, Vintage Cars","> 5, > 5"
+Vintage Cars,< 5
+Vintage Cars,< 5
+"Trucks and Buses, Vintage Cars, Classic Cars","> 5, < 5, < 5"
+"Trucks and Buses, Trains, Classic Cars","< 5, < 5, > 5"
+"Vintage Cars, Classic Cars, Trains, Ships","< 5, < 5, < 5, < 5"
+Ships,< 5
+"Ships, Vintage Cars, Classic Cars","< 5, < 5, < 5"
+"Planes, Ships, Vintage Cars","> 5, < 5, < 5"
+"Vintage Cars, Planes, Motorcycles","< 5, < 5, < 5"
+Motorcycles,< 5
+"Motorcycles, Classic Cars","> 5, < 5"
+Classic Cars,> 5
+Classic Cars,> 5
+"Vintage Cars, Classic Cars","< 5, < 5"
+Vintage Cars,< 5
+"Classic Cars, Trucks and Buses, Vintage Cars","< 5, < 5, > 5"
+"Classic Cars, Trucks and Buses","> 5, > 5"
+"Trains, Vintage Cars, Ships, Classic Cars","< 5, < 5, > 5, < 5"
+"Ships, Planes, Classic Cars, Vintage Cars","< 5, < 5, < 5, < 5"
+"Planes, Motorcycles, Vintage Cars","> 5, < 5, < 5"
+Motorcycles,> 5
+"Classic Cars, Motorcycles","> 5, < 5"
+"Classic Cars, Vintage Cars","> 5, < 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, > 5"
+"Classic Cars, Trucks and Buses","< 5, > 5"
+"Trains, Ships, Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5, > 5, < 5"
+"Ships, Vintage Cars","< 5, < 5"
+"Vintage Cars, Classic Cars, Ships, Planes","< 5, < 5, < 5, > 5"
+Planes,< 5
+"Motorcycles, Planes","> 5, < 5"
+"Motorcycles, Classic Cars","> 5, < 5"
+Classic Cars,< 5
+Classic Cars,> 5
+"Trucks and Buses, Vintage Cars, Classic Cars","< 5, > 5, < 5"
+"Vintage Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses, Vintage Cars","> 5, < 5, < 5"
+"Classic Cars, Vintage Cars, Trains, Trucks and Buses","< 5, < 5, < 5, < 5"
+"Ships, Vintage Cars, Trains","< 5, < 5, < 5"
+"Planes, Ships","< 5, > 5"
+"Planes, Vintage Cars, Ships","> 5, < 5, < 5"
+"Motorcycles, Planes, Classic Cars","> 5, < 5, > 5"
+"Motorcycles, Classic Cars","< 5, < 5"
+"Vintage Cars, Motorcycles, Classic Cars","< 5, < 5, > 5"
+"Classic Cars, Vintage Cars","> 5, > 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, < 5"
+"Classic Cars, Trucks and Buses, Trains, Vintage Cars","> 5, < 5, < 5, < 5"
+"Trains, Vintage Cars, Classic Cars, Ships","< 5, < 5, < 5, < 5"
+"Planes, Ships, Vintage Cars","< 5, < 5, < 5"
+"Motorcycles, Planes, Vintage Cars, Ships","< 5, > 5, < 5, < 5"
+"Motorcycles, Vintage Cars, Planes","< 5, < 5, < 5"
+"Planes, Motorcycles, Classic Cars","< 5, < 5, < 5"
+"Classic Cars, Motorcycles","> 5, < 5"
+"Classic Cars, Motorcycles","< 5, < 5"
+"Classic Cars, Vintage Cars","< 5, < 5"
+Vintage Cars,< 5
+"Classic Cars, Vintage Cars","< 5, < 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, > 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses","> 5, < 5"
+"Ships, Trucks and Buses, Trains, Classic Cars, Vintage Cars","> 5, < 5, < 5, < 5, < 5"
+"Vintage Cars, Planes","< 5, < 5"
+"Ships, Planes","< 5, < 5"
+"Motorcycles, Vintage Cars, Planes","< 5, < 5, > 5"
+"Motorcycles, Classic Cars","> 5, > 5"
+"Classic Cars, Motorcycles","> 5, < 5"
+"Classic Cars, Vintage Cars, Motorcycles","< 5, > 5, < 5"
+"Trucks and Buses, Vintage Cars, Classic Cars","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses, Vintage Cars","> 5, < 5, < 5"
+"Trucks and Buses, Trains, Classic Cars","< 5, < 5, < 5"
+"Ships, Vintage Cars, Planes, Trains","> 5, < 5, < 5, < 5"
+"Ships, Motorcycles, Vintage Cars, Planes","< 5, < 5, < 5, > 5"
+Motorcycles,< 5
+"Classic Cars, Motorcycles","> 5, < 5"
+Motorcycles,< 5
+"Classic Cars, Motorcycles","< 5, < 5"
+Classic Cars,< 5
+"Vintage Cars, Classic Cars","> 5, > 5"
+"Classic Cars, Vintage Cars","< 5, < 5"
+"Classic Cars, Vintage Cars","< 5, > 5"
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, > 5"
+"Classic Cars, Trucks and Buses, Trains","> 5, < 5, < 5"
+"Classic Cars, Ships, Trains, Vintage Cars","< 5, < 5, < 5, < 5"
+"Planes, Ships, Classic Cars, Vintage Cars","< 5, > 5, < 5, < 5"
+"Motorcycles, Planes","< 5, < 5"
+"Vintage Cars, Classic Cars, Planes, Motorcycles","< 5, < 5, < 5, > 5"
+Classic Cars,< 5
+Classic Cars,> 5
+"Motorcycles, Classic Cars","< 5, > 5"
+"Vintage Cars, Classic Cars","< 5, < 5"
+"Vintage Cars, Classic Cars","> 5, > 5"
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, < 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5"
+"Classic Cars, Vintage Cars, Trains, Trucks and Buses","< 5, < 5, < 5, < 5"
+"Ships, Vintage Cars, Classic Cars","< 5, < 5, < 5"
+"Vintage Cars, Ships","< 5, < 5"
+"Ships, Planes, Vintage Cars","> 5, > 5, < 5"
+Motorcycles,< 5
+"Planes, Vintage Cars, Motorcycles","< 5, < 5, < 5"
+"Classic Cars, Motorcycles","< 5, < 5"
+"Classic Cars, Vintage Cars, Motorcycles","> 5, < 5, < 5"
+"Trucks and Buses, Classic Cars, Vintage Cars","< 5, < 5, < 5"
+Vintage Cars,< 5
+"Classic Cars, Vintage Cars, Trucks and Buses","< 5, < 5, > 5"
+"Trucks and Buses, Trains, Classic Cars","< 5, < 5, < 5"
+"Trains, Classic Cars, Trucks and Buses","< 5, < 5, < 5"
+"Trains, Vintage Cars, Ships, Classic Cars","< 5, < 5, < 5, < 5"
+Ships,< 5
+"Vintage Cars, Planes, Ships","< 5, > 5, < 5"
+Motorcycles,> 5
+"Ships, Planes, Vintage Cars, Classic Cars","< 5, < 5, < 5, < 5"
+"Motorcycles, Planes, Vintage Cars","< 5, > 5, < 5"
+Motorcycles,< 5
+Motorcycles,> 5
+Classic Cars,> 5
+Classic Cars,< 5
+Classic Cars,< 5
+"Vintage Cars, Classic Cars","< 5, > 5"
+Vintage Cars,< 5
+Vintage Cars,< 5
+Vintage Cars,> 5
+"Trucks and Buses, Vintage Cars, Classic Cars","< 5, < 5, < 5"
+"Trucks and Buses, Classic Cars","> 5, < 5"
+"Classic Cars, Trains","< 5, < 5"
+"Ships, Trains, Vintage Cars, Classic Cars","> 5, < 5, < 5, < 5"
+"Vintage Cars, Ships, Planes","< 5, < 5, < 5"
+"Motorcycles, Vintage Cars, Planes","< 5, < 5, > 5"
+Motorcycles,> 5
+"Motorcycles, Classic Cars","< 5, < 5"
+Classic Cars,> 5
+"Vintage Cars, Classic Cars","> 5, > 5"
+Vintage Cars,< 5
+Vintage Cars,< 5
+Vintage Cars,< 5
+"Trucks and Buses, Vintage Cars, Classic Cars","< 5, < 5, < 5"
+"Classic Cars, Trucks and Buses","< 5, > 5"

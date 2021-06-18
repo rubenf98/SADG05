@@ -490,6 +490,11 @@
   <order>
     <hop>
       <from>Retrieve Data</from>
+      <to>Group by</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Group by</from>
       <to>Text file output</to>
       <enabled>Y</enabled>
     </hop>
@@ -508,16 +513,18 @@
     <connection>Steelwheels</connection>
     <sql>select
 	p.PRODUCTLINE,
-	c.CUSTOMERNUMBER,
-	c.CREDITLIMIT
-from CUSTOMER_W_TER c
+	orft.ORDERNUMBER
+from PRODUCTS p
 inner join ORDERFACT orft
+on p.PRODUCTCODE = orft.PRODUCTCODE 
+inner join ORDERS o
+on orft.ORDERNUMBER=o.ORDERNUMBER
+inner join CUSTOMER_W_TER c
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
-inner join DIM_TIME t
-on orft.TIME_ID=t.TIME_ID
-inner join PRODUCTS p
-on orft.PRODUCTCODE=p.PRODUCTCODE
-WHERE c.CREDITLIMIT > 100000 
+WHERE c.CREDITLIMIT > 100000
+GROUP BY orft.ORDERNUMBER, p.PRODUCTLINE
+ORDER BY orft.ORDERNUMBER
+
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -552,37 +559,14 @@ WHERE c.CREDITLIMIT > 100000
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>BigNumber</type>
-        <storagetype>normal</storagetype>
-        <name>CREDITLIMIT</name>
-        <length>18</length>
-        <precision>4</precision>
-        <origin>Retrieve Data</origin>
-        <comments>CREDITLIMIT</comments>
-        <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol/>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -605,7 +589,7 @@ WHERE c.CREDITLIMIT > 100000
       </output>
     </remotesteps>
     <GUI>
-      <xloc>432</xloc>
+      <xloc>320</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -661,32 +645,8 @@ WHERE c.CREDITLIMIT > 100000
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>50</length>
+        <length>-1</length>
         <precision>-1</precision>
-      </field>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-        <type>Integer</type>
-        <format>####0;-####0</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group>,</group>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>9</length>
-        <precision>0</precision>
-      </field>
-      <field>
-        <name>CREDITLIMIT</name>
-        <type>BigNumber</type>
-        <format>######0.0###################;-######0.0###################</format>
-        <currency/>
-        <decimal>.</decimal>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>18</length>
-        <precision>4</precision>
       </field>
     </fields>
     <attributes/>
@@ -699,6 +659,52 @@ WHERE c.CREDITLIMIT > 100000
     </remotesteps>
     <GUI>
       <xloc>624</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>ORDERNUMBER</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>PRODUCTLINE</aggregate>
+        <subject>PRODUCTLINE</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>

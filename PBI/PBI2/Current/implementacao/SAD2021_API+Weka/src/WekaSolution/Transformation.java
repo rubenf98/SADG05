@@ -22,7 +22,7 @@ public class Transformation {
 
     static void RunTransformations() throws KettleException {
         
-        File folder = new File("../");
+        File folder = new File("/home/ruben/Documents/UMa/Apoio a Decisao/SADG05/PBI/PBI2/Current/implementacao/");
         File[] listOfFiles = folder.listFiles();
         
         KettleEnvironment.init();
@@ -43,6 +43,21 @@ public class Transformation {
                 }
             }
         }     
+    }
+
+    public static void RunTransformation(String path) throws KettleException {
+        
+        KettleEnvironment.init();
+        
+        TransMeta transMeta = new TransMeta(path);
+        Trans trans = new Trans(transMeta);
+        trans.setLogLevel(LogLevel.ERROR);
+        trans.execute(null);
+        trans.waitUntilFinished();
+
+        if(trans.getErrors() > 0){
+            System.out.println("Some errors ocurred");
+        } 
     }
     
 }
