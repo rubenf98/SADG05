@@ -1,0 +1,37 @@
+@relation TASKDATA5_mod
+
+@attribute Vintage_Cars {y}
+@attribute Planes {y}
+@attribute Motorcycles {y}
+@attribute Classic_Cars {y}
+@attribute Trucks_and_Buses {y}
+@attribute Ships {y}
+@attribute Trains {y}
+
+@data
+y,y,y,y,y,?,?
+y,y,y,y,y,y,?
+y,?,y,y,y,y,y
+y,y,y,y,y,y,y
+y,y,y,y,y,y,y
+y,?,?,y,y,y,y
+y,?,y,y,y,y,y
+y,?,?,y,y,?,y
+y,y,y,y,y,?,y
+y,y,y,y,?,?,?
+y,?,?,y,?,y,y
+y,?,?,y,y,y,y
+y,y,?,y,?,y,?
+y,?,?,y,y,y,y
+?,?,y,y,?,?,?
+y,?,y,y,y,?,?
+y,y,?,y,?,y,?
+?,y,y,y,y,?,?
+?,?,?,y,?,?,?
+y,y,y,y,y,?,y
+y,?,y,y,y,y,?
+y,?,?,y,y,?,?
+y,y,y,y,y,?,y
+y,y,y,y,y,y,?
+y,?,?,y,y,?,?
+y,y,y,y,?,y,y

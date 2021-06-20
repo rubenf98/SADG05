@@ -494,15 +494,66 @@
     </hop>
     <hop>
       <from>Select values</from>
+      <to>Concat fields</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Concat fields</from>
       <to>Group by</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>Group by</from>
-      <to>Text file output</to>
+      <to> Create CSV file</to>
       <enabled>Y</enabled>
     </hop>
   </order>
+  <step>
+    <name>Group by</name>
+    <type>GroupBy</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <all_rows>N</all_rows>
+    <ignore_aggregate>N</ignore_aggregate>
+    <field_ignore/>
+    <directory>%%java.io.tmpdir%%</directory>
+    <prefix>grp</prefix>
+    <add_linenr>N</add_linenr>
+    <linenr_fieldname/>
+    <give_back_row>N</give_back_row>
+    <group>
+      <field>
+        <name>CUSTOMERNUMBER</name>
+      </field>
+    </group>
+    <fields>
+      <field>
+        <aggregate>Data</aggregate>
+        <subject>result</subject>
+        <type>CONCAT_COMMA</type>
+        <valuefield/>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>528</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>Retrieve Data</name>
     <type>TableInput</type>
@@ -518,18 +569,15 @@
     <sql>select
 	c.CUSTOMERNUMBER,
 	case 
-	when p.BUYPRICE > 100 then '> 100'
-	when p.BUYPRICE > 30 AND p.BUYPRICE &lt; 100 then '30 - 100'
-	when p.BUYPRICE &lt; 30 then '&lt; 30'
-	else 'NULL'
+	when p.BUYPRICE > 100 then '>100'
+	when p.BUYPRICE > 30 AND p.BUYPRICE &lt; 100 then '30-100'
+	when p.BUYPRICE &lt; 30 then '&lt;30'
 	end,
 	case 
-	when c.CREDITLIMIT > 200000 then '> 200k'
-	when c.CREDITLIMIT > 100000 AND c.CREDITLIMIT &lt; 200000 then '100k - 200k'
-	when c.CREDITLIMIT &lt; 100000 then '&lt; 100k'
-	else 'NULL'
-	end,
-	c.TERRITORY
+	when c.CREDITLIMIT > 200000 then '>200k'
+	when c.CREDITLIMIT > 100000 AND c.CREDITLIMIT &lt; 200000 then '100k-200k'
+	when c.CREDITLIMIT &lt; 100000 then '&lt;100k'
+	end
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -552,8 +600,8 @@ WHERE c.TERRITORY='NA'</sql>
         <origin>Retrieve Data</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -562,21 +610,21 @@ WHERE c.TERRITORY='NA'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>C2</name>
-        <length>8</length>
+        <length>6</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
         <comments>C2</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -585,21 +633,21 @@ WHERE c.TERRITORY='NA'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
         <name>C3</name>
-        <length>11</length>
+        <length>9</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
         <comments>C3</comments>
         <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -608,31 +656,8 @@ WHERE c.TERRITORY='NA'</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>TERRITORY</name>
-        <length>10</length>
-        <precision>-1</precision>
-        <origin>Retrieve Data</origin>
-        <comments>TERRITORY</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>en_US</date_format_locale>
-        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
+        <date_format_locale>pt_PT</date_format_locale>
+        <date_format_timezone>Europe/London</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -645,7 +670,7 @@ WHERE c.TERRITORY='NA'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>192</xloc>
+      <xloc>240</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
@@ -674,10 +699,6 @@ WHERE c.TERRITORY='NA'</sql>
         <name>C3</name>
         <rename>CREDITLIMIT</rename>
       </field>
-      <field>
-        <name>TERRITORY</name>
-        <rename/>
-      </field>
       <select_unspecified>N</select_unspecified>
     </fields>
     <attributes/>
@@ -689,13 +710,13 @@ WHERE c.TERRITORY='NA'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>400</xloc>
+      <xloc>352</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Text file output</name>
+    <name> Create CSV file</name>
     <type>TextFileOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -737,39 +758,15 @@ WHERE c.TERRITORY='NA'</sql>
     </file>
     <fields>
       <field>
-        <name>BUYPRICE</name>
-        <type>String</type>
+        <name>Data</name>
+        <type>None</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
         <nullif/>
         <trim_type>none</trim_type>
-        <length>8</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>CREDITLIMIT</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>11</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>TERRITORY</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>10</length>
+        <length>-1</length>
         <precision>-1</precision>
       </field>
     </fields>
@@ -788,8 +785,8 @@ WHERE c.TERRITORY='NA'</sql>
     </GUI>
   </step>
   <step>
-    <name>Group by</name>
-    <type>GroupBy</type>
+    <name>Concat fields</name>
+    <type>ConcatFields</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -798,39 +795,67 @@ WHERE c.TERRITORY='NA'</sql>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <all_rows>N</all_rows>
-    <ignore_aggregate>N</ignore_aggregate>
-    <field_ignore/>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>grp</prefix>
-    <add_linenr>N</add_linenr>
-    <linenr_fieldname/>
-    <give_back_row>N</give_back_row>
-    <group>
-      <field>
-        <name>CUSTOMERNUMBER</name>
-      </field>
-    </group>
+    <separator> ^ </separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name/>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
     <fields>
       <field>
-        <aggregate>BUYPRICE</aggregate>
-        <subject>BUYPRICE</subject>
-        <type>CONCAT_COMMA</type>
-        <valuefield/>
+        <name>BUYPRICE</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
       <field>
-        <aggregate>CREDITLIMIT</aggregate>
-        <subject>CREDITLIMIT</subject>
-        <type>CONCAT_COMMA</type>
-        <valuefield/>
-      </field>
-      <field>
-        <aggregate>TERRITORY</aggregate>
-        <subject>TERRITORY</subject>
-        <type>CONCAT_COMMA</type>
-        <valuefield/>
+        <name>CREDITLIMIT</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
       </field>
     </fields>
+    <ConcatFields>
+      <targetFieldName>result</targetFieldName>
+      <targetFieldLength>0</targetFieldLength>
+      <removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -840,7 +865,7 @@ WHERE c.TERRITORY='NA'</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>512</xloc>
+      <xloc>432</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>

@@ -21,7 +21,7 @@ public class WekaApriori {
    
     public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
         
-        String filePath = "../test_conv/TASKDATA1.arff";
+        String filePath = "../test_conv/TASKDATA6.arff";
         
 	// Carrega dados dos ficheiros
         Instances data = new Instances(new BufferedReader(new FileReader(filePath)));
