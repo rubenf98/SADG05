@@ -23,6 +23,7 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import weka.core.converters.ConverterUtils;
 
 
 /**
@@ -31,44 +32,22 @@ import java.util.Scanner;
  */
 public class CSVtoARFF {
     
-    /**
-     * @param args the command line arguments
-     * @throws java.lang.Exception
-    */
-    
     public CSVtoARFF() {
     }
    
     public static void ConvertFiles() {
-        String folderPath = "../test_conv/";
+        String folderPath = "../";
         
-        ArrayList<String> csvFilesList = GetCSVFilesList(folderPath);
+        ArrayList<String> csvFilesList = Utils.GetCSVFilesList(folderPath,"csv",3);
         for (int i = 0; i < csvFilesList.size(); i++){
             String fileName = csvFilesList.get(i);
             fileName = fileName.substring(0,fileName.length()-4);
             
             String filePath = folderPath + fileName;
-            
             ConvertCSVtoARFF(filePath, fileName);
         }
-    }
-    
-    private static ArrayList<String> GetCSVFilesList(String path) {
-        File folder = new File(path);
-        File[] listOfFiles = folder.listFiles();
         
-        ArrayList<String> result = new ArrayList<String>();
-        
-        for(int i = 0; i < listOfFiles.length; i++){
-            String fileName = listOfFiles[i].getName();
-            String fileExtension = fileName.substring(fileName.length()-3);
-            
-            if( fileExtension.equals("csv")){
-                result.add(fileName);
-            }
-        }
-        
-        return result;
+        Utils.cleanDirectoryTempFiles(folderPath);
     }
     
     private static void ConvertCSVtoARFF(String filePath, String fileName){
@@ -78,17 +57,25 @@ public class CSVtoARFF {
             
             //Load CSV
             CSVLoader loader = new CSVLoader();
-            loader.setSource(new File(filePath+"_mod.csv"));
+            File file = new File(filePath+"_mod.csv");
+            loader.setSource(file);
             Instances data = loader.getDataSet();
             
             // Save ARFF
             ArffSaver saver = new ArffSaver();
-
             // Save as ARFF
             saver.setInstances(data);
-            saver.setFile(new File("../test_conv/"+fileName+".arff"));
+            saver.setFile(new File("../"+fileName+".arff"));
             saver.writeBatch();
             System.out.println("SUCCESS: File Created -> "+fileName);
+            
+            // Necessário para retirar os ficheiros de utilização
+            saver = null;
+            data =null;
+            loader =null;
+            // Garbage Colector serve para eliminar todas as variaveis que não estão em utilização
+            System.gc();
+            
             
         }
         catch(IOException E){
@@ -103,8 +90,8 @@ public class CSVtoARFF {
        List<String> headers = getheaders(csvFile);
        
         try {
-            
-            BufferedWriter bw = new BufferedWriter(new FileWriter(filePath+"_mod.csv"));
+            FileWriter fw = new FileWriter(filePath+"_mod.csv");
+            BufferedWriter bw = new BufferedWriter(fw);
             
             bw.write(headers.toString().replace("[", "").replace("]", "").replace(" ", ""));
             bw.newLine();
@@ -139,24 +126,26 @@ public class CSVtoARFF {
                         row.add("?");
                     }
                 }
-                System.out.println(row.size());
                 bw.write(row.toString().replace("[", "").replace("]", "").replace(" ", ""));
                 bw.newLine();
             }
             
+            bw.flush();
             bw.close();
-            csvFileScanner.close();            
+            fw.close();
+            csvFileScanner.close();    
+               
         } catch (FileNotFoundException ex) {
-            //Se der erro
             System.out.println(ex);
         }
     }
     
     private static List<String> getheaders(File csvFile){
         try{
-            CSVReader reader = new CSVReader(new FileReader(csvFile));
+            FileReader fr = new FileReader(csvFile);
+            CSVReader reader = new CSVReader(fr);
             String[] nextline;
-            // SKIP HEADER
+            // Salta o HEADER
             reader.readNext();
             
             List<String> headers = new ArrayList<>();
@@ -172,12 +161,16 @@ public class CSVtoARFF {
                     }
                 }
             }
-            
+            reader.close();
+            fr.close();
             return headers;
         }catch(CsvValidationException | IOException e){
             System.out.println("ERROR: "+ e);
         }
         return null;
     }
-
+    
+    
+        
 }
+
