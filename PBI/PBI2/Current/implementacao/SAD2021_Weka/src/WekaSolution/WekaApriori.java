@@ -18,7 +18,6 @@ import java.util.ArrayList;
  */
 
 public class WekaApriori {
-    public WekaApriori(){}
    
     public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
         

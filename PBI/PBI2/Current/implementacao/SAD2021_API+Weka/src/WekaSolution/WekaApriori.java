@@ -12,6 +12,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
 import java.io.IOException;
+import java.util.ArrayList;
 /**
  *
  * @author tadeu
@@ -20,23 +21,33 @@ import java.io.IOException;
 public class WekaApriori {
     public WekaApriori(){}
    
-    public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
+     public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
         
-        String filePath = "C:\\Users\\tadeu\\Desktop\\SAD2021\\SADG05\\PBI\\PBI2\\Current\\implementacao\\TASKDATA1.arff";
+        String folderPath = "../";
+        ArrayList<String> arffFilesList = Utils.GetCSVFilesList(folderPath,"arff",4);
         
-	// load data
-        Instances data = new Instances(new BufferedReader(new FileReader(filePath)));
-        
-        System.out.println(data);
-	// build model
-	Apriori model = new Apriori();
-	model.buildAssociations(data);
-	System.out.println(model);
-	
-	FPGrowth fpgModel = new FPGrowth();
-	fpgModel.buildAssociations(data);
-	System.out.println(fpgModel);
-    } 
+        for (int i = 0; i < arffFilesList.size(); i++){
+            String fileName = arffFilesList.get(i);
+            fileName = fileName.substring(0,fileName.length()-4);
+            
+            String filePath = folderPath + fileName +"arff";
+            
+            // Carrega dados dos ficheiros
+            BufferedReader bf= new BufferedReader(new FileReader(filePath));
+            Instances data = new Instances(bf);
+
+            // Apriori
+            Apriori model = new Apriori();
+            model.buildAssociations(data);
+            System.out.println("---------------------------------------------------------------------------------");
+            System.out.println(fileName);
+            System.out.println(model);
+            System.out.println("---------------------------------------------------------------------------------");
+            data.clear();
+            bf.close();  
+            
+        }
+     }
 
     public static List<AssociationRule> RunAlgorithmToFile(String filePath) throws Exception  {        
 	// load data

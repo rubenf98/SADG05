@@ -22,7 +22,7 @@ public class Transformation {
 
     static void RunTransformations() throws KettleException {
         
-        File folder = new File("/home/ruben/Documents/UMa/Apoio a Decisao/SADG05/PBI/PBI2/Current/implementacao/");
+        File folder = new File("../");
         File[] listOfFiles = folder.listFiles();
         
         KettleEnvironment.init();

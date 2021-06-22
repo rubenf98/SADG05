@@ -31,9 +31,6 @@ import weka.core.converters.ConverterUtils;
  * @author tadeu
  */
 public class CSVtoARFF {
-    
-    public CSVtoARFF() {
-    }
    
     public static void ConvertFiles() {
         String folderPath = "../";

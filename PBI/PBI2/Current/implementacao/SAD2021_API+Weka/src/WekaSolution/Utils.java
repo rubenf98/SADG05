@@ -7,14 +7,13 @@ package WekaSolution;
 
 import java.io.File;
 import java.util.ArrayList;
-import weka.core.Instances;
 
 /**
  *
  * @author tadeu
  */
 public class Utils {
-    static ArrayList<String> GetCSVFilesList(String path, String extension, int extensionSize) {
+     static ArrayList<String> GetCSVFilesList(String path, String extension, int extensionSize) {
         File folder = new File(path);
         File[] listOfFiles = folder.listFiles();
         
@@ -38,7 +37,6 @@ public class Utils {
         
         for(int i = 0; i < listOfFiles.length; i++){
             String fileName = listOfFiles[i].getName();
-            System.out.println(fileName);
             if(fileName.length() > 8){
                 String fileExtension = fileName.substring(fileName.length()-8);
                 System.out.println(fileExtension);
@@ -53,5 +51,4 @@ public class Utils {
             }
         }
     }
-    
 }
