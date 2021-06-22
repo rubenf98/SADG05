@@ -4,12 +4,13 @@ package WekaSolution;
 
 import weka.core.Instances;
 import weka.associations.Apriori;
-
+import weka.associations.AssociationRule;
 // Java
 import weka.associations.FPGrowth;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.List;
 import java.io.IOException;
 /**
  *
@@ -35,5 +36,16 @@ public class WekaApriori {
 	FPGrowth fpgModel = new FPGrowth();
 	fpgModel.buildAssociations(data);
 	System.out.println(fpgModel);
+    } 
+
+    public static List<AssociationRule> RunAlgorithmToFile(String filePath) throws Exception  {        
+	// load data
+        Instances data = new Instances(new BufferedReader(new FileReader(filePath)));
+        
+	// build model
+	Apriori model = new Apriori();
+        model.buildAssociations(data);
+        System.out.println(model);
+        return model.getAssociationRules().getRules();
     }   
 }
