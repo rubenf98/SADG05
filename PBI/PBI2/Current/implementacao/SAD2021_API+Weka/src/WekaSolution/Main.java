@@ -37,6 +37,9 @@ public class Main {
                 case 5:
                     Transformation.RunTransformation("/home/ruben/Documents/UMa/Apoio a Decisao/SADG05/PBI/PBI2/Current/implementacao/TASKDATA1.ktr");
                     break;
+                case 6:
+                    WekaApriori.RunAlgorithmToFile("/home/ruben/Documents/UMa/Apoio a Decisao/SADG05/PBI/PBI2/Current/implementacao/test_conv/TASKDATA1.arff");
+                    break;
                 default:
                     System.out.println("Keep runing");
             }
@@ -49,5 +52,6 @@ public class Main {
         System.out.println("3- Run Kettle Transformations");
         System.out.println("4- Exit");
         System.out.println("5- Single trans");
+        System.out.println("6- Apriori to file");
     }
 }
