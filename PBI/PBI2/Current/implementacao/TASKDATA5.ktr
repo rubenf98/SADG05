@@ -520,7 +520,7 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
       </field>
     </group>
     <fields>
@@ -559,7 +559,7 @@
     <connection>Steelwheels</connection>
     <sql>SELECT
 	p.PRODUCTLINE,
-	c.CUSTOMERNUMBER
+	orft.ORDERNUMBER
 FROM PRODUCTS p
 INNER JOIN ORDERFACT orft
 ON p.PRODUCTCODE = orft.PRODUCTCODE 
@@ -568,8 +568,8 @@ ON orft.ORDERNUMBER=o.ORDERNUMBER
 INNER JOIN CUSTOMER_W_TER c
 ON c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
 WHERE c.CREDITLIMIT > 100000
-GROUP BY c.CUSTOMERNUMBER, p.PRODUCTLINE
-ORDER BY c.CUSTOMERNUMBER
+GROUP BY orft.ORDERNUMBER, p.PRODUCTLINE
+ORDER BY orft.ORDERNUMBER
 
 </sql>
     <limit>0</limit>
@@ -605,11 +605,11 @@ ORDER BY c.CUSTOMERNUMBER
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>

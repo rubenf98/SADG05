@@ -519,7 +519,7 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
       </field>
     </group>
     <fields>
@@ -557,7 +557,7 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>select
-	c.CUSTOMERNUMBER,
+	o.ORDERNUMBER,
 	p.PRODUCTLINE
 from PRODUCTS p
 inner join ORDERFACT orft
@@ -567,8 +567,8 @@ on orft.ORDERNUMBER=o.ORDERNUMBER
 inner join CUSTOMER_W_TER c
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
 WHERE c.COUNTRY='USA'
-GROUP BY c.CUSTOMERNUMBER, p.PRODUCTLINE
-ORDER BY c.CUSTOMERNUMBER
+GROUP BY o.ORDERNUMBER, p.PRODUCTLINE
+ORDER BY o.ORDERNUMBER
 
 </sql>
     <limit>0</limit>
@@ -581,11 +581,11 @@ ORDER BY c.CUSTOMERNUMBER
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
