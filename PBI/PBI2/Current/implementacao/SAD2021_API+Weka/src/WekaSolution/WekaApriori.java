@@ -49,14 +49,17 @@ public class WekaApriori {
         }
      }
 
-    public static List<AssociationRule> RunAlgorithmToFile(String filePath) throws Exception  {        
+    public static List<AssociationRule> RunAlgorithmToFile(String filePath, double minConfidence, double minSupport) throws Exception  {        
 	// load data
         Instances data = new Instances(new BufferedReader(new FileReader(filePath)));
         
 	// build model
 	Apriori model = new Apriori();
+        model.setMinMetric(minConfidence);
+        model.setLowerBoundMinSupport(minSupport);
         model.buildAssociations(data);
-        System.out.println(model);
+        
+
         return model.getAssociationRules().getRules();
     }   
 }
