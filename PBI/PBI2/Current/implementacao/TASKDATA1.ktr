@@ -520,7 +520,7 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
       </field>
     </group>
     <fields>
@@ -559,7 +559,7 @@
     <connection>Steelwheels</connection>
     <sql>select
 	p.PRODUCTNAME AS PRODUCTNAME_1,
-	c.CUSTOMERNUMBER
+	o.ORDERNUMBER
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -567,9 +567,11 @@ inner join DIM_TIME t
 on orft.TIME_ID=t.TIME_ID
 inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
+INNER JOIN ORDERS o
+ON orft.ORDERNUMBER=o.ORDERNUMBER
 WHERE t.YEAR_ID=2004
-GROUP BY c.CUSTOMERNUMBER, p.PRODUCTNAME
-ORDER BY c.CUSTOMERNUMBER</sql>
+GROUP BY o.ORDERNUMBER, p.PRODUCTNAME
+ORDER BY o.ORDERNUMBER</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -603,11 +605,11 @@ ORDER BY c.CUSTOMERNUMBER</sql>
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>

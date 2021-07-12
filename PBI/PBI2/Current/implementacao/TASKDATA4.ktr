@@ -510,6 +510,92 @@
     </hop>
   </order>
   <step>
+    <name>Concat fields</name>
+    <type>ConcatFields</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>^</separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name/>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>PRODUCTSCALE</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+      <field>
+        <name>TERRITORY</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+    <ConcatFields>
+      <targetFieldName>Result</targetFieldName>
+      <targetFieldLength>0</targetFieldLength>
+      <removeSelectedFields>N</removeSelectedFields>
+    </ConcatFields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>240</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>Group by</name>
     <type>GroupBy</type>
     <description/>
@@ -530,7 +616,7 @@
     <give_back_row>N</give_back_row>
     <group>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
       </field>
     </group>
     <fields>
@@ -568,7 +654,7 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>SELECT
-	c.CUSTOMERNUMBER,
+	o.ORDERNUMBER,
 	case
 	when p.PRODUCTSCALE = '1:10' or p.PRODUCTSCALE = '1:12' then 'large'
 	when p.PRODUCTSCALE = '1:18' or p.PRODUCTSCALE = '1:24' or p.PRODUCTSCALE = '1:32' then 'medium' else 'small'
@@ -581,8 +667,8 @@ INNER JOIN ORDERS o
 ON orft.ORDERNUMBER=o.ORDERNUMBER
 INNER JOIN CUSTOMER_W_TER c
 ON c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
-GROUP BY c.CUSTOMERNUMBER, p.PRODUCTSCALE, c.TERRITORY
-ORDER BY c.CUSTOMERNUMBER</sql>
+GROUP BY o.ORDERNUMBER, p.PRODUCTSCALE, c.TERRITORY
+ORDER BY o.ORDERNUMBER</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -593,11 +679,11 @@ ORDER BY c.CUSTOMERNUMBER</sql>
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
         <origin>Retrieve Data</origin>
-        <comments>CUSTOMERNUMBER</comments>
+        <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>,</decimal_symbol>
         <grouping_symbol>.</grouping_symbol>
@@ -687,7 +773,7 @@ ORDER BY c.CUSTOMERNUMBER</sql>
     </partitioning>
     <fields>
       <field>
-        <name>CUSTOMERNUMBER</name>
+        <name>ORDERNUMBER</name>
         <rename/>
       </field>
       <field>
@@ -779,92 +865,6 @@ ORDER BY c.CUSTOMERNUMBER</sql>
     </remotesteps>
     <GUI>
       <xloc>784</xloc>
-      <yloc>240</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Concat fields</name>
-    <type>ConcatFields</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <separator>^</separator>
-    <enclosure>"</enclosure>
-    <enclosure_forced>N</enclosure_forced>
-    <enclosure_fix_disabled>N</enclosure_fix_disabled>
-    <header>N</header>
-    <footer>N</footer>
-    <format>DOS</format>
-    <compression>None</compression>
-    <encoding/>
-    <endedLine/>
-    <fileNameInField>N</fileNameInField>
-    <fileNameField/>
-    <create_parent_folder>Y</create_parent_folder>
-    <file>
-      <name/>
-      <servlet_output>N</servlet_output>
-      <do_not_open_new_file_init>N</do_not_open_new_file_init>
-      <extention>txt</extention>
-      <append>N</append>
-      <split>N</split>
-      <haspartno>N</haspartno>
-      <add_date>N</add_date>
-      <add_time>N</add_time>
-      <SpecifyFormat>N</SpecifyFormat>
-      <date_time_format/>
-      <add_to_result_filenames>Y</add_to_result_filenames>
-      <pad>N</pad>
-      <fast_dump>N</fast_dump>
-      <splitevery>0</splitevery>
-    </file>
-    <fields>
-      <field>
-        <name>PRODUCTSCALE</name>
-        <type>None</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-      <field>
-        <name>TERRITORY</name>
-        <type>None</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif/>
-        <trim_type>none</trim_type>
-        <length>-1</length>
-        <precision>-1</precision>
-      </field>
-    </fields>
-    <ConcatFields>
-      <targetFieldName>Result</targetFieldName>
-      <targetFieldLength>0</targetFieldLength>
-      <removeSelectedFields>N</removeSelectedFields>
-    </ConcatFields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>560</xloc>
       <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
