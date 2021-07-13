@@ -559,7 +559,7 @@
     <connection>Steelwheels</connection>
     <sql>select
 	p.PRODUCTNAME AS PRODUCTNAME_1,
-	o.ORDERNUMBER
+	orft.ORDERNUMBER
 from CUSTOMER_W_TER c
 inner join ORDERFACT orft
 on c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
@@ -569,9 +569,10 @@ inner join PRODUCTS p
 on orft.PRODUCTCODE=p.PRODUCTCODE
 INNER JOIN ORDERS o
 ON orft.ORDERNUMBER=o.ORDERNUMBER
-WHERE t.YEAR_ID=2004
-GROUP BY o.ORDERNUMBER, p.PRODUCTNAME
-ORDER BY o.ORDERNUMBER</sql>
+WHERE c.TERRITORY='EMEA'
+AND t.YEAR_ID = 2004
+GROUP BY orft.ORDERNUMBER, p.PRODUCTNAME
+ORDER BY orft.ORDERNUMBER</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -588,8 +589,8 @@ ORDER BY o.ORDERNUMBER</sql>
         <origin>Retrieve Data</origin>
         <comments>PRODUCTNAME_1</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -598,8 +599,8 @@ ORDER BY o.ORDERNUMBER</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -611,8 +612,8 @@ ORDER BY o.ORDERNUMBER</sql>
         <origin>Retrieve Data</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -621,8 +622,8 @@ ORDER BY o.ORDERNUMBER</sql>
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -635,7 +636,7 @@ ORDER BY o.ORDERNUMBER</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
+      <xloc>240</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>

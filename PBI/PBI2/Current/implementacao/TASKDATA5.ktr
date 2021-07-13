@@ -525,8 +525,8 @@
     </group>
     <fields>
       <field>
-        <aggregate>PRODUCTLINE</aggregate>
-        <subject>PRODUCTLINE</subject>
+        <aggregate>PRODUCTNAME</aggregate>
+        <subject>PRODUCTNAME</subject>
         <type>CONCAT_COMMA</type>
         <valuefield/>
       </field>
@@ -558,7 +558,7 @@
     </partitioning>
     <connection>Steelwheels</connection>
     <sql>SELECT
-	p.PRODUCTLINE,
+	p.PRODUCTNAME,
 	orft.ORDERNUMBER
 FROM PRODUCTS p
 INNER JOIN ORDERFACT orft
@@ -568,7 +568,7 @@ ON orft.ORDERNUMBER=o.ORDERNUMBER
 INNER JOIN CUSTOMER_W_TER c
 ON c.CUSTOMERNUMBER = orft.CUSTOMERNUMBER 
 WHERE c.CREDITLIMIT > 100000
-GROUP BY orft.ORDERNUMBER, p.PRODUCTLINE
+GROUP BY orft.ORDERNUMBER, p.PRODUCTNAME
 ORDER BY orft.ORDERNUMBER
 
 </sql>
@@ -582,14 +582,14 @@ ORDER BY orft.ORDERNUMBER
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>PRODUCTLINE</name>
-        <length>50</length>
+        <name>PRODUCTNAME</name>
+        <length>70</length>
         <precision>-1</precision>
         <origin>Retrieve Data</origin>
-        <comments>PRODUCTLINE</comments>
+        <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -598,8 +598,8 @@ ORDER BY orft.ORDERNUMBER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
       <value-meta>
@@ -611,8 +611,8 @@ ORDER BY orft.ORDERNUMBER
         <origin>Retrieve Data</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>,</decimal_symbol>
-        <grouping_symbol>.</grouping_symbol>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
         <currency_symbol/>
         <trim_type>none</trim_type>
         <case_insensitive>N</case_insensitive>
@@ -621,8 +621,8 @@ ORDER BY orft.ORDERNUMBER
         <sort_descending>N</sort_descending>
         <output_padding>N</output_padding>
         <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_PT</date_format_locale>
-        <date_format_timezone>Europe/London</date_format_timezone>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>Atlantic/Madeira</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
     </row-meta>
@@ -683,7 +683,7 @@ ORDER BY orft.ORDERNUMBER
     </file>
     <fields>
       <field>
-        <name>PRODUCTLINE</name>
+        <name>PRODUCTNAME</name>
         <type>String</type>
         <format/>
         <currency/>

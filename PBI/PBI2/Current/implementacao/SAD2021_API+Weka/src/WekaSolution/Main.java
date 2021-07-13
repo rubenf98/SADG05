@@ -41,7 +41,7 @@ public class Main {
     }
 
     private static void DisplayOption() {
-        System.out.println("1- Convert Files");
+        System.out.println("1- Convert Filess");
         System.out.println("2- Apriori Algorithm");
         System.out.println("3- Run Kettle Transformations");
         System.out.println("4- Exit");

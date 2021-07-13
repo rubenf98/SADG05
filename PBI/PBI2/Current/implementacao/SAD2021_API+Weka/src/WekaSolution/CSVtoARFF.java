@@ -30,6 +30,7 @@ import java.util.Scanner;
  */
 public class CSVtoARFF {
      public static void ConvertFiles() {
+
         String folderPath = "../";
         
         ArrayList<String> csvFilesList = Utils.GetCSVFilesList(folderPath,"csv",3);
