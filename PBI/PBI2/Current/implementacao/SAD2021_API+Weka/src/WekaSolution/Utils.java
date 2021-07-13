@@ -39,7 +39,6 @@ public class Utils {
             String fileName = listOfFiles[i].getName();
             if(fileName.length() > 8){
                 String fileExtension = fileName.substring(fileName.length()-8);
-                System.out.println(fileExtension);
                 if( fileExtension.equals("_mod.csv")){
                     File file = new File(path + fileName);
 

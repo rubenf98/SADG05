@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class WekaApriori {
     public WekaApriori(){}
    
-     public static void RunAlgorithm() throws FileNotFoundException, IOException, Exception  {
+     public static void RunAlgorithm(double conf, double sup) throws FileNotFoundException, IOException, Exception  {
         
         String folderPath = "../";
         ArrayList<String> arffFilesList = Utils.GetCSVFilesList(folderPath,"arff",4);
@@ -38,6 +38,8 @@ public class WekaApriori {
 
             // Apriori
             Apriori model = new Apriori();
+            model.setMinMetric(conf);
+            model.setLowerBoundMinSupport(sup);
             model.buildAssociations(data);
             System.out.println("---------------------------------------------------------------------------------");
             System.out.println(fileName);

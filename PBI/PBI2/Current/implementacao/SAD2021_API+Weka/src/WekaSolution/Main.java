@@ -26,7 +26,7 @@ public class Main {
                     CSVtoARFF.ConvertFiles();
                     break;
                 case 2:
-                    WekaApriori.RunAlgorithm();
+                    runApriori();
                     break;
                 case 3:
                     Transformation.RunTransformations();
@@ -45,5 +45,23 @@ public class Main {
         System.out.println("2- Apriori Algorithm");
         System.out.println("3- Run Kettle Transformations");
         System.out.println("4- Exit");
+    }
+    
+    private static void runApriori() throws Exception{
+        Scanner scan = new Scanner(System.in);
+        double sup = -1;
+        while (sup<0 || sup>1){
+            System.out.println("Chose minimum suport between 0 and 1");
+             sup = scan.nextDouble();
+        }
+        
+        double conf = -1;
+        while (conf<0 || conf>1){
+            System.out.println("Chose minimum conf between 0 and 1");
+              conf = scan.nextDouble();
+        }
+           
+        
+        WekaApriori.RunAlgorithm(sup, conf);
     }
 }
