@@ -1,7 +1,6 @@
 package WekaSolution;
 
 // Weka
-
 import weka.core.Instances;
 import weka.associations.Apriori;
 import weka.associations.AssociationRule;
@@ -13,6 +12,10 @@ import java.io.FileReader;
 import java.util.List;
 import java.io.IOException;
 import java.util.ArrayList;
+
+// Excel Handler
+import WekaSolution.ExcelHandler;
+
 /**
  *
  * @author tadeu
@@ -41,13 +44,9 @@ public class WekaApriori {
             model.setMinMetric(conf);
             model.setLowerBoundMinSupport(sup);
             model.buildAssociations(data);
-            System.out.println("---------------------------------------------------------------------------------");
-            System.out.println(fileName);
-            System.out.println(model);
-            System.out.println("---------------------------------------------------------------------------------");
+            ExcelHandler.createSheet(model.getAssociationRules().getRules(),fileName);
             data.clear();
             bf.close();  
-            
         }
      }
 
