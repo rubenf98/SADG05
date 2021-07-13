@@ -29,6 +29,9 @@ public class Main {
                     WekaApriori.RunAlgorithm();
                     break;
                 case 3:
+                    ExcelHandler.createSheet();
+                    break;
+                case 4:
                     running = false;
                     break;
                 default:
