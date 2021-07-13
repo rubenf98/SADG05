@@ -443,8 +443,8 @@
     <access>Native</access>
     <database>dw</database>
     <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
+    <username>admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -549,8 +549,8 @@
     <access>Native</access>
     <database>australia_db</database>
     <port>3306</port>
-    <username>root</username>
-    <password>Encrypted </password>
+    <username>admin</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce71da9fa6d4</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -3505,15 +3505,12 @@ FROM u435441883_uk.CUSTOMER_W_TER
     <fields>
       <field>
         <name>CUSTOMERNUMBER</name>
-        <rename/>
       </field>
       <field>
         <name>CUSTOMERNAME</name>
-        <rename/>
       </field>
       <field>
         <name>PHONE</name>
-        <rename/>
       </field>
       <field>
         <name>ADRESSLINE</name>
@@ -3521,19 +3518,15 @@ FROM u435441883_uk.CUSTOMER_W_TER
       </field>
       <field>
         <name>CITY</name>
-        <rename/>
       </field>
       <field>
         <name>STATE</name>
-        <rename/>
       </field>
       <field>
         <name>COUNTRY</name>
-        <rename/>
       </field>
       <field>
         <name>TERRITORY</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
       <meta>
@@ -4732,7 +4725,7 @@ FROM australia_db.ORDERFACT
         <name>ORDERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>ORDERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -4755,7 +4748,7 @@ FROM australia_db.ORDERFACT
         <name>PRODUCTCODE</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -4778,7 +4771,7 @@ FROM australia_db.ORDERFACT
         <name>CUSTOMERNUMBER</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>CUSTOMERNUMBER</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -4801,7 +4794,7 @@ FROM australia_db.ORDERFACT
         <name>TIME_ID</name>
         <length>10</length>
         <precision>-1</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>TIME_ID</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -4824,7 +4817,7 @@ FROM australia_db.ORDERFACT
         <name>QUANTITYORDERED</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>QUANTITYORDERED</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -4847,7 +4840,7 @@ FROM australia_db.ORDERFACT
         <name>PRICEEACH</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>PRICEEACH</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -4870,7 +4863,7 @@ FROM australia_db.ORDERFACT
         <name>TOTALPRICE</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>ORDERFACT_Australia_MySQL 2</origin>
+        <origin>OF_AUS</origin>
         <comments>TOTALPRICE</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -8693,7 +8686,7 @@ FROM australia_db.PRODUCTS
         <name>PRODUCTCODE</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>PRODUCTCODE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -8716,7 +8709,7 @@ FROM australia_db.PRODUCTS
         <name>PRODUCTNAME</name>
         <length>70</length>
         <precision>-1</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>PRODUCTNAME</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -8739,7 +8732,7 @@ FROM australia_db.PRODUCTS
         <name>PRODUCTVENDOR</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>PRODUCTVENDOR</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -8762,7 +8755,7 @@ FROM australia_db.PRODUCTS
         <name>PRODUCTLINE</name>
         <length>50</length>
         <precision>-1</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>PRODUCTLINE</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
@@ -8785,7 +8778,7 @@ FROM australia_db.PRODUCTS
         <name>QUANTITYINSTOCK</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>QUANTITYINSTOCK</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -8808,7 +8801,7 @@ FROM australia_db.PRODUCTS
         <name>PRICEINAUD</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>PRICEINAUD</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -8831,7 +8824,7 @@ FROM australia_db.PRODUCTS
         <name>MSRP</name>
         <length>16</length>
         <precision>2</precision>
-        <origin>Product_Australia_MySQL</origin>
+        <origin>PR_AUS</origin>
         <comments>MSRP</comments>
         <conversion_Mask>######0.0###################;-######0.0###################</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
@@ -13150,6 +13143,102 @@ FROM u435441883_uk.DIM_TIME
     </GUI>
   </step>
   <step>
+    <name>TIME_USA_MOD</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>TIME_ID</name>
+        <rename>TIME_ID</rename>
+        <type>String</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type>normal</storage_type>
+      </meta>
+      <meta>
+        <name>MONTH_ID</name>
+        <rename>MONTH_ID</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>QTR_ID</name>
+        <rename>QTR_ID</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>YEAR_ID</name>
+        <rename>YEAR_ID</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>832</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
     <name>UKNames 3</name>
     <type>SelectValues</type>
     <description/>
@@ -13273,102 +13362,6 @@ FROM u435441883_uk.DIM_TIME
     <GUI>
       <xloc>832</xloc>
       <yloc>384</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>TIME_USA_MOD</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>TIME_ID</name>
-        <rename>TIME_ID</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type>normal</storage_type>
-      </meta>
-      <meta>
-        <name>MONTH_ID</name>
-        <rename>MONTH_ID</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>QTR_ID</name>
-        <rename>QTR_ID</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>YEAR_ID</name>
-        <rename>YEAR_ID</rename>
-        <type>Integer</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>832</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
