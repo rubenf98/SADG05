@@ -540,7 +540,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
+      <xloc>528</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -636,7 +636,7 @@ ORDER BY orft.ORDERNUMBER</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>240</xloc>
+      <xloc>320</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -705,7 +705,7 @@ ORDER BY orft.ORDERNUMBER</sql>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>656</xloc>
+      <xloc>736</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
